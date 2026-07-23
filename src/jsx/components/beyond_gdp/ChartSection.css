@@ -65,16 +65,45 @@
     box-sizing: border-box;
     margin: 0 0 16px;
     padding: clamp(16px, 3vw, 28px);
+    &.cs_chart--fit {
+      margin: 0 auto 16px;
+      max-width: calc(600px + 2px + 2 * clamp(16px, 3vw, 28px));
+    }
+  }
+  .cs_loading {
+    background: #fff;
+    border: 1px solid var(--un-color-grey-lightest);
+    border-radius: 16px;
+    box-sizing: border-box;
+    margin: 0 0 16px;
+    min-height: 400px;
   }
   .cs_expandable {
     color: var(--un-color-grey-text);
     font-size: var(--un-font-size-xxs);
-    margin: 0 0 16px;
+    margin: 0 0 16px 25px;
     max-width: 700px;
     summary {
       color: var(--un-color-blue-text);
       cursor: pointer;
       font-weight: var(--un-font-weight-bold);
+      list-style: none;
+      position: relative;
+      &::-webkit-details-marker {
+        display: none;
+      }
+      &::before {
+        content: '▶';
+        display: inline-block;
+        font-size: 0.65em;
+        left: -14px;
+        position: absolute;
+        top: 0.35em;
+        transition: transform 0.2s ease-out;
+      }
+    }
+    &[open] summary::before {
+      transform: rotate(90deg);
     }
     p {
       color: var(--un-color-grey-text);

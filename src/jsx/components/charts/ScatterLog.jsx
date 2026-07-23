@@ -4,7 +4,7 @@ import { scaleLinear, scaleLog } from 'd3-scale';
 import { select } from 'd3-selection';
 import { useEffect, useRef, useState } from 'react';
 import ChartCaption from './ChartCaption.jsx';
-import ChartTooltip from './ChartTooltip.jsx';
+import ChartTooltip, { shouldFlipTooltip } from './ChartTooltip.jsx';
 import './d3Locale.js';
 import formatNumber from './formatNumber.js';
 import './ScatterLog.css';
@@ -54,7 +54,7 @@ const ScatterLog = ({ isVisible = false, points = [], title, xFormat = defaultXF
   const handlePointMove = (event, p) => {
     const wrapRect = plotRef.current.getBoundingClientRect();
     const left = event.clientX - wrapRect.left;
-    setHovered({ flip: left > wrapRect.width * 0.6, left, point: p, top: event.clientY - wrapRect.top });
+    setHovered({ flip: shouldFlipTooltip(left, wrapRect.width), left, point: p, top: event.clientY - wrapRect.top });
   };
 
   return (
@@ -80,16 +80,11 @@ const ScatterLog = ({ isVisible = false, points = [], title, xFormat = defaultXF
                 />
               ))}
             </g>
-            {xLabel && (
-              <text className="sl_axis_caption" textAnchor="end" x={size.width - margin.right} y={size.height - 4}>
-                {xLabel}
-              </text>
-            )}
           </svg>
         )}
         {hovered && (
           <ChartTooltip flip={hovered.flip} left={hovered.left} top={hovered.top}>
-            <div className="chart_tooltip_heading">{hovered.point.key}</div>
+            <div className="chart_tooltip_heading">{hovered.point.label ?? hovered.point.key}</div>
             <div className="chart_tooltip_row">
               <span className="chart_tooltip_label">{xLabel}</span>
               <span className="chart_tooltip_value">{xFormat(hovered.point.x)}</span>
@@ -101,6 +96,7 @@ const ScatterLog = ({ isVisible = false, points = [], title, xFormat = defaultXF
           </ChartTooltip>
         )}
       </div>
+      <ChartCaption align="right">{xLabel}</ChartCaption>
     </div>
   );
 };

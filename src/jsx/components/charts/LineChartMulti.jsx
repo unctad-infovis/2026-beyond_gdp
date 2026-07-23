@@ -1,8 +1,18 @@
-import * as d3 from 'd3';
+import { extent, max } from 'd3-array';
+import { axisBottom, axisLeft } from 'd3-axis';
+import { easeLinear } from 'd3-ease';
+import { format } from 'd3-format';
+import { scaleLinear } from 'd3-scale';
+import { pointer, select } from 'd3-selection';
+import { line } from 'd3-shape';
+// Side-effect import: patches Selection.prototype.transition, which selection.transition() below
+// relies on — d3-selection alone doesn't define it.
+import 'd3-transition';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import ChartCaption from './ChartCaption.jsx';
 import ChartLegend from './ChartLegend.jsx';
-import ChartTooltip from './ChartTooltip.jsx';
-import seriesColor from './chartColors.js';
+import ChartTooltip, { shouldFlipTooltip } from './ChartTooltip.jsx';
+import seriesColor, { seriesToLegendItems } from './chartColors.js';
 import './d3Locale.js';
 import formatNumber from './formatNumber.js';
 import './LineChartMulti.css';
@@ -10,7 +20,7 @@ import './LineChartMulti.css';
 // Module-scope so the default stays referentially stable across renders — an inline object
 // literal default parameter would otherwise be a new reference every render, destabilizing
 // the draw() useCallback below and corrupting in-flight D3 transitions on parent re-renders.
-const DEFAULT_MARGIN = { top: 16, right: 16, bottom: 32, left: 80 };
+const DEFAULT_MARGIN = { top: 16, right: 16, bottom: 32, left: 56 };
 
 const formatTooltipValue = value => (Math.abs(value) >= 1000 ? formatNumber(value) : (Math.round(value * 10) / 10).toLocaleString());
 
@@ -22,11 +32,14 @@ const formatTooltipValue = value => (Math.abs(value) >= 1000 ? formatNumber(valu
 // crosshair with each series' value at that year, matching the cdde CommodityPrices pattern
 // (bisector-free here since the data is on a whole-year grid, so the nearest year is just a
 // rounded scale inversion).
-const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', isVisible = false, margin = DEFAULT_MARGIN, seriesKey, series = [], title, valueKey, yLabel = '' }) => {
+const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', hoveredYear, isVisible = false, margin = DEFAULT_MARGIN, onHoverChange, palette, seriesKey, series = [], stackedLegend = false, title, valueKey, yLabel = '', yMax }) => {
   const svgRef = useRef(null);
   const structureBuilt = useRef(false);
   const phase = useRef('hidden'); // 'hidden' | 'revealing' | 'shown'
   const isAnimating = useRef(false);
+  const showHoverRef = useRef(() => {});
+  const hideHoverRef = useRef(() => {});
+  const lastObservedSize = useRef({ width: 0, height: 0 });
   const [tooltip, setTooltip] = useState(null);
 
   // Memoized so draw()'s identity stays stable across parent re-renders (e.g. a sibling
@@ -58,20 +71,19 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', isVi
       const height = totalHeight - margin.top - margin.bottom;
       if (width <= 0 || height <= 0) return;
 
-      const svg = d3.select(svgRef.current);
+      const svg = select(svgRef.current);
       svg.selectAll('*').remove();
       svg.attr('width', totalWidth).attr('height', totalHeight);
 
       const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
 
       const allPoints = seriesData.flatMap(s => s.points);
-      const xExtent = d3.extent(allPoints, d => d.date);
-      const xScale = d3.scaleLinear().domain(xExtent).range([0, width]);
-      const yScale = d3
-        .scaleLinear()
-        .domain([0, d3.max(allPoints, d => d.value) ?? 0])
-        .nice()
+      const xExtent = extent(allPoints, d => d.date);
+      const xScale = scaleLinear().domain(xExtent).range([0, width]);
+      const yScale = scaleLinear()
+        .domain([0, yMax ?? max(allPoints, d => d.value) ?? 0])
         .range([height, 0]);
+      if (yMax === undefined) yScale.nice();
 
       // Nice round-number interior ticks from d3, always anchored with the domain's first/last
       // year so the chart's actual start/end dates are labeled even if off-step. Ticks too close
@@ -82,28 +94,18 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', isVi
       const merged = [...new Set([xExtent[0], ...niceTicks, xExtent[1]])].sort((a, b) => a - b);
       const keptFromStart = merged.filter((t, i) => i === 0 || t - merged[i - 1] >= minGap);
       const xTicks = keptFromStart.filter((t, i) => i === 0 || i === keptFromStart.length - 1 || keptFromStart[keptFromStart.length - 1] - t >= minGap);
-      const xAxis = d3.axisBottom(xScale).tickValues(xTicks).tickFormat(d3.format('d')).tickSize(0).tickPadding(10);
+      const xAxis = axisBottom(xScale).tickValues(xTicks).tickFormat(format('d')).tickSize(0).tickPadding(10);
       g.append('g')
         .attr('class', 'lcm_axis lcm_axis_x')
         .attr('transform', `translate(0,${height})`)
         .call(xAxis)
         .call(ax => ax.select('.domain').remove());
 
-      const yAxis = d3.axisLeft(yScale).ticks(5).tickSize(-width).tickPadding(10);
+      const yAxis = axisLeft(yScale).ticks(5).tickSize(-width).tickPadding(10);
       g.append('g')
         .attr('class', 'lcm_axis lcm_axis_y')
         .call(yAxis)
         .call(ax => ax.select('.domain').remove());
-
-      if (yLabel) {
-        g.append('text')
-          .attr('class', 'lcm_axis_label')
-          .attr('transform', 'rotate(-90)')
-          .attr('x', -height / 2)
-          .attr('y', -margin.left + 12)
-          .attr('text-anchor', 'middle')
-          .text(yLabel);
-      }
 
       const clipId = `lcm-clip-${Math.random().toString(36).slice(2, 7)}`;
       svg
@@ -117,13 +119,12 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', isVi
       const linesGroup = g.append('g').attr('clip-path', `url(#${clipId})`);
       // Straight segments between points (default d3.curveLinear) — no spline smoothing, per
       // project convention: never imply data between measured points that wasn't measured.
-      const lineGen = d3
-        .line()
+      const lineGen = line()
         .x(d => xScale(d.date))
         .y(d => yScale(d.value));
 
       seriesData.forEach((s, idx) => {
-        linesGroup.append('path').datum(s.points).attr('class', 'lcm_line').attr('fill', 'none').attr('stroke', seriesColor(idx)).attr('d', lineGen);
+        linesGroup.append('path').datum(s.points).attr('class', 'lcm_line').attr('fill', 'none').attr('stroke', seriesColor(idx, palette)).attr('d', lineGen);
       });
 
       // Hover crosshair — kept outside linesGroup (unclipped) so it works across the full plot
@@ -131,24 +132,14 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', isVi
       const hoverGroup = g.append('g').attr('class', 'lcm_hover').style('display', 'none');
       const hoverLine = hoverGroup.append('line').attr('class', 'lcm_hover_line').attr('y1', 0).attr('y2', height);
 
-      const handleLeave = () => {
-        hoverGroup.style('display', 'none');
-        setTooltip(null);
-      };
-
-      const handleMove = event => {
-        const [mx, my] = d3.pointer(event, svgRef.current);
-        const chartX = mx - margin.left;
-        if (chartX < 0 || chartX > width) {
-          handleLeave();
-          return;
-        }
-        const year = Math.max(xExtent[0], Math.min(xExtent[1], Math.round(xScale.invert(chartX))));
-        const rows = seriesData.map((s, idx) => ({ color: seriesColor(idx), label: s.label, point: s.points.find(p => p.date === year) })).filter(r => r.point);
-        if (!rows.length) {
-          handleLeave();
-          return;
-        }
+      // Draws the crosshair + dots for a given year; reused both by this chart's own mouse
+      // handler (which sets its own tooltip separately, anchored to the real cursor position)
+      // and, via the refs below, by a sibling ChartPair panel reporting its hovered year — in
+      // that case there's no real cursor here, so the tooltip is anchored to the crosshair
+      // itself instead, keeping both panels' tooltips in sync too.
+      const showHoverAtYear = (year, { anchorTooltip = false } = {}) => {
+        const rows = seriesData.map((s, idx) => ({ color: seriesColor(idx, palette), label: s.label, point: s.points.find(p => p.date === year) })).filter(r => r.point);
+        if (!rows.length) return;
         const cx = xScale(year);
         hoverGroup.style('display', null);
         hoverLine.attr('x1', cx).attr('x2', cx);
@@ -161,7 +152,39 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', isVi
           .attr('fill', d => d.color)
           .attr('cx', cx)
           .attr('cy', d => yScale(d.point.value));
-        setTooltip({ flip: mx > totalWidth * 0.6, rows: rows.map(r => ({ color: r.color, label: r.label, value: r.point.value })), x: mx, y: my, year });
+        if (anchorTooltip) {
+          const avgCy = rows.reduce((sum, r) => sum + yScale(r.point.value), 0) / rows.length;
+          const mx = cx + margin.left;
+          setTooltip({ flip: shouldFlipTooltip(mx, totalWidth), rows: rows.map(r => ({ color: r.color, label: r.label, value: r.point.value })), x: mx, y: avgCy + margin.top, year });
+        }
+      };
+      showHoverRef.current = year => showHoverAtYear(year, { anchorTooltip: true });
+      hideHoverRef.current = () => {
+        hoverGroup.style('display', 'none');
+        setTooltip(null);
+      };
+
+      const handleLeave = () => {
+        hideHoverRef.current();
+        onHoverChange?.(null);
+      };
+
+      const handleMove = event => {
+        const [mx, my] = pointer(event, svgRef.current);
+        const chartX = mx - margin.left;
+        if (chartX < 0 || chartX > width) {
+          handleLeave();
+          return;
+        }
+        const year = Math.max(xExtent[0], Math.min(xExtent[1], Math.round(xScale.invert(chartX))));
+        const rows = seriesData.map((s, idx) => ({ color: seriesColor(idx, palette), label: s.label, point: s.points.find(p => p.date === year) })).filter(r => r.point);
+        if (!rows.length) {
+          handleLeave();
+          return;
+        }
+        showHoverAtYear(year);
+        setTooltip({ flip: shouldFlipTooltip(mx, totalWidth), rows: rows.map(r => ({ color: r.color, label: r.label, value: r.point.value })), x: mx, y: my, year });
+        onHoverChange?.(year);
       };
 
       g.append('rect').attr('class', 'lcm_overlay').attr('width', width).attr('height', height).on('mousemove', handleMove).on('mouseleave', handleLeave);
@@ -172,7 +195,7 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', isVi
           .select(`#${clipId} rect`)
           .transition()
           .duration(animDuration)
-          .ease(d3.easeLinear)
+          .ease(easeLinear)
           .attr('width', width)
           .on('end', () => {
             isAnimating.current = false;
@@ -180,7 +203,7 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', isVi
           });
       }
     },
-    [animDuration, margin, seriesData, yLabel]
+    [animDuration, margin, onHoverChange, palette, seriesData, yMax]
   );
 
   const hasPoints = seriesData.some(s => s.points.length > 0);
@@ -204,7 +227,14 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', isVi
   useEffect(() => {
     if (!structureBuilt.current) return;
     let timeout;
-    const observer = new ResizeObserver(() => {
+    // Skip redraws where the box didn't actually change size — ResizeObserver can fire from
+    // unrelated layout settling elsewhere on the page (e.g. a sibling's reveal animation), and a
+    // no-op redraw would otherwise wipe an in-progress hover (this chart's own, or a synced one
+    // from a ChartPair sibling) for no visual benefit.
+    const observer = new ResizeObserver(entries => {
+      const { width, height } = entries[0].contentRect;
+      if (width === lastObservedSize.current.width && height === lastObservedSize.current.height) return;
+      lastObservedSize.current = { width, height };
       clearTimeout(timeout);
       timeout = setTimeout(() => {
         if (!isAnimating.current) draw(phase.current === 'shown' ? 'shown' : 'hidden');
@@ -217,9 +247,18 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', isVi
     };
   }, [draw]);
 
+  // Mirrors a sibling ChartPair panel's hovered year onto this chart's own crosshair — including
+  // when this chart is itself the one being hovered, since re-applying the same year is a no-op.
+  useEffect(() => {
+    if (!structureBuilt.current) return;
+    if (hoveredYear == null) hideHoverRef.current();
+    else showHoverRef.current(hoveredYear);
+  }, [hoveredYear]);
+
   return (
     <div className="lcm_container">
-      <ChartLegend items={series.map((s, idx) => ({ color: seriesColor(idx), key: s.key, label: s.label }))} />
+      <ChartLegend items={seriesToLegendItems(series, palette)} stacked={stackedLegend} />
+      <ChartCaption>{yLabel}</ChartCaption>
       <div className="lcm_plot_wrap">
         <svg aria-label={title} className="lcm_svg" ref={svgRef} role="img" />
         {tooltip && (

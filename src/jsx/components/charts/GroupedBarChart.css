@@ -14,17 +14,23 @@
       height 0.35s ease-out,
       y 0.35s ease-out;
   }
-  .gbc_gridline {
-    stroke: var(--un-color-grey-lightest);
-    stroke-dasharray: 2 2;
-  }
-  .gbc_tick_label,
   .gbc_category_label {
     fill: var(--un-color-grey-text);
     font-size: var(--un-font-size-xxxs);
-  }
-  .gbc_category_label {
     text-anchor: middle;
+  }
+  .gbc_goal {
+    line {
+      stroke: var(--un-color-red-dark);
+      stroke-dasharray: 5 3;
+      stroke-width: 1.5px;
+    }
+    text {
+      fill: var(--un-color-red-dark);
+      font-size: var(--un-font-size-xxs);
+      font-weight: var(--un-font-weight-bold);
+      text-anchor: end;
+    }
   }
   @media (prefers-reduced-motion: reduce) {
     .gbc_bar {

@@ -19,10 +19,6 @@
     stroke: var(--un-color-grey-lightest);
     stroke-dasharray: 2 2;
   }
-  .lcm_axis_label {
-    fill: var(--un-color-grey-text);
-    font-size: var(--un-font-size-xxxs);
-  }
   .lcm_line {
     stroke-width: 4px;
   }

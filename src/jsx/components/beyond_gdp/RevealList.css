@@ -16,7 +16,7 @@
     }
   }
   .rl_item {
-    background: var(--un-color-grey-lightest);
+    background: var(--un-color-blue-lightest);
     border-radius: 8px;
     box-sizing: border-box;
     opacity: 0;
@@ -31,15 +31,14 @@
     }
   }
   .rl_item_title {
-    color: var(--un-color-blue-text-dark);
-    font-size: var(--un-font-size-normal);
+    font-size: var(--un-font-size-xl);
     font-weight: var(--un-font-weight-bolder);
     margin: 0 0 6px;
     padding: 0;
   }
   .rl_item_description {
     color: var(--un-color-grey-darkest);
-    font-size: var(--un-font-size-xxs);
+    font-size: var(--un-font-size-normal);
     margin: 0;
     padding: 0;
   }

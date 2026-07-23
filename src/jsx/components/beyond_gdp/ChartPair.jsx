@@ -9,6 +9,7 @@ import './ChartPair.css';
 const ChartPair = ({ leftChart, rightChart, rightDelayMs = 2000 }) => {
   const [pairRef, pairInView] = useIsVisible(0.3);
   const [rightVisible, setRightVisible] = useState(false);
+  const [hoveredYear, setHoveredYear] = useState(null);
 
   useEffect(() => {
     if (!pairInView) return;
@@ -21,10 +22,14 @@ const ChartPair = ({ leftChart, rightChart, rightDelayMs = 2000 }) => {
     return () => clearTimeout(timer);
   }, [pairInView, rightDelayMs]);
 
+  // Passed as a second argument so charts that support synced hover (e.g. LineChartMulti) can
+  // mirror the hovered year on the sibling panel; charts that ignore it just don't destructure it.
+  const hoverProps = { hoveredYear, onHoverChange: setHoveredYear };
+
   return (
     <div className="two_column cp_pair" ref={pairRef}>
-      <div className="cp_panel">{leftChart(pairInView)}</div>
-      <div className="cp_panel">{rightChart(rightVisible)}</div>
+      <div className="cp_panel">{leftChart(pairInView, hoverProps)}</div>
+      <div className="cp_panel">{rightChart(rightVisible, hoverProps)}</div>
     </div>
   );
 };

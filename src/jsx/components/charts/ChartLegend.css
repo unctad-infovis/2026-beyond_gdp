@@ -4,6 +4,10 @@
     flex-wrap: wrap;
     gap: 16px;
     margin: 0 0 12px;
+    &.chart_legend--stacked {
+      flex-direction: column;
+      gap: 0;
+    }
   }
   .chart_legend_item {
     align-items: center;

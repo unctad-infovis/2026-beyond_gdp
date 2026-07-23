@@ -11,7 +11,7 @@
   }
   .tl_eyebrow {
     align-items: center;
-    color: var(--un-color-yellow-brand-shade);
+    color: var(--un-color-blue-text-dark);
     display: flex;
     font-size: var(--un-font-size-xxs);
     font-weight: var(--un-font-weight-bold);
@@ -22,14 +22,14 @@
     text-transform: uppercase;
   }
   .tl_eyebrow_line {
-    background: var(--un-color-yellow-brand);
+    background: var(--un-color-blue-text-dark);
     display: block;
     flex: 0 0 auto;
     height: 2px;
     width: 24px;
   }
   .tl_title {
-    color: var(--un-color-yellow-brand-shade);
+    color: #000;
     font-size: clamp(var(--un-font-size-xxl), 6vw, var(--un-font-size-xxxl));
     font-weight: var(--un-font-weight-boldest);
     line-height: var(--un-line-height-small);

@@ -1,3 +1,6 @@
+import PREJUDICE_COUNTRY_NAMES from './jsx/components/beyond_gdp/prejudiceCountryNames.js';
+import { DEVELOPMENT_STATUS_PALETTE_VARS } from './jsx/components/charts/chartColors.js';
+
 <Header title={props.meta.hero.title} subtitle={props.meta.hero.subtitle} byline={props.meta.hero.byline} image_url={props.meta.hero.image_url} titleHighlight={props.meta.hero.titleHighlight} />
 
 <Nav items={props.meta.nav} />
@@ -60,6 +63,16 @@ The proposed dashboard contains 31 indicators designed to help countries track p
 </div>
 </div>
 
+<div className="container_section anchor_data">
+<div className="container_section__wide">
+
+### What the selected data show
+
+The dashboard changes the questions we ask about progress. These examples compare economic output with outcomes for people, society and the planet, highlighting insights and data gaps from indicators on the new dashboard for tracking progress beyond GDP.
+
+</div>
+</div>
+
 <DashboardFramework
   title="The Beyond GDP dashboard tracks three dimensions of progress"
   foundationalPrinciples={[
@@ -74,19 +87,11 @@ The proposed dashboard contains 31 indicators designed to help countries track p
   ]}
 />
 
-<div className="container_section anchor_data">
-<div className="container_section__wide">
-
-### What the selected data show
-
-The dashboard changes the questions we ask about progress. These examples compare economic output with outcomes for people, society and the planet, highlighting insights and data gaps from indicators on the new dashboard for tracking progress beyond GDP.
-
-#### Current well-being
+<SectionDivider maxWidth="700px" title="Current well-being">
 
 This dimension covers material conditions and work, health, education, security, subjective well-being, social cohesion, the quality of institutions and environmental quality. Let's look at some selected data.
 
-</div>
-</div>
+</SectionDivider>
 
 <ChartData file="2026-beyond_gdp_healthy_life_expectancy.json">
 {data => (
@@ -98,8 +103,8 @@ This dimension covers material conditions and work, health, education, security,
   >
     <ChartPair
       rightDelayMs={1400}
-      leftChart={vis => <LineChartMulti data={data} seriesKey="iso3" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita, $" yLabel="Gross domestic product (GDP) per capita, $" series={[{ key: 'CRI', label: 'Costa Rica' }, { key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }]} />}
-      rightChart={vis => <LineChartMulti data={data} seriesKey="iso3" valueKey="healthy_life_exp" isVisible={vis} title="Healthy life expectancy, years" yLabel="Healthy life expectancy, years" series={[{ key: 'CRI', label: 'Costa Rica' }, { key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }]} />}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="iso3" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita, dollars" yLabel="Gross domestic product (GDP) per capita, dollars" hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'CRI', label: 'Costa Rica' }, { key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="iso3" valueKey="healthy_life_exp" isVisible={vis} title="Healthy life expectancy, years" yLabel="Healthy life expectancy, years" yMax={100} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'CRI', label: 'Costa Rica' }, { key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }]} />}
     />
   </ChartSection>
 )}
@@ -116,8 +121,8 @@ This dimension covers material conditions and work, health, education, security,
   >
     <ChartPair
       rightDelayMs={1400}
-      leftChart={vis => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita index, 2015=100" yLabel="Gross domestic product (GDP) per capita index, 2015=100" series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern Asia', label: 'Eastern Asia' }]} />}
-      rightChart={vis => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="homicides" isVisible={vis} title="Homicides per 100 000 people" yLabel="Homicides per 100 000 people" series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern Asia', label: 'Eastern Asia' }]} />}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita index, index 2015=100" yLabel="Gross domestic product (GDP) per capita, index 2015=100" hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern Asia', label: 'Eastern Asia' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="homicides" isVisible={vis} title="Number of homicides per 100 000 people" yLabel="Number of homicides per 100 000 people" yMax={20} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern Asia', label: 'Eastern Asia' }]} />}
     />
   </ChartSection>
 )}
@@ -137,8 +142,9 @@ This dimension covers material conditions and work, health, education, security,
       leftChart={vis => (
         <GroupedBarChart
           isVisible={vis}
-          title="Gross domestic product (GDP) per capita index, 2014=100"
-          yLabel="Gross domestic product (GDP) per capita index, 2014=100"
+          title="Gross domestic product (GDP) per capita, index 2014=100"
+          yLabel="Gross domestic product (GDP) per capita, index 2014=100"
+          yMax={150}
           categories={[{ key: 'Northern Africa', label: 'Northern Africa' }, { key: 'Western Asia', label: 'Western Asia' }]}
           series={data.years.map(y => ({ key: String(y), label: String(y) }))}
           values={Object.fromEntries(Object.entries(data.regions).map(([region, r]) => [region, Object.fromEntries(data.years.map((y, i) => [String(y), r.gdp_index[i]]))]))}
@@ -149,7 +155,8 @@ This dimension covers material conditions and work, health, education, security,
           isVisible={vis}
           title="Share who trust most people, per cent"
           yLabel="Share who trust most people, per cent"
-          valueFormat="percent"
+          yMax={15}
+          valueFormat=""
           categories={[{ key: 'Northern Africa', label: 'Northern Africa' }, { key: 'Western Asia', label: 'Western Asia' }]}
           series={data.years.map(y => ({ key: String(y), label: String(y) }))}
           values={Object.fromEntries(Object.entries(data.regions).map(([region, r]) => [region, Object.fromEntries(data.years.map((y, i) => [String(y), r.trust_pct[i]]))]))}
@@ -174,15 +181,11 @@ This dimension covers material conditions and work, health, education, security,
 )}
 </ChartData>
 
-<div className="container_section">
-<div className="container_section__wide">
-
-#### Equity and inclusion
+<SectionDivider maxWidth="700px" title="Equity and inclusion">
 
 This dimension measures whether opportunities and outcomes are shared. It covers wealth and income inequality, poverty, work inclusion, regional inequalities and overlapping deprivations. Let's look at some selected data.
 
-</div>
-</div>
+</SectionDivider>
 
 <ChartData file="2026-beyond_gdp_wealth_inequality.json">
 {data => (
@@ -195,8 +198,8 @@ This dimension measures whether opportunities and outcomes are shared. It covers
   >
     <ChartPair
       rightDelayMs={1400}
-      leftChart={vis => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita index, 2000=100" yLabel="Gross domestic product (GDP) per capita index, 2000=100" series={[{ key: 'Eastern Europe', label: 'Eastern Europe' }, { key: 'Southern Europe', label: 'Southern Europe' }]} />}
-      rightChart={vis => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="wealth_99_perc" isVisible={vis} title="Wealth share of bottom 99%, per cent" yLabel="Wealth share of bottom 99%, per cent" series={[{ key: 'Eastern Europe', label: 'Eastern Europe' }, { key: 'Southern Europe', label: 'Southern Europe' }]} />}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita, index 2000=100" yLabel="Gross domestic product (GDP) per capita, index 2000=100" yMax={250} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Eastern Europe', label: 'Eastern Europe' }, { key: 'Southern Europe', label: 'Southern Europe' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="wealth_99_perc" isVisible={vis} title="Wealth share of bottom 99%, per cent" yLabel="Wealth share of bottom 99%, percentage" yMax={100} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Eastern Europe', label: 'Eastern Europe' }, { key: 'Southern Europe', label: 'Southern Europe' }]} />}
     />
   </ChartSection>
 )}
@@ -214,8 +217,8 @@ This dimension measures whether opportunities and outcomes are shared. It covers
   >
     <ChartPair
       rightDelayMs={840}
-      leftChart={vis => <BarPair isVisible={vis} title="Gross domestic product (GDP) per capita, $" periods={data.periods} values={data.series.gdp_per_capita} valueFormat="currency" />}
-      rightChart={vis => <BarPair isVisible={vis} title="Women's hourly earnings, share of men's, per cent" periods={data.periods} values={data.series.wage_gap_pct} valueFormat="percent" />}
+      leftChart={vis => <BarPair isVisible={vis} title="Gross domestic product (GDP) per capita, dollars" yLabel="Gross domestic product (GDP) per capita, dollars" periods={data.periods} values={data.series.gdp_per_capita} valueFormat="" />}
+      rightChart={vis => <BarPair isVisible={vis} title="Women's hourly earnings, share of men's, per cent" yLabel="Women's hourly earnings, share of men's" periods={data.periods} values={data.series.wage_gap_pct} valueFormat="percent" />}
     />
   </ChartSection>
 )}
@@ -227,13 +230,14 @@ This dimension measures whether opportunities and outcomes are shared. It covers
     title="Economic prosperity doesn't protect people against prejudice"
     description="Gross domestic product (GDP) per capita and share of people reporting discrimination or harassment in the previous 12 months, selected countries, dollars on a logarithmic scale and percentage, 2014–2024 average."
     insight={["Higher GDP isn't systematically linked to less discrimination or harassment. Focusing only on economic growth creates a major blind spot in people's lived experience."]}
+    fitChart
   >
     <RevealOnView>
       {vis => (
         <ScatterLog
-          points={data.map(d => ({ key: d.iso3, x: d['GDP per capita (log scale)'], y: d['Share reporting discrimination or harassment'] }))}
+          points={data.map(d => ({ key: d.iso3, label: PREJUDICE_COUNTRY_NAMES[d.iso3] ?? d.iso3, x: d['GDP per capita (log scale)'], y: d['Share reporting discrimination or harassment'] }))}
           title="Gross domestic product (GDP) per capita vs. share reporting discrimination or harassment"
-          xLabel="GDP per capita ($, log scale)"
+          xLabel="Gross domestic product (GDP) per capita, dollars"
           yLabel="Share reporting discrimination or harassment, per cent"
           isVisible={vis}
         />
@@ -243,15 +247,11 @@ This dimension measures whether opportunities and outcomes are shared. It covers
 )}
 </ChartData>
 
-<div className="container_section">
-<div className="container_section__wide">
-
-#### Sustainability and resilience
+<SectionDivider maxWidth="700px" title="Sustainability and resilience">
 
 This dimension tracks whether progress can continue over time. It considers produced, human, social, institutional and natural capital.
 
-</div>
-</div>
+</SectionDivider>
 
 <ChartData file="2026-beyond_gdp_emissions.json">
 {data => (
@@ -264,14 +264,14 @@ This dimension tracks whether progress can continue over time. It considers prod
   >
     <ChartPair
       rightDelayMs={1400}
-      leftChart={vis => <LineChartMulti data={data} seriesKey="developing" valueKey="ghg_per_capita" isVisible={vis} title="Greenhouse gas (GHG) emissions per capita, tonnes CO₂e per person" yLabel="Greenhouse gas (GHG) emissions per capita, tonnes CO₂e per person" series={[{ key: 'Developed', label: 'Developed' }, { key: 'LDCs', label: 'Least developed countries (LDCs)' }, { key: 'Other developing', label: 'Other developing' }]} />}
-      rightChart={vis => <LineChartMulti data={data} seriesKey="developing" valueKey="total_ghg_emissions" isVisible={vis} title="Total greenhouse gas (GHG) emissions, billions of tonnes CO₂e" yLabel="Total greenhouse gas (GHG) emissions, billions of tonnes CO₂e" series={[{ key: 'Developed', label: 'Developed' }, { key: 'LDCs', label: 'Least developed countries (LDCs)' }, { key: 'Other developing', label: 'Other developing' }]} />}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="developing" valueKey="ghg_per_capita" isVisible={vis} title="Greenhouse gas (GHG) emissions per capita, tonnes CO₂e per person" yLabel="Greenhouse gas (GHG) emissions per capita, tonnes CO₂e per person" hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} stackedLegend palette={DEVELOPMENT_STATUS_PALETTE_VARS} series={[{ key: 'Developed', label: 'Developed' }, { key: 'LDCs', label: 'Least developed countries (LDCs)' }, { key: 'Other developing', label: 'Other developing' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="developing" valueKey="total_ghg_emissions" isVisible={vis} title="Total greenhouse gas (GHG) emissions, billions of tonnes CO₂e" yLabel="Total greenhouse gas (GHG) emissions, billions of tonnes CO₂e" hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} stackedLegend palette={DEVELOPMENT_STATUS_PALETTE_VARS} series={[{ key: 'Developed', label: 'Developed' }, { key: 'LDCs', label: 'Least developed countries (LDCs)' }, { key: 'Other developing', label: 'Other developing' }]} />}
     />
   </ChartSection>
 )}
 </ChartData>
 
-<SectionDivider anchorClass="anchor_gaps" eyebrow="Data gaps" title="How can we fix what we can't see?">
+<SectionDivider maxWidth="700px" anchorClass="anchor_gaps" eyebrow="Data gaps" title="How can we fix what we can't see?">
 
 The availability of Beyond GDP indicators varies widely across levels of development and dashboard dimensions.
 
@@ -285,7 +285,7 @@ The availability of Beyond GDP indicators varies widely across levels of develop
     description="Beyond GDP dashboard indicators with at least one publicly available data point, by dimension and development status, percentage."
     insight={["Despite largely relying on the SDG indicator framework, data availability remains limited. Only for equity and inclusion are data available for at least 50% indicators and countries since 2000, and for current well-being only for developed countries. In developing countries data gaps are particularly severe for current foundational principles and sustainability and resilience, where ==internationally comparable indicators are available for only a limited number of countries==."]}
   >
-    <GapChart data={data} title="Developing countries have less Beyond GDP data" />
+    <GapChart data={data} title="Developing countries have less Beyond GDP data" yLabel="Indicators with available data, percentage" />
   </ChartSection>
 )}
 </ChartData>
@@ -297,7 +297,7 @@ The availability of Beyond GDP indicators varies widely across levels of develop
     description="Beyond GDP dashboard indicators with at least 10 publicly available data points and coverage through 2024 or later, by dimension and development status, percentage."
     insight={['Timeliness and historical coverage are weak in all countries. The shortfall affects every dashboard section, making it harder to monitor progress promptly and compare results across countries.']}
   >
-    <GapChart data={data} title="Timely, long-running data remain scarce in all countries" />
+    <GapChart data={data} title="Timely, long-running data remain scarce in all countries" yLabel="Indicators with timely, long-running data, percentage" />
   </ChartSection>
 )}
 </ChartData>
@@ -340,10 +340,8 @@ We also work with countries and civil society organizations to ensure efficient 
   ]}
 />
 
-<div className="container_section">
-<div className="container_section__wide">
+<SectionDivider maxWidth="700px" title="Moving beyond GDP requires a collective, long-term effort.">
 
-Moving beyond GDP requires a collective, long-term effort. Governments, institutions and society need stronger data and evidence-based action.
+Governments, institutions and society need stronger data and evidence-based action.
 
-</div>
-</div>
+</SectionDivider>

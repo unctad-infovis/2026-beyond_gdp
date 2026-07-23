@@ -1,0 +1,11 @@
+#app-root-2026-beyond_gdp .app {
+  .chart_y_gridline {
+    stroke: var(--un-color-grey-lightest);
+    stroke-dasharray: 2 2;
+  }
+  .chart_y_tick_label {
+    fill: var(--un-color-grey-text);
+    font-size: var(--un-font-size-xxxs);
+    text-anchor: end;
+  }
+}

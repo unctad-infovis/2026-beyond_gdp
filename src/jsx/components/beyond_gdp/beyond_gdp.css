@@ -5,9 +5,17 @@
     padding: clamp(40px, 6vw, 64px) 10px;
     width: 100%;
     &.container_section--tint {
-      background: #f3f8fd;
+      background: var(--un-color-blue-lightest);
       border-bottom: 1px solid #ece7e2;
       border-top: 1px solid #ece7e2;
+      margin: 40px 0;
+      h3 {
+        font-weight: var(--un-font-weight-boldest);
+        font-size: var(--un-font-size-xxxl);
+      }
+      p {
+        font-size: var(--un-font-size-xl);
+      }
     }
   }
   .container_section__wide {
@@ -23,35 +31,25 @@
     color: var(--un-color-grey-darkest);
     font-size: var(--un-font-size-normal);
     line-height: var(--un-line-height-normal);
+    list-style: none;
     margin: 0 auto 20px;
     max-width: 700px;
-    padding: 0 0 0 20px;
+    padding: 0 0 0 10px;
     li {
-      margin-bottom: 8px;
+      margin-bottom: 10px;
+      padding-left: 35px;
+      position: relative;
+      &::before {
+        background-color: var(--un-color-yellow-brand);
+        content: '';
+        height: 25px;
+        left: 0;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='70 105 230 215'><path d='M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z'/></svg>") no-repeat center / contain;
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='70 105 230 215'><path d='M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z'/></svg>") no-repeat center / contain;
+        position: absolute;
+        top: 0px;
+        width: 25px;
+      }
     }
-  }
-  .eyebrow {
-    align-items: center;
-    color: var(--un-color-yellow-brand-shade);
-    display: flex;
-    font-size: var(--un-font-size-xxs);
-    font-weight: var(--un-font-weight-bold);
-    gap: 10px;
-    justify-content: center;
-    letter-spacing: 0.1em;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    &:before {
-      background: var(--un-color-yellow-brand);
-      content: '';
-      display: block;
-      flex: 0 0 auto;
-      height: 2px;
-      width: 24px;
-    }
-  }
-  h2.section_title {
-    color: var(--un-color-grey-darkest);
-    text-align: center;
   }
 }
