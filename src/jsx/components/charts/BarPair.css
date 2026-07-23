@@ -1,0 +1,36 @@
+#app-root-2026-beyond_gdp .app {
+  .bp_plot {
+    height: clamp(200px, 22vw, 260px);
+    width: 100%;
+  }
+  .bp_svg {
+    display: block;
+  }
+  .bp_bar {
+    transition:
+      height 0.42s ease-out,
+      y 0.42s ease-out;
+  }
+  .bp_value {
+    fill: var(--un-color-grey-darkest);
+    font-size: var(--un-font-size-xxs);
+    font-weight: var(--un-font-weight-bold);
+    opacity: 0;
+    text-anchor: middle;
+    transition: opacity 0.28s ease-out;
+    &.bp_value--visible {
+      opacity: 1;
+    }
+  }
+  .bp_period_label {
+    fill: var(--un-color-grey-text);
+    font-size: var(--un-font-size-xxxs);
+    text-anchor: middle;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .bp_bar,
+    .bp_value {
+      transition: none;
+    }
+  }
+}

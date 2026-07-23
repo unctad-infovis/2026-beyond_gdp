@@ -1,0 +1,105 @@
+#app-root-2026-beyond_gdp .app {
+  .dbr_container {
+    width: 100%;
+  }
+  .dbr_head {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 140px 1fr 1fr;
+    margin: 0 0 6px;
+    padding: 0 4px;
+  }
+  .dbr_head_label {
+    align-items: center;
+    background: none;
+    border: 0;
+    color: var(--un-color-grey-text);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: var(--un-font-size-xxs);
+    font-weight: var(--un-font-weight-bold);
+    gap: 4px;
+    padding: 0;
+    &:hover,
+    &:focus-visible {
+      color: var(--un-color-blue-text);
+    }
+    &.dbr_head_label--active {
+      color: var(--un-color-blue-text-dark);
+    }
+  }
+  .dbr_sort_arrow {
+    font-size: var(--un-font-size-xxxxs);
+    opacity: 0.5;
+    .dbr_head_label--active & {
+      opacity: 1;
+    }
+  }
+  .dbr_row {
+    align-items: center;
+    border-top: 1px solid var(--un-color-grey-lightest);
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 140px 1fr 1fr;
+    padding: 5px 4px;
+    &.dbr_row--highlight {
+      background: var(--un-color-yellow-brand-lighter);
+    }
+  }
+  .dbr_name {
+    align-items: center;
+    display: flex;
+    gap: 6px;
+    justify-content: flex-end;
+    min-width: 0;
+  }
+  .dbr_name_text {
+    color: var(--un-color-grey-darkest);
+    font-size: var(--un-font-size-xxxs);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    .dbr_row--highlight & {
+      font-weight: var(--un-font-weight-bold);
+    }
+  }
+  .dbr_flag {
+    flex: 0 0 auto;
+  }
+  .dbr_bar_track {
+    align-items: center;
+    display: flex;
+    gap: 6px;
+    position: relative;
+  }
+  .dbr_bar {
+    border-radius: 2px;
+    display: block;
+    height: 12px;
+    min-width: 2px;
+    transition: width 0.42s ease-out;
+    &.dbr_bar--primary {
+      background: var(--un-color-blue-brand);
+    }
+    &.dbr_bar--secondary {
+      background: var(--un-color-yellow);
+    }
+  }
+  .dbr_bar_value {
+    color: var(--un-color-grey-text);
+    flex: 0 0 auto;
+    font-size: var(--un-font-size-xxxxs);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .dbr_bar {
+      transition: none;
+    }
+  }
+  @media (max-width: 560px) {
+    .dbr_head,
+    .dbr_row {
+      grid-template-columns: 96px 1fr 1fr;
+    }
+  }
+}

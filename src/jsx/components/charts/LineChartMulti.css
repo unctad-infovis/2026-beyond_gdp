@@ -1,0 +1,43 @@
+#app-root-2026-beyond_gdp .app {
+  .lcm_container {
+    width: 100%;
+  }
+  .lcm_plot_wrap {
+    position: relative;
+  }
+  .lcm_svg {
+    display: block;
+    height: clamp(260px, 30vw, 360px);
+    width: 100%;
+  }
+  .lcm_axis_x text,
+  .lcm_axis_y text {
+    fill: var(--un-color-grey-text);
+    font-size: var(--un-font-size-xxxs);
+  }
+  .lcm_axis_y line {
+    stroke: var(--un-color-grey-lightest);
+    stroke-dasharray: 2 2;
+  }
+  .lcm_axis_label {
+    fill: var(--un-color-grey-text);
+    font-size: var(--un-font-size-xxxs);
+  }
+  .lcm_line {
+    stroke-width: 4px;
+  }
+  .lcm_overlay {
+    cursor: crosshair;
+    fill: transparent;
+  }
+  .lcm_hover_line {
+    pointer-events: none;
+    stroke: var(--un-color-grey-dark);
+    stroke-dasharray: 3 2;
+  }
+  .lcm_hover_dot {
+    pointer-events: none;
+    stroke: #fff;
+    stroke-width: 1.5px;
+  }
+}

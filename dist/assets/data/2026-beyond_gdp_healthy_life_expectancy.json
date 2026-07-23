@@ -1,0 +1,362 @@
+[
+  {
+    "date": 2003,
+    "iso3": "CRI",
+    "gdp_per_capita": 8207.45746763047,
+    "healthy_life_exp": 68.16
+  },
+  {
+    "date": 2005,
+    "iso3": "CRI",
+    "gdp_per_capita": 8655.33965418585,
+    "healthy_life_exp": 68.88
+  },
+  {
+    "date": 2004,
+    "iso3": "CRI",
+    "gdp_per_capita": 8445.52914945792,
+    "healthy_life_exp": 68.13
+  },
+  {
+    "date": 2000,
+    "iso3": "CRI",
+    "gdp_per_capita": 7726.5198568203,
+    "healthy_life_exp": 67.83
+  },
+  {
+    "date": 2002,
+    "iso3": "CRI",
+    "gdp_per_capita": 7989.55926102157,
+    "healthy_life_exp": 68.28
+  },
+  {
+    "date": 2006,
+    "iso3": "CRI",
+    "gdp_per_capita": 9160.29437453237,
+    "healthy_life_exp": 68.57
+  },
+  {
+    "date": 2011,
+    "iso3": "CRI",
+    "gdp_per_capita": 10612.4694861141,
+    "healthy_life_exp": 69.19
+  },
+  {
+    "date": 2001,
+    "iso3": "CRI",
+    "gdp_per_capita": 7854.2339580182,
+    "healthy_life_exp": 67.75
+  },
+  {
+    "date": 2007,
+    "iso3": "CRI",
+    "gdp_per_capita": 9779.51149389818,
+    "healthy_life_exp": 69.23
+  },
+  {
+    "date": 2008,
+    "iso3": "CRI",
+    "gdp_per_capita": 10104.9092039691,
+    "healthy_life_exp": 69.25
+  },
+  {
+    "date": 2012,
+    "iso3": "CRI",
+    "gdp_per_capita": 11001.5192856576,
+    "healthy_life_exp": 69.29
+  },
+  {
+    "date": 2013,
+    "iso3": "CRI",
+    "gdp_per_capita": 11151.1437869768,
+    "healthy_life_exp": 69.41
+  },
+  {
+    "date": 2010,
+    "iso3": "CRI",
+    "gdp_per_capita": 10285.0856660419,
+    "healthy_life_exp": 68.64
+  },
+  {
+    "date": 2009,
+    "iso3": "CRI",
+    "gdp_per_capita": 9883.67567046296,
+    "healthy_life_exp": 69.48
+  },
+  {
+    "date": 2015,
+    "iso3": "CRI",
+    "gdp_per_capita": 11714.7105980732,
+    "healthy_life_exp": 69.38
+  },
+  {
+    "date": 2014,
+    "iso3": "CRI",
+    "gdp_per_capita": 11422.6735793176,
+    "healthy_life_exp": 69.33
+  },
+  {
+    "date": 2019,
+    "iso3": "CRI",
+    "gdp_per_capita": 12877.650101079,
+    "healthy_life_exp": 69.21
+  },
+  {
+    "date": 2018,
+    "iso3": "CRI",
+    "gdp_per_capita": 12679.5253643016,
+    "healthy_life_exp": 69.18
+  },
+  {
+    "date": 2017,
+    "iso3": "CRI",
+    "gdp_per_capita": 12468.5654531709,
+    "healthy_life_exp": 69.12
+  },
+  {
+    "date": 2016,
+    "iso3": "CRI",
+    "gdp_per_capita": 12084.4351325634,
+    "healthy_life_exp": 69.04
+  },
+  {
+    "date": 2006,
+    "iso3": "ITA",
+    "gdp_per_capita": 33873.0493680093,
+    "healthy_life_exp": 69.74
+  },
+  {
+    "date": 2014,
+    "iso3": "ITA",
+    "gdp_per_capita": 30325.0287793923,
+    "healthy_life_exp": 71.17
+  },
+  {
+    "date": 2011,
+    "iso3": "ITA",
+    "gdp_per_capita": 32039.5032494315,
+    "healthy_life_exp": 70.52
+  },
+  {
+    "date": 2010,
+    "iso3": "ITA",
+    "gdp_per_capita": 31928.5543621096,
+    "healthy_life_exp": 70.53
+  },
+  {
+    "date": 2013,
+    "iso3": "ITA",
+    "gdp_per_capita": 30330.0221599668,
+    "healthy_life_exp": 70.91
+  },
+  {
+    "date": 2012,
+    "iso3": "ITA",
+    "gdp_per_capita": 30953.4147447427,
+    "healthy_life_exp": 70.56
+  },
+  {
+    "date": 2007,
+    "iso3": "ITA",
+    "gdp_per_capita": 34159.9109244074,
+    "healthy_life_exp": 69.88
+  },
+  {
+    "date": 2005,
+    "iso3": "ITA",
+    "gdp_per_capita": 33407.6754716472,
+    "healthy_life_exp": 69.33
+  },
+  {
+    "date": 2004,
+    "iso3": "ITA",
+    "gdp_per_capita": 33348.9744820455,
+    "healthy_life_exp": 69.3
+  },
+  {
+    "date": 2003,
+    "iso3": "ITA",
+    "gdp_per_capita": 33110.1698494811,
+    "healthy_life_exp": 68.78
+  },
+  {
+    "date": 2009,
+    "iso3": "ITA",
+    "gdp_per_capita": 31587.0638416305,
+    "healthy_life_exp": 70.23
+  },
+  {
+    "date": 2008,
+    "iso3": "ITA",
+    "gdp_per_capita": 33550.6340800063,
+    "healthy_life_exp": 70.07
+  },
+  {
+    "date": 2018,
+    "iso3": "ITA",
+    "gdp_per_capita": 31819.3971830066,
+    "healthy_life_exp": 71.27
+  },
+  {
+    "date": 2017,
+    "iso3": "ITA",
+    "gdp_per_capita": 31635.52277108,
+    "healthy_life_exp": 71.12
+  },
+  {
+    "date": 2016,
+    "iso3": "ITA",
+    "gdp_per_capita": 31077.6792675211,
+    "healthy_life_exp": 71.37
+  },
+  {
+    "date": 2015,
+    "iso3": "ITA",
+    "gdp_per_capita": 30639.8829751432,
+    "healthy_life_exp": 70.9
+  },
+  {
+    "date": 2002,
+    "iso3": "ITA",
+    "gdp_per_capita": 33267.4474482048,
+    "healthy_life_exp": 68.84
+  },
+  {
+    "date": 2001,
+    "iso3": "ITA",
+    "gdp_per_capita": 33243.5993439761,
+    "healthy_life_exp": 68.62
+  },
+  {
+    "date": 2000,
+    "iso3": "ITA",
+    "gdp_per_capita": 32609.66746283,
+    "healthy_life_exp": 68.39
+  },
+  {
+    "date": 2019,
+    "iso3": "ITA",
+    "gdp_per_capita": 32180.4341017428,
+    "healthy_life_exp": 71.43
+  },
+  {
+    "date": 2001,
+    "iso3": "USA",
+    "gdp_per_capita": 48361.0167607071,
+    "healthy_life_exp": 65.36
+  },
+  {
+    "date": 2000,
+    "iso3": "USA",
+    "gdp_per_capita": 48379.755170578,
+    "healthy_life_exp": 65.32
+  },
+  {
+    "date": 2012,
+    "iso3": "USA",
+    "gdp_per_capita": 53738.1476714594,
+    "healthy_life_exp": 66.59
+  },
+  {
+    "date": 2011,
+    "iso3": "USA",
+    "gdp_per_capita": 52956.6630340963,
+    "healthy_life_exp": 66.56
+  },
+  {
+    "date": 2019,
+    "iso3": "USA",
+    "gdp_per_capita": 60750.9898621638,
+    "healthy_life_exp": 66.02
+  },
+  {
+    "date": 2018,
+    "iso3": "USA",
+    "gdp_per_capita": 59526.6656987121,
+    "healthy_life_exp": 66.02
+  },
+  {
+    "date": 2017,
+    "iso3": "USA",
+    "gdp_per_capita": 58151.7021391855,
+    "healthy_life_exp": 66.03
+  },
+  {
+    "date": 2016,
+    "iso3": "USA",
+    "gdp_per_capita": 57151.4708448373,
+    "healthy_life_exp": 66.17
+  },
+  {
+    "date": 2015,
+    "iso3": "USA",
+    "gdp_per_capita": 56572.9188996063,
+    "healthy_life_exp": 66.31
+  },
+  {
+    "date": 2014,
+    "iso3": "USA",
+    "gdp_per_capita": 55394.451043533,
+    "healthy_life_exp": 66.5
+  },
+  {
+    "date": 2013,
+    "iso3": "USA",
+    "gdp_per_capita": 54462.6252412406,
+    "healthy_life_exp": 66.53
+  },
+  {
+    "date": 2008,
+    "iso3": "USA",
+    "gdp_per_capita": 53442.7136899777,
+    "healthy_life_exp": 66.22
+  },
+  {
+    "date": 2007,
+    "iso3": "USA",
+    "gdp_per_capita": 53889.3964951775,
+    "healthy_life_exp": 66.16
+  },
+  {
+    "date": 2010,
+    "iso3": "USA",
+    "gdp_per_capita": 52555.7695134021,
+    "healthy_life_exp": 66.56
+  },
+  {
+    "date": 2009,
+    "iso3": "USA",
+    "gdp_per_capita": 51611.3217087717,
+    "healthy_life_exp": 66.44
+  },
+  {
+    "date": 2004,
+    "iso3": "USA",
+    "gdp_per_capita": 51098.5573007419,
+    "healthy_life_exp": 65.82
+  },
+  {
+    "date": 2003,
+    "iso3": "USA",
+    "gdp_per_capita": 49662.752054984,
+    "healthy_life_exp": 65.53
+  },
+  {
+    "date": 2006,
+    "iso3": "USA",
+    "gdp_per_capita": 53335.5896950224,
+    "healthy_life_exp": 66
+  },
+  {
+    "date": 2005,
+    "iso3": "USA",
+    "gdp_per_capita": 52393.4513113092,
+    "healthy_life_exp": 65.81
+  },
+  {
+    "date": 2002,
+    "iso3": "USA",
+    "gdp_per_capita": 48729.1586442624,
+    "healthy_life_exp": 65.43
+  }
+]

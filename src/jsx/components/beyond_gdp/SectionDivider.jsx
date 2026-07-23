@@ -1,0 +1,21 @@
+import './SectionDivider.css';
+
+// Section-intro band (eyebrow + bold headline + divider + body prose) used to introduce a
+// new part of the page, styled after 2026-cdde's SectionDivider "light" variant.
+const SectionDivider = ({ anchorClass, children, eyebrow, title }) => (
+  <div className={`container_section container_section--tint sdv_section${anchorClass ? ` ${anchorClass}` : ''}`}>
+    <div className="container_section__wide">
+      {eyebrow && (
+        <div className="sdv_eyebrow">
+          <span className="sdv_eyebrow_line" />
+          <span className="sdv_eyebrow_text">{eyebrow}</span>
+        </div>
+      )}
+      <h2 className="sdv_title">{title}</h2>
+      <hr className="sdv_divider" />
+      <div className="sdv_body">{children}</div>
+    </div>
+  </div>
+);
+
+export default SectionDivider;

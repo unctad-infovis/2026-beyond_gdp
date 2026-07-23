@@ -1,0 +1,34 @@
+#app-root-2026-beyond_gdp .app {
+  .gbc_container {
+    width: 100%;
+  }
+  .gbc_plot {
+    height: clamp(240px, 26vw, 320px);
+    width: 100%;
+  }
+  .gbc_svg {
+    display: block;
+  }
+  .gbc_bar {
+    transition:
+      height 0.35s ease-out,
+      y 0.35s ease-out;
+  }
+  .gbc_gridline {
+    stroke: var(--un-color-grey-lightest);
+    stroke-dasharray: 2 2;
+  }
+  .gbc_tick_label,
+  .gbc_category_label {
+    fill: var(--un-color-grey-text);
+    font-size: var(--un-font-size-xxxs);
+  }
+  .gbc_category_label {
+    text-anchor: middle;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gbc_bar {
+      transition: none;
+    }
+  }
+}

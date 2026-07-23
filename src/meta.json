@@ -1,0 +1,11 @@
+{
+  "show_site_header": false,
+  "hero": {
+    "title": "Looking beyond GDP",
+    "subtitle": "Measuring what matters",
+    "byline": "Via the UN Secretary-General's High-Level Expert Group's proposed dashboard",
+    "image_url": "assets/img/2026-beyond_gdp_hero.jpg",
+    "titleHighlight": "beyond GDP"
+  },
+  "nav": [{ "label": "What the data shows", "href": ".anchor_data" }, { "label": "Data gaps", "href": ".anchor_gaps" }, { "label": "What next", "href": ".anchor_next" }]
+}

@@ -1,0 +1,10 @@
+#app-root-2026-beyond_gdp .app {
+  .cp_pair {
+    align-items: stretch;
+  }
+  .cp_panel {
+    box-sizing: border-box;
+    min-width: 0;
+    width: 100%;
+  }
+}

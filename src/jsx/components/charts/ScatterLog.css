@@ -1,0 +1,55 @@
+#app-root-2026-beyond_gdp .app {
+  .sl_container {
+    width: 100%;
+  }
+  .sl_plot {
+    aspect-ratio: 1;
+    margin: 0 auto;
+    position: relative;
+    width: min(100%, 600px);
+  }
+  .sl_svg {
+    display: block;
+    overflow: visible;
+  }
+  .sl_axis_x text,
+  .sl_axis_y text {
+    fill: var(--un-color-grey-text);
+    font-size: var(--un-font-size-xxxs);
+  }
+  .sl_axis_y line {
+    stroke: var(--un-color-grey-lightest);
+    stroke-dasharray: 2 2;
+  }
+  .sl_axis_caption {
+    fill: var(--un-color-grey-text);
+    font-size: var(--un-font-size-xxxxs);
+  }
+  .sl_point {
+    cursor: pointer;
+    fill: var(--un-color-blue-brand);
+    fill-opacity: 0.55;
+    opacity: 0;
+    stroke: var(--un-color-blue-darkest);
+    stroke-opacity: 0.3;
+    transform-box: fill-box;
+    transform-origin: center;
+    transition:
+      opacity 0.28s ease-out,
+      transform 0.14s ease-out,
+      fill-opacity 0.14s ease-out;
+    &.sl_point--visible {
+      opacity: 1;
+    }
+    &.sl_point--hover {
+      fill-opacity: 0.9;
+      stroke-opacity: 0.8;
+      transform: scale(1.4);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sl_point {
+      transition: none;
+    }
+  }
+}

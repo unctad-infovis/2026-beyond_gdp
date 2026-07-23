@@ -1,0 +1,349 @@
+<Header title={props.meta.hero.title} subtitle={props.meta.hero.subtitle} byline={props.meta.hero.byline} image_url={props.meta.hero.image_url} titleHighlight={props.meta.hero.titleHighlight} />
+
+<Nav items={props.meta.nav} />
+
+<div className="container_section container_section--tint">
+<div className="container_section__wide bgdp_lead">
+
+### Why go beyond GDP?
+
+Gross domestic product (GDP) has long been the leading indicator used to measure progress and assess countries' performance.
+
+GDP measures economic output. But it doesn't show whether people are living well, whether production and consumption are harming the planet, whether opportunities are shared or whether progress can continue over time.
+
+These limitations are reflected in real-world outcomes. GDP growth has been accompanied by persistent inequality, ecological degradation and declining public trust in institutions.
+
+Episodic shocks, such as financial crises and the COVID-19 pandemic, have revealed systemic weaknesses. Long-term structural pressures, including environmental degradation, inequality, geopolitical tensions and democratic challenges, have further underscored the limitations of relying on GDP alone.
+
+</div>
+</div>
+
+{/* TODO: draft has no explicit heading for this timeline beyond "PROPOSAL: Present the below as an expandable timeline" — confirm the heading with the client before publish. */}
+<Timeline
+  title="Milestones on the way to Beyond GDP"
+  milestones={[
+    { date: 'September 2024', label: 'With the Pact for the Future, UN Member States asked the UN Secretary-General to convene a High-Level Expert Group on Beyond GDP to "develop recommendations for a limited set of country-owned, universally applicable indicators of sustainable development that complement and go beyond gross domestic product (GDP)". The UN Department of Economic and Social Affairs (DESA), UN Trade and Development (UNCTAD), the UN Development Programme (UNDP) and the Executive Office of the Secretary-General supported the group as its co-secretariat.' },
+    { date: 'May 2025', label: 'UN Secretary-General launched the High-Level Expert Group to develop a conceptual framework and a dashboard of indicators Beyond GDP.' },
+    { date: 'November 2025', label: 'The co-chairs of the Expert Group release their interim report at the World Social Summit for feedback from all stakeholders with the UN Deputy Secretary-General and the Youth Network.' },
+    { date: '7 May 2026', label: 'One year later, they released their report, Counting what counts: A compass of progress for people and planet.' },
+    { date: 'July 2026', label: "A global effort to develop countries' technical capacities to measure progress Beyond GDP is launched by DESA, UNCTAD, UNDP and the Executive Office of the Secretary-General to collect feedback on the feasibility and relevance of the metrics to shape indicator refinement." },
+    { date: 'From 2027', label: 'Data reporting is recommended to start in 2027, as governments are invited to establish national progress-measuring initiatives using the proposed dashboard, tailored to country-specific needs and priorities.', current: true }
+  ]}
+/>
+
+<div className="container_section">
+<div className="container_section__wide">
+
+Looking Beyond GDP illustrates messages drawn from selected data on the new dashboard of indicators to track progress beyond GDP. It points to policy messages as well as data gaps to be addressed in future capacity development.
+
+### What does going beyond GDP mean?
+
+It requires a new understanding of what we mean by progress.
+
+Progress builds on the foundational principles of peace, human rights and respect for the planet, recognizing that:
+
+<ul className="bullet_list">
+  <li>Well-being is collective as well as individual</li>
+  <li>People and planet are deeply interconnected</li>
+  <li>Cross-border spillovers matter in an interdependent world</li>
+</ul>
+
+The proposed dashboard contains 31 indicators designed to help countries track progress beyond GDP:
+
+<ul className="bullet_list">
+  <li>Around half of the indicators are drawn directly from the Sustainable Development Goals (SDGs), so countries can start immediately</li>
+  <li>It is country-owned and adaptable</li>
+  <li>It measures well-being outcomes, equity and inclusion directly</li>
+  <li>It tracks sustainability and resilience through natural, human, social and institutional capital</li>
+</ul>
+
+</div>
+</div>
+
+<DashboardFramework
+  title="The Beyond GDP dashboard tracks three dimensions of progress"
+  foundationalPrinciples={[
+    { key: 'peace', label: 'Peace' },
+    { key: 'human_rights', label: 'Human Rights' },
+    { key: 'planet', label: 'Respect for the Planet' }
+  ]}
+  dimensions={[
+    { key: 'current_wellbeing', label: 'Current well-being', components: ['Material conditions and work', 'Health', 'Education', 'Security', 'Subjective well-being', 'Social cohesion', 'Quality of institutions', 'Environmental quality'] },
+    { key: 'equity_inclusion', label: 'Equity and inclusion', components: ['Wealth inequality', 'Income inequality', 'Poverty', 'Work inclusion', 'Regional inequalities', 'Overlapping deprivations'] },
+    { key: 'sustainability_resilience', label: 'Sustainability and resilience', components: ['Produced capital', 'Human capital', 'Social capital', 'Institutional capital', 'Natural capital'] }
+  ]}
+/>
+
+<div className="container_section anchor_data">
+<div className="container_section__wide">
+
+### What the selected data show
+
+The dashboard changes the questions we ask about progress. These examples compare economic output with outcomes for people, society and the planet, highlighting insights and data gaps from indicators on the new dashboard for tracking progress beyond GDP.
+
+#### Current well-being
+
+This dimension covers material conditions and work, health, education, security, subjective well-being, social cohesion, the quality of institutions and environmental quality. Let's look at some selected data.
+
+</div>
+</div>
+
+<ChartData file="2026-beyond_gdp_healthy_life_expectancy.json">
+{data => (
+  <ChartSection
+    title="Higher incomes don't always mean longer, healthier lives"
+    description="Gross domestic product (GDP) per capita and healthy life expectancy in years, Costa Rica, Italy and the United States of America, dollars and years, 2000–2019."
+    source="UN Trade and Development (UNCTAD) based on World Bank and WHO."
+    insight={["Higher GDP doesn't always translate into more well-being. Costa Rica's GDP per capita is less than one quarter of the United States level. Yet ==its healthy life expectancy is higher==. In Italy, healthy life expectancy continued to improve despite economic slowdown."]}
+  >
+    <ChartPair
+      rightDelayMs={1400}
+      leftChart={vis => <LineChartMulti data={data} seriesKey="iso3" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita, $" yLabel="Gross domestic product (GDP) per capita, $" series={[{ key: 'CRI', label: 'Costa Rica' }, { key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }]} />}
+      rightChart={vis => <LineChartMulti data={data} seriesKey="iso3" valueKey="healthy_life_exp" isVisible={vis} title="Healthy life expectancy, years" yLabel="Healthy life expectancy, years" series={[{ key: 'CRI', label: 'Costa Rica' }, { key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }]} />}
+    />
+  </ChartSection>
+)}
+</ChartData>
+
+{/* TODO: draft narrative and this chart's underlying data disagree on the region name — "Eastern and South-Eastern Asia" (draft prose) vs "Eastern Asia" (actual xlsx data label, used here as source of truth). Confirm the intended grouping name with the client. */}
+<ChartData file="2026-beyond_gdp_homicides.json">
+{data => (
+  <ChartSection
+    title="Safety and security can worsen even as GDP improves"
+    description="Median gross domestic product (GDP) per capita and intentional homicides, Latin America and the Caribbean and Eastern Asia, index: 2015=100 and homicides per 100,000 people, 2015–2023."
+    insight={["Sustained GDP growth doesn't always deliver more safety. In Latin America, homicides increased nearly 50% from 2015 to 2023, even as GDP rose 17%. In fact, ==median homicide rates reached their highest level on record in 2023==. This contrasts sharply with Eastern Asia, where homicide rates were 29 times lower."]}
+    expandable={{ label: 'Countries in calculation', items: ['Eastern Asia: Japan, Malaysia, Mongolia, Myanmar, Republic of Korea, Singapore.', 'Latin America: Argentina, Barbados, Brazil, Chile, Colombia, Costa Rica, Dominica, Ecuador, Grenada, Guyana, Honduras, Jamaica, Mexico, Panama, Paraguay, Plurinational State of Bolivia, Saint Lucia, Suriname, Uruguay.'] }}
+  >
+    <ChartPair
+      rightDelayMs={1400}
+      leftChart={vis => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita index, 2015=100" yLabel="Gross domestic product (GDP) per capita index, 2015=100" series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern Asia', label: 'Eastern Asia' }]} />}
+      rightChart={vis => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="homicides" isVisible={vis} title="Homicides per 100 000 people" yLabel="Homicides per 100 000 people" series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern Asia', label: 'Eastern Asia' }]} />}
+    />
+  </ChartSection>
+)}
+</ChartData>
+
+<ChartData file="2026-beyond_gdp_trust.json">
+{data => (
+  <ChartSection
+    title="Economic growth doesn't automatically improve social cohesion"
+    description="Median gross domestic product (GDP) per capita and share of people who say most people can be trusted, Northern Africa and Western Asia, index: 2014=100 and percentage, 2014 and 2022."
+    source="World Bank and World Values Survey."
+    insight={["You can't buy trust. Median GDP rose 10.5% in Northern Africa between 2014 and 2022, but trust in people fell more than 17%. Meanwhile, both GDP per capita and trust rose by more than 20% during the same period in Western Asia."]}
+    expandable={{ label: 'Countries in calculation', items: ['Northern Africa: Egypt, Libya, Morocco, Tunisia.', 'Western Asia: Armenia, Azerbaijan, Georgia, Iraq, Jordan, Lebanon, Türkiye.'] }}
+  >
+    <ChartPair
+      rightDelayMs={1400}
+      leftChart={vis => (
+        <GroupedBarChart
+          isVisible={vis}
+          title="Gross domestic product (GDP) per capita index, 2014=100"
+          yLabel="Gross domestic product (GDP) per capita index, 2014=100"
+          categories={[{ key: 'Northern Africa', label: 'Northern Africa' }, { key: 'Western Asia', label: 'Western Asia' }]}
+          series={data.years.map(y => ({ key: String(y), label: String(y) }))}
+          values={Object.fromEntries(Object.entries(data.regions).map(([region, r]) => [region, Object.fromEntries(data.years.map((y, i) => [String(y), r.gdp_index[i]]))]))}
+        />
+      )}
+      rightChart={vis => (
+        <GroupedBarChart
+          isVisible={vis}
+          title="Share who trust most people, per cent"
+          yLabel="Share who trust most people, per cent"
+          valueFormat="percent"
+          categories={[{ key: 'Northern Africa', label: 'Northern Africa' }, { key: 'Western Asia', label: 'Western Asia' }]}
+          series={data.years.map(y => ({ key: String(y), label: String(y) }))}
+          values={Object.fromEntries(Object.entries(data.regions).map(([region, r]) => [region, Object.fromEntries(data.years.map((y, i) => [String(y), r.trust_pct[i]]))]))}
+        />
+      )}
+    />
+  </ChartSection>
+)}
+</ChartData>
+
+<ChartData file="2026-beyond_gdp_satisfaction.json">
+{data => (
+  <ChartSection
+    title="More prosperity doesn't guarantee more satisfaction with public services"
+    description="Share of people satisfied with their last experience of public services and gross domestic product (GDP) per capita, selected countries, percentage and dollars, 2015–2024 average."
+    source="World Bank and United Nations Development Programme via the United Nations Global SDG Indicators Database."
+    note="Reported satisfaction may reflect expectancy-disconfirmation. People with higher expectations may report lower satisfaction, even when the objective quality of the service is higher."
+    insight={["Confidence in institutions matters. And this doesn't always come with higher levels of economic prosperity. Bulgaria and Mexico report greater satisfaction with public services than some wealthier countries, such as Norway and Italy."]}
+  >
+    <DualBarRowsLoader data={data} />
+  </ChartSection>
+)}
+</ChartData>
+
+<div className="container_section">
+<div className="container_section__wide">
+
+#### Equity and inclusion
+
+This dimension measures whether opportunities and outcomes are shared. It covers wealth and income inequality, poverty, work inclusion, regional inequalities and overlapping deprivations. Let's look at some selected data.
+
+</div>
+</div>
+
+<ChartData file="2026-beyond_gdp_wealth_inequality.json">
+{data => (
+  <ChartSection
+    title="Faster growth can come with wider wealth inequality"
+    description="Median gross domestic product (GDP) per capita and share of wealth held by the bottom 99%, Eastern and Southern Europe, index: 2000=100 and percentage, 2000–2019."
+    source="UN Trade and Development (UNCTAD) based on World Bank and World Inequality Database."
+    insight={["A rising tide doesn't always lift all boats. In Eastern Europe, GDP per capita grew faster than in Southern Europe. However, the wealth share of the bottom 99% declined more sharply."]}
+    expandable={{ label: 'Countries in calculation', items: ['Eastern Europe: Belarus, Bulgaria, Czechia, Hungary, Poland, Republic of Moldova, Romania, Russian Federation, Slovakia, Ukraine.', 'Southern Europe: Albania, Andorra, Bosnia and Herzegovina, Croatia, Cyprus, Greece, Italy, Malta, Montenegro, North Macedonia, Portugal, San Marino, Serbia, Slovenia, Spain.'] }}
+  >
+    <ChartPair
+      rightDelayMs={1400}
+      leftChart={vis => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita index, 2000=100" yLabel="Gross domestic product (GDP) per capita index, 2000=100" series={[{ key: 'Eastern Europe', label: 'Eastern Europe' }, { key: 'Southern Europe', label: 'Southern Europe' }]} />}
+      rightChart={vis => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="wealth_99_perc" isVisible={vis} title="Wealth share of bottom 99%, per cent" yLabel="Wealth share of bottom 99%, per cent" series={[{ key: 'Eastern Europe', label: 'Eastern Europe' }, { key: 'Southern Europe', label: 'Southern Europe' }]} />}
+    />
+  </ChartSection>
+)}
+</ChartData>
+
+{/* TODO: draft chart title text says "2000-2003" but the underlying data and the draft's own 10-year framing confirm the first period is 2010-2013 — used here as source of truth. */}
+<ChartData file="2026-beyond_gdp_wage_gap.json">
+{data => (
+  <ChartSection
+    title="Economic growth outpaces gains in women's pay"
+    description="Average gross domestic product (GDP) per capita and women's average hourly earnings as a share of men's, developed economies, dollars and percentage, 2010–2013 and 2020–2023 averages."
+    source="World Bank and International Labour Organization via the United Nations Global SDG Indicators Database."
+    insight={["GDP growth can be slower for one segment of the population. Average GDP per capita in developed economies rose 12% over a 10-year period, but ==women's pay relative to men's improved only 1% – less than one tenth as much==."]}
+    expandable={{ label: 'Countries in calculation', items: ['Bosnia and Herzegovina, Czechia, Finland, France, Greece, Hungary, Italy, Portugal, Republic of Korea, Republic of Moldova, Romania, Slovakia, Spain, Sweden, Switzerland, United Kingdom of Great Britain and Northern Ireland, United States of America.'] }}
+  >
+    <ChartPair
+      rightDelayMs={840}
+      leftChart={vis => <BarPair isVisible={vis} title="Gross domestic product (GDP) per capita, $" periods={data.periods} values={data.series.gdp_per_capita} valueFormat="currency" />}
+      rightChart={vis => <BarPair isVisible={vis} title="Women's hourly earnings, share of men's, per cent" periods={data.periods} values={data.series.wage_gap_pct} valueFormat="percent" />}
+    />
+  </ChartSection>
+)}
+</ChartData>
+
+<ChartData file="2026-beyond_gdp_prejudice.json">
+{data => (
+  <ChartSection
+    title="Economic prosperity doesn't protect people against prejudice"
+    description="Gross domestic product (GDP) per capita and share of people reporting discrimination or harassment in the previous 12 months, selected countries, dollars on a logarithmic scale and percentage, 2014–2024 average."
+    insight={["Higher GDP isn't systematically linked to less discrimination or harassment. Focusing only on economic growth creates a major blind spot in people's lived experience."]}
+  >
+    <RevealOnView>
+      {vis => (
+        <ScatterLog
+          points={data.map(d => ({ key: d.iso3, x: d['GDP per capita (log scale)'], y: d['Share reporting discrimination or harassment'] }))}
+          title="Gross domestic product (GDP) per capita vs. share reporting discrimination or harassment"
+          xLabel="GDP per capita ($, log scale)"
+          yLabel="Share reporting discrimination or harassment, per cent"
+          isVisible={vis}
+        />
+      )}
+    </RevealOnView>
+  </ChartSection>
+)}
+</ChartData>
+
+<div className="container_section">
+<div className="container_section__wide">
+
+#### Sustainability and resilience
+
+This dimension tracks whether progress can continue over time. It considers produced, human, social, institutional and natural capital.
+
+</div>
+</div>
+
+<ChartData file="2026-beyond_gdp_emissions.json">
+{data => (
+  <ChartSection
+    title="Global emissions rise even as emissions per person level off"
+    description="Greenhouse gas emissions, by development status, billions of tonnes of carbon dioxide equivalent and median tonnes of carbon dioxide equivalent per person, 2000–2017."
+    source="UN Trade and Development (UNCTAD) based on UNFCCC Secretariat via UN Global SDG Indicators Database."
+    note="Units assumed from the draft mockup (tonnes CO₂e per person; billions of tonnes CO₂e total) — not explicitly confirmed in the source graphic."
+    insight={["The picture changes if we look at emissions per person or total emissions. Per-person emissions have stabilized in many countries, but economic and population growth continue to push total emissions higher. Staying within planetary boundaries requires greater ambition and action."]}
+  >
+    <ChartPair
+      rightDelayMs={1400}
+      leftChart={vis => <LineChartMulti data={data} seriesKey="developing" valueKey="ghg_per_capita" isVisible={vis} title="Greenhouse gas (GHG) emissions per capita, tonnes CO₂e per person" yLabel="Greenhouse gas (GHG) emissions per capita, tonnes CO₂e per person" series={[{ key: 'Developed', label: 'Developed' }, { key: 'LDCs', label: 'Least developed countries (LDCs)' }, { key: 'Other developing', label: 'Other developing' }]} />}
+      rightChart={vis => <LineChartMulti data={data} seriesKey="developing" valueKey="total_ghg_emissions" isVisible={vis} title="Total greenhouse gas (GHG) emissions, billions of tonnes CO₂e" yLabel="Total greenhouse gas (GHG) emissions, billions of tonnes CO₂e" series={[{ key: 'Developed', label: 'Developed' }, { key: 'LDCs', label: 'Least developed countries (LDCs)' }, { key: 'Other developing', label: 'Other developing' }]} />}
+    />
+  </ChartSection>
+)}
+</ChartData>
+
+<SectionDivider anchorClass="anchor_gaps" eyebrow="Data gaps" title="How can we fix what we can't see?">
+
+The availability of Beyond GDP indicators varies widely across levels of development and dashboard dimensions.
+
+</SectionDivider>
+
+{/* TODO: no reference date is given in the draft for this calculation — confirm the extraction/latest-observation date before publish. */}
+<ChartData file="2026-beyond_gdp_gap1.json">
+{data => (
+  <ChartSection
+    title="Developing countries have less Beyond GDP data"
+    description="Beyond GDP dashboard indicators with at least one publicly available data point, by dimension and development status, percentage."
+    insight={["Despite largely relying on the SDG indicator framework, data availability remains limited. Only for equity and inclusion are data available for at least 50% indicators and countries since 2000, and for current well-being only for developed countries. In developing countries data gaps are particularly severe for current foundational principles and sustainability and resilience, where ==internationally comparable indicators are available for only a limited number of countries==."]}
+  >
+    <GapChart data={data} title="Developing countries have less Beyond GDP data" />
+  </ChartSection>
+)}
+</ChartData>
+
+<ChartData file="2026-beyond_gdp_gap2.json">
+{data => (
+  <ChartSection
+    title="Timely, long-running data remain scarce in all countries"
+    description="Beyond GDP dashboard indicators with at least 10 publicly available data points and coverage through 2024 or later, by dimension and development status, percentage."
+    insight={['Timeliness and historical coverage are weak in all countries. The shortfall affects every dashboard section, making it harder to monitor progress promptly and compare results across countries.']}
+  >
+    <GapChart data={data} title="Timely, long-running data remain scarce in all countries" />
+  </ChartSection>
+)}
+</ChartData>
+
+<RevealList
+  layout="rows"
+  items={[
+    { title: 'Governments', description: 'to invest in statistics, data and innovation' },
+    { title: 'Countries', description: 'to set up national progress-measurement initiatives' },
+    { title: 'The UN', description: 'to support implementation, including a global capacity development and reporting process' },
+    { title: 'The statistical community', description: 'to improve methods and fill data gaps' },
+    { title: 'Civil society and others', description: 'to support measurement and accountability' }
+  ]}
+/>
+
+<div className="container_section anchor_next">
+<div className="container_section__wide">
+
+### UNCTAD's role in Beyond GDP
+
+UNCTAD's work on Beyond GDP focuses on supporting countries' statistical and analytical capacities, as requested at the UNCTAD16 conference.
+
+We work closely with DESA, UNDP and the Executive Office of the Secretary-General on capacity support. We also contribute to methodology development under the Statistical Commission and the United Nations Chief Statisticians' network, and advance youth engagement with the Geneva Beyond Lab.
+
+We support the Global Alliance on Beyond GDP, launched in Sevilla and spearheaded by Spain. Together with the Organisation for Economic Co-operation and Development (OECD) and the Ibero-American General Secretariat (SEGIB), the Alliance facilitates country exchanges and learning.
+
+We also work with countries and civil society organizations to ensure efficient support and promote shared global approaches.
+
+</div>
+</div>
+
+{/* TODO: draft says "add links where available" but supplies none — fill in real URLs before publish. */}
+<RevealList
+  layout="grid"
+  items={[
+    { title: 'Country capacity support', description: 'We work closely with DESA, UNDP and the Executive Office of the Secretary-General on capacity support.', links: [] },
+    { title: 'Methodological collaboration', description: "We contribute to methodology development under the Statistical Commission and the United Nations Chief Statisticians' network.", links: [{ label: 'UN Statistical Commission', url: '' }] },
+    { title: 'Youth engagement', description: 'We advance youth engagement with the Geneva Beyond Lab.', links: [{ label: 'Geneva Beyond Lab', url: '' }] },
+    { title: 'International exchange and partnership', description: 'We support the Global Alliance on Beyond GDP, launched in Sevilla and spearheaded by Spain. Together with the OECD and SEGIB, the Alliance facilitates country exchanges and learning.', links: [{ label: 'Global Alliance on Beyond GDP', url: '' }] }
+  ]}
+/>
+
+<div className="container_section">
+<div className="container_section__wide">
+
+Moving beyond GDP requires a collective, long-term effort. Governments, institutions and society need stronger data and evidence-based action.
+
+</div>
+</div>

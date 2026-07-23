@@ -1,0 +1,46 @@
+#app-root-2026-beyond_gdp .app {
+  .sdv_eyebrow {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .sdv_eyebrow_line {
+    background: var(--un-color-blue);
+    display: block;
+    flex: 0 0 auto;
+    height: 2px;
+    width: 28px;
+  }
+  .sdv_eyebrow_text {
+    color: var(--un-color-blue-text-dark);
+    font-size: var(--un-font-size-xxxs);
+    font-weight: var(--un-font-weight-bold);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .sdv_title {
+    color: var(--un-color-blue-darkest);
+    font-size: var(--un-font-size-xxxl);
+    font-weight: var(--un-font-weight-boldest);
+    line-height: var(--un-line-height-small);
+    margin: 0;
+    max-width: none;
+    padding: 0;
+  }
+  .sdv_divider {
+    border: none;
+    border-top: 1px solid var(--un-color-blue-light);
+    margin: 20px 0 24px;
+  }
+  .sdv_body {
+    p {
+      color: var(--un-color-grey-darkest);
+      font-size: var(--un-font-size-normal);
+      line-height: var(--un-line-height-normal);
+      margin: 0;
+      max-width: 700px;
+      padding: 0;
+    }
+  }
+}

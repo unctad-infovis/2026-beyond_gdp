@@ -1,0 +1,110 @@
+[
+  {
+    "date": 2015,
+    "UNCTAD_region": "Eastern Asia",
+    "gdp_per_capita": 100,
+    "homicides": 0.73552614730237
+  },
+  {
+    "date": 2016,
+    "UNCTAD_region": "Eastern Asia",
+    "gdp_per_capita": 102.762900759394,
+    "homicides": 0.693986349015599
+  },
+  {
+    "date": 2017,
+    "UNCTAD_region": "Eastern Asia",
+    "gdp_per_capita": 105.992723787686,
+    "homicides": 0.584621875068617
+  },
+  {
+    "date": 2018,
+    "UNCTAD_region": "Eastern Asia",
+    "gdp_per_capita": 108.88610863396,
+    "homicides": 0.59836299503258
+  },
+  {
+    "date": 2019,
+    "UNCTAD_region": "Eastern Asia",
+    "gdp_per_capita": 111.018639115951,
+    "homicides": 0.573715197653771
+  },
+  {
+    "date": 2020,
+    "UNCTAD_region": "Eastern Asia",
+    "gdp_per_capita": 110.08935556111,
+    "homicides": 0.593924062354197
+  },
+  {
+    "date": 2021,
+    "UNCTAD_region": "Eastern Asia",
+    "gdp_per_capita": 115.316124653824,
+    "homicides": 0.472531479878428
+  },
+  {
+    "date": 2022,
+    "UNCTAD_region": "Eastern Asia",
+    "gdp_per_capita": 118.683754042113,
+    "homicides": 0.49630655708926
+  },
+  {
+    "date": 2023,
+    "UNCTAD_region": "Eastern Asia",
+    "gdp_per_capita": 120.469162919262,
+    "homicides": 0.477306316584835
+  },
+  {
+    "date": 2015,
+    "UNCTAD_region": "Latin America and the Caribbean",
+    "gdp_per_capita": 100,
+    "homicides": 11.5607212354156
+  },
+  {
+    "date": 2016,
+    "UNCTAD_region": "Latin America and the Caribbean",
+    "gdp_per_capita": 97.3248863346169,
+    "homicides": 10.7054970567084
+  },
+  {
+    "date": 2017,
+    "UNCTAD_region": "Latin America and the Caribbean",
+    "gdp_per_capita": 97.8968344514018,
+    "homicides": 10.7077463406277
+  },
+  {
+    "date": 2018,
+    "UNCTAD_region": "Latin America and the Caribbean",
+    "gdp_per_capita": 98.9643099575086,
+    "homicides": 11.7995456872358
+  },
+  {
+    "date": 2019,
+    "UNCTAD_region": "Latin America and the Caribbean",
+    "gdp_per_capita": 99.5214501613063,
+    "homicides": 13.7953035613438
+  },
+  {
+    "date": 2020,
+    "UNCTAD_region": "Latin America and the Caribbean",
+    "gdp_per_capita": 95.4577820154001,
+    "homicides": 12.0335909094816
+  },
+  {
+    "date": 2021,
+    "UNCTAD_region": "Latin America and the Caribbean",
+    "gdp_per_capita": 99.8367457079973,
+    "homicides": 12.6570480772218
+  },
+  {
+    "date": 2022,
+    "UNCTAD_region": "Latin America and the Caribbean",
+    "gdp_per_capita": 106.723418080071,
+    "homicides": 15.2310515092909
+  },
+  {
+    "date": 2023,
+    "UNCTAD_region": "Latin America and the Caribbean",
+    "gdp_per_capita": 111.394263850751,
+    "homicides": 17.7454798727379
+  }
+]

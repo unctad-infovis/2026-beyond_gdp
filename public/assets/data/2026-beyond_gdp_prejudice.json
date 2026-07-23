@@ -1,0 +1,507 @@
+[
+  {
+    "iso3": "AGO",
+    "Share reporting discrimination or harassment": 34.2,
+    "GDP per capita (log scale)": 3151.3417055524
+  },
+  {
+    "iso3": "AUT",
+    "Share reporting discrimination or harassment": 28.3333333333333,
+    "GDP per capita (log scale)": 45296.5470816904
+  },
+  {
+    "iso3": "BDI",
+    "Share reporting discrimination or harassment": 5.75222222222222,
+    "GDP per capita (log scale)": 263.516823488611
+  },
+  {
+    "iso3": "BEL",
+    "Share reporting discrimination or harassment": 38,
+    "GDP per capita (log scale)": 42522.116972508
+  },
+  {
+    "iso3": "BEN",
+    "Share reporting discrimination or harassment": 4.80625,
+    "GDP per capita (log scale)": 1122.85510330351
+  },
+  {
+    "iso3": "BFA",
+    "Share reporting discrimination or harassment": 12.8666666666667,
+    "GDP per capita (log scale)": 699.342996735994
+  },
+  {
+    "iso3": "BGR",
+    "Share reporting discrimination or harassment": 1.855,
+    "GDP per capita (log scale)": 8511.72582491044
+  },
+  {
+    "iso3": "BLR",
+    "Share reporting discrimination or harassment": 1.19375,
+    "GDP per capita (log scale)": 6235.99765072445
+  },
+  {
+    "iso3": "BLZ",
+    "Share reporting discrimination or harassment": 19.1,
+    "GDP per capita (log scale)": 5926.12194781585
+  },
+  {
+    "iso3": "BOL",
+    "Share reporting discrimination or harassment": 3.26934981684982,
+    "GDP per capita (log scale)": 3052.71310091644
+  },
+  {
+    "iso3": "BWA",
+    "Share reporting discrimination or harassment": 20.6666666666667,
+    "GDP per capita (log scale)": 6741.22227940177
+  },
+  {
+    "iso3": "CAF",
+    "Share reporting discrimination or harassment": 11.81875,
+    "GDP per capita (log scale)": 387.283895462093
+  },
+  {
+    "iso3": "CAN",
+    "Share reporting discrimination or harassment": 5.26375,
+    "GDP per capita (log scale)": 44298.2261113014
+  },
+  {
+    "iso3": "CHE",
+    "Share reporting discrimination or harassment": 18.7678787878788,
+    "GDP per capita (log scale)": 86791.6287574629
+  },
+  {
+    "iso3": "CHL",
+    "Share reporting discrimination or harassment": 12.6666666666667,
+    "GDP per capita (log scale)": 13724.1191195948
+  },
+  {
+    "iso3": "CIV",
+    "Share reporting discrimination or harassment": 24.35,
+    "GDP per capita (log scale)": 2060.49896441326
+  },
+  {
+    "iso3": "CMR",
+    "Share reporting discrimination or harassment": 60.1,
+    "GDP per capita (log scale)": 1444.9407690159
+  },
+  {
+    "iso3": "COD",
+    "Share reporting discrimination or harassment": 8.5875,
+    "GDP per capita (log scale)": 498.367186582814
+  },
+  {
+    "iso3": "COL",
+    "Share reporting discrimination or harassment": 5.75416666666666,
+    "GDP per capita (log scale)": 6426.15058255389
+  },
+  {
+    "iso3": "COM",
+    "Share reporting discrimination or harassment": 7.29375,
+    "GDP per capita (log scale)": 1367.28998930896
+  },
+  {
+    "iso3": "CPV",
+    "Share reporting discrimination or harassment": 3.91,
+    "GDP per capita (log scale)": 3762.84937783255
+  },
+  {
+    "iso3": "CUB",
+    "Share reporting discrimination or harassment": 0.73125,
+    "GDP per capita (log scale)": 7642.31125422481
+  },
+  {
+    "iso3": "CYP",
+    "Share reporting discrimination or harassment": 18.3333333333333,
+    "GDP per capita (log scale)": 19400.3576764808
+  },
+  {
+    "iso3": "CZE",
+    "Share reporting discrimination or harassment": 20.6666666666667,
+    "GDP per capita (log scale)": null
+  },
+  {
+    "iso3": "DEU",
+    "Share reporting discrimination or harassment": 10.2567619047619,
+    "GDP per capita (log scale)": 43393.7759354488
+  },
+  {
+    "iso3": "DNK",
+    "Share reporting discrimination or harassment": 19,
+    "GDP per capita (log scale)": 56635.386696619
+  },
+  {
+    "iso3": "ESP",
+    "Share reporting discrimination or harassment": 1.046125,
+    "GDP per capita (log scale)": 27193.0294017839
+  },
+  {
+    "iso3": "EST",
+    "Share reporting discrimination or harassment": 21.6666666666667,
+    "GDP per capita (log scale)": 19628.2989988111
+  },
+  {
+    "iso3": "ETH",
+    "Share reporting discrimination or harassment": 25.5666666666667,
+    "GDP per capita (log scale)": 728.837519483762
+  },
+  {
+    "iso3": "FIN",
+    "Share reporting discrimination or harassment": 17.6666666666667,
+    "GDP per capita (log scale)": 44709.1620292698
+  },
+  {
+    "iso3": "FJI",
+    "Share reporting discrimination or harassment": 6.275,
+    "GDP per capita (log scale)": 5303.48920642858
+  },
+  {
+    "iso3": "FRA",
+    "Share reporting discrimination or harassment": 20.05,
+    "GDP per capita (log scale)": 37820.6193687165
+  },
+  {
+    "iso3": "GBR",
+    "Share reporting discrimination or harassment": 20.1428571428571,
+    "GDP per capita (log scale)": 46542.4964973832
+  },
+  {
+    "iso3": "GEO",
+    "Share reporting discrimination or harassment": 1.6375,
+    "GDP per capita (log scale)": 4996.71310469707
+  },
+  {
+    "iso3": "GHA",
+    "Share reporting discrimination or harassment": 24.5333333333333,
+    "GDP per capita (log scale)": 1933.94531582473
+  },
+  {
+    "iso3": "GIN",
+    "Share reporting discrimination or harassment": 10.4,
+    "GDP per capita (log scale)": 905.147820924412
+  },
+  {
+    "iso3": "GMB",
+    "Share reporting discrimination or harassment": 23.6,
+    "GDP per capita (log scale)": 671.075373847133
+  },
+  {
+    "iso3": "GRC",
+    "Share reporting discrimination or harassment": 13,
+    "GDP per capita (log scale)": 19099.0708948391
+  },
+  {
+    "iso3": "GUY",
+    "Share reporting discrimination or harassment": 4.5625,
+    "GDP per capita (log scale)": 11697.792845227
+  },
+  {
+    "iso3": "HND",
+    "Share reporting discrimination or harassment": 3.225,
+    "GDP per capita (log scale)": 2388.48844315373
+  },
+  {
+    "iso3": "HRV",
+    "Share reporting discrimination or harassment": 21,
+    "GDP per capita (log scale)": 14529.182629365
+  },
+  {
+    "iso3": "HUN",
+    "Share reporting discrimination or harassment": 18.3333333333333,
+    "GDP per capita (log scale)": 14691.6852412639
+  },
+  {
+    "iso3": "IRL",
+    "Share reporting discrimination or harassment": 16.4597222222222,
+    "GDP per capita (log scale)": 78207.6099208227
+  },
+  {
+    "iso3": "ISR",
+    "Share reporting discrimination or harassment": 8.5192011081162,
+    "GDP per capita (log scale)": 39149.9807735449
+  },
+  {
+    "iso3": "ITA",
+    "Share reporting discrimination or harassment": 18,
+    "GDP per capita (log scale)": 32003.8408922253
+  },
+  {
+    "iso3": "KEN",
+    "Share reporting discrimination or harassment": 29.6666666666667,
+    "GDP per capita (log scale)": 1633.58455067622
+  },
+  {
+    "iso3": "KIR",
+    "Share reporting discrimination or harassment": 11.8,
+    "GDP per capita (log scale)": 1809.30189239988
+  },
+  {
+    "iso3": "KOR",
+    "Share reporting discrimination or harassment": 5.85,
+    "GDP per capita (log scale)": 33290.0897787474
+  },
+  {
+    "iso3": "LBR",
+    "Share reporting discrimination or harassment": 30.8666666666667,
+    "GDP per capita (log scale)": 656.818562097713
+  },
+  {
+    "iso3": "LSO",
+    "Share reporting discrimination or harassment": 6.625,
+    "GDP per capita (log scale)": 1037.1929578552
+  },
+  {
+    "iso3": "LTU",
+    "Share reporting discrimination or harassment": 15.3333333333333,
+    "GDP per capita (log scale)": 16841.3454406683
+  },
+  {
+    "iso3": "LUX",
+    "Share reporting discrimination or harassment": 26.3333333333333,
+    "GDP per capita (log scale)": 106736.804192583
+  },
+  {
+    "iso3": "LVA",
+    "Share reporting discrimination or harassment": 16.3333333333333,
+    "GDP per capita (log scale)": 14969.8851603262
+  },
+  {
+    "iso3": "MAR",
+    "Share reporting discrimination or harassment": 17.8666666666667,
+    "GDP per capita (log scale)": 3312.47841046906
+  },
+  {
+    "iso3": "MDA",
+    "Share reporting discrimination or harassment": 16.7875,
+    "GDP per capita (log scale)": 3299.23324785829
+  },
+  {
+    "iso3": "MDG",
+    "Share reporting discrimination or harassment": 11.4,
+    "GDP per capita (log scale)": 446.867037759899
+  },
+  {
+    "iso3": "MEX",
+    "Share reporting discrimination or harassment": 6.52708333333334,
+    "GDP per capita (log scale)": 10016.8995304853
+  },
+  {
+    "iso3": "MLI",
+    "Share reporting discrimination or harassment": 12.7,
+    "GDP per capita (log scale)": 874.435941040215
+  },
+  {
+    "iso3": "MLT",
+    "Share reporting discrimination or harassment": 14.6666666666667,
+    "GDP per capita (log scale)": 29252.5870372769
+  },
+  {
+    "iso3": "MMR",
+    "Share reporting discrimination or harassment": 17.8,
+    "GDP per capita (log scale)": 1230.34551264215
+  },
+  {
+    "iso3": "MNE",
+    "Share reporting discrimination or harassment": 1.7875,
+    "GDP per capita (log scale)": 7176.36885547393
+  },
+  {
+    "iso3": "MNG",
+    "Share reporting discrimination or harassment": 15.05,
+    "GDP per capita (log scale)": 4125.80598715651
+  },
+  {
+    "iso3": "MOZ",
+    "Share reporting discrimination or harassment": 32.7333333333333,
+    "GDP per capita (log scale)": 605.947067108571
+  },
+  {
+    "iso3": "MUS",
+    "Share reporting discrimination or harassment": 30.6333333333333,
+    "GDP per capita (log scale)": 10404.8860720446
+  },
+  {
+    "iso3": "MWI",
+    "Share reporting discrimination or harassment": 8.73125,
+    "GDP per capita (log scale)": 553.147209246909
+  },
+  {
+    "iso3": "NAM",
+    "Share reporting discrimination or harassment": 34.7,
+    "GDP per capita (log scale)": 4250.9253282536
+  },
+  {
+    "iso3": "NER",
+    "Share reporting discrimination or harassment": 17.3333333333333,
+    "GDP per capita (log scale)": 526.613950093442
+  },
+  {
+    "iso3": "NGA",
+    "Share reporting discrimination or harassment": 8.325,
+    "GDP per capita (log scale)": 2386.49087376274
+  },
+  {
+    "iso3": "NLD",
+    "Share reporting discrimination or harassment": 2.51212121212121,
+    "GDP per capita (log scale)": 48514.757840979
+  },
+  {
+    "iso3": "NOR",
+    "Share reporting discrimination or harassment": 6.1,
+    "GDP per capita (log scale)": 76773.1352893502
+  },
+  {
+    "iso3": "NRU",
+    "Share reporting discrimination or harassment": 1.3753475,
+    "GDP per capita (log scale)": 7920.74153717061
+  },
+  {
+    "iso3": "NZL",
+    "Share reporting discrimination or harassment": 5.17777777777778,
+    "GDP per capita (log scale)": 40545.5793538875
+  },
+  {
+    "iso3": "PAK",
+    "Share reporting discrimination or harassment": 4.34628125,
+    "GDP per capita (log scale)": 1528.63221598217
+  },
+  {
+    "iso3": "PER",
+    "Share reporting discrimination or harassment": 5.98329111111111,
+    "GDP per capita (log scale)": 6430.09983716534
+  },
+  {
+    "iso3": "POL",
+    "Share reporting discrimination or harassment": 7.35,
+    "GDP per capita (log scale)": 15036.2079830961
+  },
+  {
+    "iso3": "PRT",
+    "Share reporting discrimination or harassment": 1.58181818181818,
+    "GDP per capita (log scale)": 20752.7710365348
+  },
+  {
+    "iso3": "QAT",
+    "Share reporting discrimination or harassment": 0.773438571428571,
+    "GDP per capita (log scale)": 65040.3114500657
+  },
+  {
+    "iso3": "ROU",
+    "Share reporting discrimination or harassment": 20.6666666666667,
+    "GDP per capita (log scale)": 10747.3168336167
+  },
+  {
+    "iso3": "RWA",
+    "Share reporting discrimination or harassment": 0.175,
+    "GDP per capita (log scale)": 853.941898105916
+  },
+  {
+    "iso3": "SDN",
+    "Share reporting discrimination or harassment": 24,
+    "GDP per capita (log scale)": 1069.73146835691
+  },
+  {
+    "iso3": "SEN",
+    "Share reporting discrimination or harassment": 14.1333333333333,
+    "GDP per capita (log scale)": 1353.03795185797
+  },
+  {
+    "iso3": "SLE",
+    "Share reporting discrimination or harassment": 13.1,
+    "GDP per capita (log scale)": 1041.54922121206
+  },
+  {
+    "iso3": "SUR",
+    "Share reporting discrimination or harassment": 3.3,
+    "GDP per capita (log scale)": 7974.0812795622
+  },
+  {
+    "iso3": "SVK",
+    "Share reporting discrimination or harassment": 20.3333333333333,
+    "GDP per capita (log scale)": 17894.7672710428
+  },
+  {
+    "iso3": "SVN",
+    "Share reporting discrimination or harassment": 11.6666666666667,
+    "GDP per capita (log scale)": 23321.0996709521
+  },
+  {
+    "iso3": "SWE",
+    "Share reporting discrimination or harassment": 2.80612244897959,
+    "GDP per capita (log scale)": 52506.1478099038
+  },
+  {
+    "iso3": "SWZ",
+    "Share reporting discrimination or harassment": 4.56875,
+    "GDP per capita (log scale)": 3627.42442636209
+  },
+  {
+    "iso3": "TCD",
+    "Share reporting discrimination or harassment": 5.88125,
+    "GDP per capita (log scale)": 901.603842757928
+  },
+  {
+    "iso3": "TGO",
+    "Share reporting discrimination or harassment": 12.76,
+    "GDP per capita (log scale)": 813.216108323923
+  },
+  {
+    "iso3": "THA",
+    "Share reporting discrimination or harassment": 3.42388888888889,
+    "GDP per capita (log scale)": 6121.08675630967
+  },
+  {
+    "iso3": "TON",
+    "Share reporting discrimination or harassment": 7.74375,
+    "GDP per capita (log scale)": 4479.49685012653
+  },
+  {
+    "iso3": "TUN",
+    "Share reporting discrimination or harassment": 8.4952380952381,
+    "GDP per capita (log scale)": 4000.70719246502
+  },
+  {
+    "iso3": "TUV",
+    "Share reporting discrimination or harassment": 13.09375,
+    "GDP per capita (log scale)": 3963.94526329627
+  },
+  {
+    "iso3": "TZA",
+    "Share reporting discrimination or harassment": 7.53333333333333,
+    "GDP per capita (log scale)": 994.553040247115
+  },
+  {
+    "iso3": "UGA",
+    "Share reporting discrimination or harassment": 35.7,
+    "GDP per capita (log scale)": 907.457860105891
+  },
+  {
+    "iso3": "VNM",
+    "Share reporting discrimination or harassment": 0.8625,
+    "GDP per capita (log scale)": null
+  },
+  {
+    "iso3": "VUT",
+    "Share reporting discrimination or harassment": 11.75312375,
+    "GDP per capita (log scale)": 2823.1329526879
+  },
+  {
+    "iso3": "WSM",
+    "Share reporting discrimination or harassment": 6.4875,
+    "GDP per capita (log scale)": 4325.87840328753
+  },
+  {
+    "iso3": "ZAF",
+    "Share reporting discrimination or harassment": 1.52142857142857,
+    "GDP per capita (log scale)": 5928.88652435569
+  },
+  {
+    "iso3": "ZMB",
+    "Share reporting discrimination or harassment": 30.6333333333333,
+    "GDP per capita (log scale)": 1300.0551306497
+  },
+  {
+    "iso3": "ZWE",
+    "Share reporting discrimination or harassment": 6.55,
+    "GDP per capita (log scale)": 1377.06609862167
+  }
+]
