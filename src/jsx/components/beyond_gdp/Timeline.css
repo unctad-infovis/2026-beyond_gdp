@@ -1,6 +1,5 @@
 #app-root-2026-beyond_gdp .app {
   .tl_container {
-    background: #fff;
     box-sizing: border-box;
     padding: clamp(40px, 6vw, 64px) clamp(8px, 5vw, 80px);
   }

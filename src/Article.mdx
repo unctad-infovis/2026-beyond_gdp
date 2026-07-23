@@ -103,8 +103,8 @@ This dimension covers material conditions and work, health, education, security,
   >
     <ChartPair
       rightDelayMs={1400}
-      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="iso3" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita, dollars" yLabel="Gross domestic product (GDP) per capita, dollars" hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'CRI', label: 'Costa Rica' }, { key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }]} />}
-      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="iso3" valueKey="healthy_life_exp" isVisible={vis} title="Healthy life expectancy, years" yLabel="Healthy life expectancy, years" yMax={100} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'CRI', label: 'Costa Rica' }, { key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }]} />}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="iso3" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita, dollars" yLabel="Gross domestic product (GDP) per capita, dollars" hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} palette={['--un-color-blue-brand', '--un-color-blue-darkest', '--un-color-yellow']} series={[{ key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }, { key: 'CRI', label: 'Costa Rica' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="iso3" valueKey="healthy_life_exp" isVisible={vis} title="Healthy life expectancy, years" yLabel="Healthy life expectancy, years" yMax={100} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} palette={['--un-color-blue-brand', '--un-color-blue-darkest', '--un-color-yellow']} series={[{ key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }, { key: 'CRI', label: 'Costa Rica' }]} />}
     />
   </ChartSection>
 )}
