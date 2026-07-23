@@ -1,0 +1,242 @@
+[
+  {
+    "date": 2000,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 100,
+    "wealth_99_perc": 76.72
+  },
+  {
+    "date": 2001,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 106.696673666374,
+    "wealth_99_perc": 76.78
+  },
+  {
+    "date": 2002,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 114.865231692972,
+    "wealth_99_perc": 76.75
+  },
+  {
+    "date": 2003,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 118.405336602108,
+    "wealth_99_perc": 76.81
+  },
+  {
+    "date": 2004,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 131.499916830953,
+    "wealth_99_perc": 76.74
+  },
+  {
+    "date": 2005,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 138.491117946858,
+    "wealth_99_perc": 76.78
+  },
+  {
+    "date": 2006,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 150.49923386912,
+    "wealth_99_perc": 76.66
+  },
+  {
+    "date": 2007,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 163.787786819502,
+    "wealth_99_perc": 76.455
+  },
+  {
+    "date": 2008,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 182.040639937808,
+    "wealth_99_perc": 76.265
+  },
+  {
+    "date": 2009,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 173.436873936249,
+    "wealth_99_perc": 76.535
+  },
+  {
+    "date": 2010,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 167.655610845724,
+    "wealth_99_perc": 76.225
+  },
+  {
+    "date": 2011,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 176.056554718199,
+    "wealth_99_perc": 76.215
+  },
+  {
+    "date": 2012,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 180.208462411585,
+    "wealth_99_perc": 75.945
+  },
+  {
+    "date": 2013,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 181.383101296693,
+    "wealth_99_perc": 76.13
+  },
+  {
+    "date": 2014,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 189.557539673983,
+    "wealth_99_perc": 75.75
+  },
+  {
+    "date": 2015,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 196.463252418021,
+    "wealth_99_perc": 75.72
+  },
+  {
+    "date": 2016,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 203.244565493205,
+    "wealth_99_perc": 75.87
+  },
+  {
+    "date": 2017,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 209.532510930561,
+    "wealth_99_perc": 75.455
+  },
+  {
+    "date": 2018,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 215.259268108098,
+    "wealth_99_perc": 75.4
+  },
+  {
+    "date": 2019,
+    "UNCTAD_region": "Eastern Europe",
+    "gdp_per_capita": 219.907365247933,
+    "wealth_99_perc": 75.45
+  },
+  {
+    "date": 2000,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 100,
+    "wealth_99_perc": 77.28
+  },
+  {
+    "date": 2001,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 102.177838733284,
+    "wealth_99_perc": 77.3
+  },
+  {
+    "date": 2002,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 104.311525968082,
+    "wealth_99_perc": 77.27
+  },
+  {
+    "date": 2003,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 107.579425250293,
+    "wealth_99_perc": 77.27
+  },
+  {
+    "date": 2004,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 108.197044962256,
+    "wealth_99_perc": 77.3
+  },
+  {
+    "date": 2005,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 111.44680089776,
+    "wealth_99_perc": 77.29
+  },
+  {
+    "date": 2006,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 114.678419240358,
+    "wealth_99_perc": 77.28
+  },
+  {
+    "date": 2007,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 118.469333855732,
+    "wealth_99_perc": 77.31
+  },
+  {
+    "date": 2008,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 122.092523498292,
+    "wealth_99_perc": 77.27
+  },
+  {
+    "date": 2009,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 118.167995068717,
+    "wealth_99_perc": 77.28
+  },
+  {
+    "date": 2010,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 120.166130164886,
+    "wealth_99_perc": 77.29
+  },
+  {
+    "date": 2011,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 118.28089595872,
+    "wealth_99_perc": 77.2
+  },
+  {
+    "date": 2012,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 109.825714397971,
+    "wealth_99_perc": 77.19
+  },
+  {
+    "date": 2013,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 107.637473672167,
+    "wealth_99_perc": 76.96
+  },
+  {
+    "date": 2014,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 109.215284631391,
+    "wealth_99_perc": 76.91
+  },
+  {
+    "date": 2015,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 109.686248871347,
+    "wealth_99_perc": 76.86
+  },
+  {
+    "date": 2016,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 110.108378445842,
+    "wealth_99_perc": 76.8
+  },
+  {
+    "date": 2017,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 111.951614886329,
+    "wealth_99_perc": 76.77
+  },
+  {
+    "date": 2018,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 114.495101080773,
+    "wealth_99_perc": 76.82
+  },
+  {
+    "date": 2019,
+    "UNCTAD_region": "Southern Europe",
+    "gdp_per_capita": 119.695994137089,
+    "wealth_99_perc": 76.85
+  }
+]

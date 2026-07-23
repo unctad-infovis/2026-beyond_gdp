@@ -1,0 +1,326 @@
+[
+  {
+    "date": 2000,
+    "developing": "Developed",
+    "ghg_per_capita": 9.83416595676437,
+    "total_ghg_emissions": 18.27806704
+  },
+  {
+    "date": 2001,
+    "developing": "Developed",
+    "ghg_per_capita": 9.86082344376934,
+    "total_ghg_emissions": 18.24890235
+  },
+  {
+    "date": 2002,
+    "developing": "Developed",
+    "ghg_per_capita": 9.94490857074634,
+    "total_ghg_emissions": 18.277596
+  },
+  {
+    "date": 2003,
+    "developing": "Developed",
+    "ghg_per_capita": 10.2309449207501,
+    "total_ghg_emissions": 18.51765062
+  },
+  {
+    "date": 2004,
+    "developing": "Developed",
+    "ghg_per_capita": 10.2084714563558,
+    "total_ghg_emissions": 18.6595121
+  },
+  {
+    "date": 2005,
+    "developing": "Developed",
+    "ghg_per_capita": 10.2154250434983,
+    "total_ghg_emissions": 18.6867596
+  },
+  {
+    "date": 2006,
+    "developing": "Developed",
+    "ghg_per_capita": 10.0009325364661,
+    "total_ghg_emissions": 18.65672455
+  },
+  {
+    "date": 2007,
+    "developing": "Developed",
+    "ghg_per_capita": 9.85111387390008,
+    "total_ghg_emissions": 18.79185787
+  },
+  {
+    "date": 2008,
+    "developing": "Developed",
+    "ghg_per_capita": 10.2957717685827,
+    "total_ghg_emissions": 18.42796846
+  },
+  {
+    "date": 2009,
+    "developing": "Developed",
+    "ghg_per_capita": 9.43924736098364,
+    "total_ghg_emissions": 17.29226583
+  },
+  {
+    "date": 2010,
+    "developing": "Developed",
+    "ghg_per_capita": 9.66420691765967,
+    "total_ghg_emissions": 17.8457129
+  },
+  {
+    "date": 2011,
+    "developing": "Developed",
+    "ghg_per_capita": 9.60424640364607,
+    "total_ghg_emissions": 17.71210945
+  },
+  {
+    "date": 2012,
+    "developing": "Developed",
+    "ghg_per_capita": 9.2029395237871,
+    "total_ghg_emissions": 17.48064748
+  },
+  {
+    "date": 2013,
+    "developing": "Developed",
+    "ghg_per_capita": 8.91876487004786,
+    "total_ghg_emissions": 17.50664926
+  },
+  {
+    "date": 2014,
+    "developing": "Developed",
+    "ghg_per_capita": 8.13295178164582,
+    "total_ghg_emissions": 17.2566541
+  },
+  {
+    "date": 2015,
+    "developing": "Developed",
+    "ghg_per_capita": 8.19588850373462,
+    "total_ghg_emissions": 17.04413551
+  },
+  {
+    "date": 2016,
+    "developing": "Developed",
+    "ghg_per_capita": 8.3800979353622,
+    "total_ghg_emissions": 16.85055854
+  },
+  {
+    "date": 2017,
+    "developing": "Developed",
+    "ghg_per_capita": 8.77726477143715,
+    "total_ghg_emissions": 16.92044515
+  },
+  {
+    "date": 2000,
+    "developing": "LDCs",
+    "ghg_per_capita": 2.02897815221988,
+    "total_ghg_emissions": 0.36056344
+  },
+  {
+    "date": 2001,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.66698179945167,
+    "total_ghg_emissions": 0.31823755
+  },
+  {
+    "date": 2002,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.53835702762752,
+    "total_ghg_emissions": 0.33253595
+  },
+  {
+    "date": 2003,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.505479900035,
+    "total_ghg_emissions": 0.33901556
+  },
+  {
+    "date": 2004,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.5016658322468,
+    "total_ghg_emissions": 0.34587566
+  },
+  {
+    "date": 2005,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.69632040468333,
+    "total_ghg_emissions": 0.36760698
+  },
+  {
+    "date": 2006,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.32517496728857,
+    "total_ghg_emissions": 0.28381679
+  },
+  {
+    "date": 2007,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.32271767361701,
+    "total_ghg_emissions": 0.29489022
+  },
+  {
+    "date": 2008,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.16587702014924,
+    "total_ghg_emissions": 0.31407379
+  },
+  {
+    "date": 2009,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.31298067090578,
+    "total_ghg_emissions": 0.33015642
+  },
+  {
+    "date": 2010,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.30742022143849,
+    "total_ghg_emissions": 0.36717668
+  },
+  {
+    "date": 2011,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.28441601891368,
+    "total_ghg_emissions": 0.3542917
+  },
+  {
+    "date": 2012,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.36206647324489,
+    "total_ghg_emissions": 0.38047611
+  },
+  {
+    "date": 2013,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.51608575545537,
+    "total_ghg_emissions": 0.45738151
+  },
+  {
+    "date": 2014,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.39495053673598,
+    "total_ghg_emissions": 0.4233236
+  },
+  {
+    "date": 2015,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.24129353704406,
+    "total_ghg_emissions": 0.40136121
+  },
+  {
+    "date": 2016,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.25548232684019,
+    "total_ghg_emissions": 0.39514308
+  },
+  {
+    "date": 2017,
+    "developing": "LDCs",
+    "ghg_per_capita": 1.25669289866242,
+    "total_ghg_emissions": 0.38998348
+  },
+  {
+    "date": 2000,
+    "developing": "Other developing",
+    "ghg_per_capita": 5.32755726065135,
+    "total_ghg_emissions": 16.23977159
+  },
+  {
+    "date": 2001,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.4604675803752,
+    "total_ghg_emissions": 15.87489315
+  },
+  {
+    "date": 2002,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.37877058024368,
+    "total_ghg_emissions": 16.32279728
+  },
+  {
+    "date": 2003,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.44006949054117,
+    "total_ghg_emissions": 16.89179252
+  },
+  {
+    "date": 2004,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.48819912860255,
+    "total_ghg_emissions": 17.63349485
+  },
+  {
+    "date": 2005,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.49502087847013,
+    "total_ghg_emissions": 18.10172772
+  },
+  {
+    "date": 2006,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.48615829623537,
+    "total_ghg_emissions": 18.86407284
+  },
+  {
+    "date": 2007,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.28584937521108,
+    "total_ghg_emissions": 19.59964685
+  },
+  {
+    "date": 2008,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.12928469445247,
+    "total_ghg_emissions": 20.37035681
+  },
+  {
+    "date": 2009,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.41280821917808,
+    "total_ghg_emissions": 20.92590607
+  },
+  {
+    "date": 2010,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.75501253268366,
+    "total_ghg_emissions": 22.4513382
+  },
+  {
+    "date": 2011,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.80470249331831,
+    "total_ghg_emissions": 23.15360717
+  },
+  {
+    "date": 2012,
+    "developing": "Other developing",
+    "ghg_per_capita": 5.00794436151779,
+    "total_ghg_emissions": 24.24049826
+  },
+  {
+    "date": 2013,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.42613744324105,
+    "total_ghg_emissions": 24.0060496
+  },
+  {
+    "date": 2014,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.11766207288809,
+    "total_ghg_emissions": 23.35259526
+  },
+  {
+    "date": 2015,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.4681232436354,
+    "total_ghg_emissions": 23.71205363
+  },
+  {
+    "date": 2016,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.2251110904674,
+    "total_ghg_emissions": 26.71169273
+  },
+  {
+    "date": 2017,
+    "developing": "Other developing",
+    "ghg_per_capita": 4.24256768690521,
+    "total_ghg_emissions": 26.74588972
+  }
+]
