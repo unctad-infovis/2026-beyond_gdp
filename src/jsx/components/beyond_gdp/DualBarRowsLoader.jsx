@@ -3,7 +3,7 @@ import formatNumber from '../charts/formatNumber.js';
 import COUNTRY_NAMES, { COUNTRY_ISO2 } from './countryNames.js';
 import RevealOnView from './RevealOnView.jsx';
 
-const HIGHLIGHT_ISO3 = ['BGR', 'MEX', 'NOR', 'ITA'];
+const HIGHLIGHT_ISO3 = [];
 
 // Shapes the raw satisfaction.json rows (iso3-keyed) into DualBarRows' generic row shape.
 // Visibility is delegated to RevealOnView since this chart renders standalone (not inside a ChartPair).

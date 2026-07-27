@@ -119,7 +119,7 @@
   }
   .tl_item--current .tl_date,
   .tl_item--current .tl_label {
-    color: var(--un-color-yellow-brand-shade);
+    color: var(--un-color-blue-text);
     font-weight: var(--un-font-weight-bold);
   }
   .tl_item--current .tl_marker {

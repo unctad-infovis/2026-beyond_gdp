@@ -37,8 +37,6 @@ Episodic shocks, such as financial crises and the COVID-19 pandemic, have reveal
 <div className="container_section">
 <div className="container_section__wide">
 
-Looking Beyond GDP illustrates messages drawn from selected data on the new dashboard of indicators to track progress beyond GDP. It points to policy messages as well as data gaps to be addressed in future capacity development.
-
 ### What does going beyond GDP mean?
 
 It requires a new understanding of what we mean by progress.
@@ -63,18 +61,14 @@ The proposed dashboard contains 31 indicators designed to help countries track p
 </div>
 </div>
 
-<div className="container_section anchor_data">
-<div className="container_section__wide">
-
-### What the selected data show
+<SectionDivider maxWidth="700px" anchorClass="anchor_data" title="What the selected data show">
 
 The dashboard changes the questions we ask about progress. These examples compare economic output with outcomes for people, society and the planet, highlighting insights and data gaps from indicators on the new dashboard for tracking progress beyond GDP.
 
-</div>
-</div>
+</SectionDivider>
 
 <DashboardFramework
-  title="The Beyond GDP dashboard tracks three dimensions of progress"
+  title="The Beyond GDP dashboard tracks three dimensions of progress supported by foundational principles"
   foundationalPrinciples={[
     { key: 'peace', label: 'Peace' },
     { key: 'human_rights', label: 'Human Rights' },
@@ -104,7 +98,7 @@ This dimension covers material conditions and work, health, education, security,
     <ChartPair
       rightDelayMs={1400}
       leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="iso3" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita, dollars" yLabel="Gross domestic product (GDP) per capita, dollars" hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} palette={['--un-color-blue-brand', '--un-color-blue-darkest', '--un-color-yellow']} series={[{ key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }, { key: 'CRI', label: 'Costa Rica' }]} />}
-      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="iso3" valueKey="healthy_life_exp" isVisible={vis} title="Healthy life expectancy, years" yLabel="Healthy life expectancy, years" yMax={100} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} palette={['--un-color-blue-brand', '--un-color-blue-darkest', '--un-color-yellow']} series={[{ key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }, { key: 'CRI', label: 'Costa Rica' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="iso3" valueKey="healthy_life_exp" isVisible={vis} title="Healthy life expectancy, years" yLabel="Healthy life expectancy, years" yMin={64} yMax={72} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} palette={['--un-color-blue-brand', '--un-color-blue-darkest', '--un-color-yellow']} series={[{ key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }, { key: 'CRI', label: 'Costa Rica' }]} />}
     />
   </ChartSection>
 )}
@@ -121,8 +115,8 @@ This dimension covers material conditions and work, health, education, security,
   >
     <ChartPair
       rightDelayMs={1400}
-      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita index, index 2015=100" yLabel="Gross domestic product (GDP) per capita, index 2015=100" hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern Asia', label: 'Eastern Asia' }]} />}
-      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="homicides" isVisible={vis} title="Number of homicides per 100 000 people" yLabel="Number of homicides per 100 000 people" yMax={20} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern Asia', label: 'Eastern Asia' }]} />}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita index, index 2015=100" yLabel="Gross domestic product (GDP) per capita, index 2015=100" yMin={90} yMax={121} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern Asia', label: 'Eastern Asia' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="homicides" isVisible={vis} title="Number of homicides per 100 000 people" yLabel="Number of homicides per 100 000 people" yMin={0} yMax={20} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern Asia', label: 'Eastern Asia' }]} />}
     />
   </ChartSection>
 )}
@@ -198,8 +192,8 @@ This dimension measures whether opportunities and outcomes are shared. It covers
   >
     <ChartPair
       rightDelayMs={1400}
-      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita, index 2000=100" yLabel="Gross domestic product (GDP) per capita, index 2000=100" yMax={250} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Eastern Europe', label: 'Eastern Europe' }, { key: 'Southern Europe', label: 'Southern Europe' }]} />}
-      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="wealth_99_perc" isVisible={vis} title="Wealth share of bottom 99%, per cent" yLabel="Wealth share of bottom 99%, percentage" yMax={100} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Eastern Europe', label: 'Eastern Europe' }, { key: 'Southern Europe', label: 'Southern Europe' }]} />}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita, index 2000=100" yLabel="Gross domestic product (GDP) per capita, index 2000=100" yMin={90} yMax={250} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Eastern Europe', label: 'Eastern Europe' }, { key: 'Southern Europe', label: 'Southern Europe' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="wealth_99_perc" isVisible={vis} title="Wealth share of bottom 99%, per cent" yLabel="Wealth share of bottom 99%, percentage"  yMin={75} yMax={78} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Eastern Europe', label: 'Eastern Europe' }, { key: 'Southern Europe', label: 'Southern Europe' }]} />}
     />
   </ChartSection>
 )}
@@ -212,7 +206,7 @@ This dimension measures whether opportunities and outcomes are shared. It covers
     title="Economic growth outpaces gains in women's pay"
     description="Average gross domestic product (GDP) per capita and women's average hourly earnings as a share of men's, developed economies, dollars and percentage, 2010–2013 and 2020–2023 averages."
     source="World Bank and International Labour Organization via the United Nations Global SDG Indicators Database."
-    insight={["GDP growth can be slower for one segment of the population. Average GDP per capita in developed economies rose 12% over a 10-year period, but ==women's pay relative to men's improved only 1% – less than one tenth as much==."]}
+    insight={["GDP growth can be slower for one segment of the population. Average GDP per capita in developed economies rose 12% over a 10-year period, but ==women's pay relative to men's improved only 1%, less than one tenth as much==."]}
     expandable={{ label: 'Countries in calculation', items: ['Bosnia and Herzegovina, Czechia, Finland, France, Greece, Hungary, Italy, Portugal, Republic of Korea, Republic of Moldova, Romania, Slovakia, Spain, Sweden, Switzerland, United Kingdom of Great Britain and Northern Ireland, United States of America.'] }}
   >
     <ChartPair
@@ -283,21 +277,10 @@ The availability of Beyond GDP indicators varies widely across levels of develop
   <ChartSection
     title="Developing countries have less Beyond GDP data"
     description="Beyond GDP dashboard indicators with at least one publicly available data point, by dimension and development status, percentage."
-    insight={["Despite largely relying on the SDG indicator framework, data availability remains limited. Only for equity and inclusion are data available for at least 50% indicators and countries since 2000, and for current well-being only for developed countries. In developing countries data gaps are particularly severe for current foundational principles and sustainability and resilience, where ==internationally comparable indicators are available for only a limited number of countries==."]}
+    source="UN Trade and Development (UNCTAD) calculations on internationally available data"
+    insight={["Despite largely relying on the SDG indicator framework, data availability remains a challenge. Based on currently available international indicators, coverage gaps between developed and developing countries are particularly pronounced for current well-being and sustainability and resilience. At present, fewer than half of developing countries are covered for these two key dimensions."]}
   >
     <GapChart data={data} title="Developing countries have less Beyond GDP data" yLabel="Indicators with available data, percentage" />
-  </ChartSection>
-)}
-</ChartData>
-
-<ChartData file="2026-beyond_gdp_gap2.json">
-{data => (
-  <ChartSection
-    title="Timely, long-running data remain scarce in all countries"
-    description="Beyond GDP dashboard indicators with at least 10 publicly available data points and coverage through 2024 or later, by dimension and development status, percentage."
-    insight={['Timeliness and historical coverage are weak in all countries. The shortfall affects every dashboard section, making it harder to monitor progress promptly and compare results across countries.']}
-  >
-    <GapChart data={data} title="Timely, long-running data remain scarce in all countries" yLabel="Indicators with timely, long-running data, percentage" />
   </ChartSection>
 )}
 </ChartData>
@@ -313,10 +296,7 @@ The availability of Beyond GDP indicators varies widely across levels of develop
   ]}
 />
 
-<div className="container_section anchor_next">
-<div className="container_section__wide">
-
-### UNCTAD's role in Beyond GDP
+<SectionDivider maxWidth="700px" anchorClass="anchor_next" title="UNCTAD's role in Beyond GDP">
 
 UNCTAD's work on Beyond GDP focuses on supporting countries' statistical and analytical capacities, as requested at the UNCTAD16 conference.
 
@@ -326,8 +306,7 @@ We support the Global Alliance on Beyond GDP, launched in Sevilla and spearheade
 
 We also work with countries and civil society organizations to ensure efficient support and promote shared global approaches.
 
-</div>
-</div>
+</SectionDivider>
 
 {/* TODO: draft says "add links where available" but supplies none — fill in real URLs before publish. */}
 <RevealList

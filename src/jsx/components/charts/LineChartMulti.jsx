@@ -32,7 +32,7 @@ const formatTooltipValue = value => (Math.abs(value) >= 1000 ? formatNumber(valu
 // crosshair with each series' value at that year, matching the cdde CommodityPrices pattern
 // (bisector-free here since the data is on a whole-year grid, so the nearest year is just a
 // rounded scale inversion).
-const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', hoveredYear, isVisible = false, margin = DEFAULT_MARGIN, onHoverChange, palette, seriesKey, series = [], stackedLegend = false, title, valueKey, yLabel = '', yMax }) => {
+const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', hoveredYear, isVisible = false, margin = DEFAULT_MARGIN, onHoverChange, palette, seriesKey, series = [], stackedLegend = false, title, valueKey, yLabel = '', yMax, yMin }) => {
   const svgRef = useRef(null);
   const structureBuilt = useRef(false);
   const phase = useRef('hidden'); // 'hidden' | 'revealing' | 'shown'
@@ -81,7 +81,7 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', hove
       const xExtent = extent(allPoints, d => d.date);
       const xScale = scaleLinear().domain(xExtent).range([0, width]);
       const yScale = scaleLinear()
-        .domain([0, yMax ?? max(allPoints, d => d.value) ?? 0])
+        .domain([yMin ?? 0, yMax ?? max(allPoints, d => d.value) ?? 0])
         .range([height, 0]);
       if (yMax === undefined) yScale.nice();
 
@@ -203,7 +203,7 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', hove
           });
       }
     },
-    [animDuration, margin, onHoverChange, palette, seriesData, yMax]
+    [animDuration, margin, onHoverChange, palette, seriesData, yMax, yMin]
   );
 
   const hasPoints = seriesData.some(s => s.points.length > 0);
