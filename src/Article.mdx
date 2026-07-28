@@ -3,7 +3,8 @@ import { DEVELOPMENT_STATUS_PALETTE_VARS } from './jsx/components/charts/chartCo
 
 <Header title={props.meta.hero.title} subtitle={props.meta.hero.subtitle} byline={props.meta.hero.byline} image_url={props.meta.hero.image_url} titleHighlight={props.meta.hero.titleHighlight} />
 
-<Nav items={props.meta.nav} />
+{/* TODO: download_report_url in meta.json is a placeholder (unctad.org) until the client provides the real report link. */}
+<Nav items={props.meta.nav} downloadUrl={props.meta.download_report_url} />
 
 <div className="container_section container_section--tint">
 <div className="container_section__wide bgdp_lead">
@@ -17,6 +18,8 @@ GDP measures economic output. But it doesn't show whether people are living well
 These limitations are reflected in real-world outcomes. GDP growth has been accompanied by persistent inequality, ecological degradation and declining public trust in institutions.
 
 Episodic shocks, such as financial crises and the COVID-19 pandemic, have revealed systemic weaknesses. Long-term structural pressures, including environmental degradation, inequality, geopolitical tensions and democratic challenges, have further underscored the limitations of relying on GDP alone.
+
+<StatTiles tiles={[{ value: 31, label: 'Indicators' }, { value: 4, label: 'Dimensions' }, { value: 2027, label: 'First national reporting', format: 'year' }]} />
 
 </div>
 </div>

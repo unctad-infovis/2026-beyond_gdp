@@ -1,33 +1,47 @@
 #app-root-2026-beyond_gdp .app {
   .bgdp_nav {
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     gap: clamp(8px, 2vw, 16px);
+    justify-content: space-between;
     margin: 40px auto 0;
     max-width: 1100px;
     padding: 0 10px;
-  }
-  .bgdp_nav_btn {
-    background: var(--un-color-blue);
-    border: none;
-    border-radius: 999px;
-    color: #fff;
-    cursor: pointer;
-    font-size: var(--un-font-size-xs);
-    font-weight: var(--un-font-weight-bold);
-    padding: 12px 22px;
-    transition:
-      background 0.14s ease,
-      color 0.14s ease;
-    &:hover,
-    &:focus-visible {
-      background: var(--un-color-yellow-brand);
-      color: #000;
+    .bgdp_nav_links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(8px, 2vw, 16px);
     }
-  }
-  @media (prefers-reduced-motion: reduce) {
     .bgdp_nav_btn {
-      transition: none;
+      background: var(--un-color-blue);
+      border: none;
+      border-radius: 999px;
+      color: #fff;
+      cursor: pointer;
+      font-size: var(--un-font-size-xs);
+      font-weight: var(--un-font-weight-bold);
+      padding: 12px 22px;
+      transition:
+        background 0.14s ease,
+        color 0.14s ease;
+      &:hover,
+      &:focus-visible {
+        background: var(--un-color-yellow-brand);
+        color: #000;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        transition: none;
+      }
+    }
+    .container_button_download {
+      margin: 0;
+      .full_report {
+        background-color: var(--un-color-blue-darkest);
+        &:hover {
+          background-color: var(--un-color-blue-dark);
+        }
+      }
     }
   }
 }

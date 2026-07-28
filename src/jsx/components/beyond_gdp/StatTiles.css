@@ -1,0 +1,45 @@
+#app-root-2026-beyond_gdp .app {
+  .st_grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 160px));
+    margin: clamp(24px, 4vw, 32px) 0 0;
+    max-width: 560px;
+  }
+  .st_tile {
+    background: #fff;
+    border: 1px solid var(--un-color-grey-lightest);
+    border-radius: 16px;
+    box-sizing: border-box;
+    opacity: 0;
+    padding: 16px 18px;
+    transform: translateY(12px);
+    transition:
+      opacity 0.5s ease-out,
+      transform 0.5s ease-out;
+  }
+  .st_grid--inview .st_tile {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .st_tile_value {
+    color: var(--un-color-blue-text);
+    font-size: var(--un-font-size-xxxl);
+    font-weight: var(--un-font-weight-bolder);
+    line-height: 1;
+    margin: 0 0 8px;
+  }
+  .st_tile_label {
+    color: var(--un-color-grey-text);
+    font-size: var(--un-font-size-xxxs);
+    font-weight: var(--un-font-weight-bold);
+    letter-spacing: 0.08em;
+    margin: 0;
+    text-transform: uppercase;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .st_tile {
+      transition: none;
+    }
+  }
+}
