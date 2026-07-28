@@ -1,5 +1,20 @@
 #app-root-2026-beyond_gdp .app {
-  background: #f6fbfe;
+  .container_section__wide {
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1100px;
+    h3 {
+      max-width: 100%;
+    }
+    p {
+      max-width: 760px;
+      margin: 0 0 20px 0;
+    }
+    &.bgdp_lead p {
+      color: var(--un-color-blue-darkest);
+      font-weight: var(--un-font-weight-bold);
+    }
+  }
   .container_section {
     box-sizing: border-box;
     padding: clamp(40px, 6vw, 64px) 10px;
@@ -14,17 +29,8 @@
         font-size: var(--un-font-size-xxxl);
       }
       p {
-        font-size: var(--un-font-size-xl);
+        font-size: var(--un-font-size-normal);
       }
-    }
-  }
-  .container_section__wide {
-    box-sizing: border-box;
-    margin: 0 auto;
-    max-width: 1100px;
-    &.bgdp_lead p {
-      color: var(--un-color-blue-darkest);
-      font-weight: var(--un-font-weight-bold);
     }
   }
   .bullet_list {
@@ -33,7 +39,7 @@
     line-height: var(--un-line-height-normal);
     list-style: none;
     margin: 0 auto 20px;
-    max-width: 700px;
+    max-width: 1100px;
     padding: 0 0 0 10px;
     li {
       margin-bottom: 10px;
