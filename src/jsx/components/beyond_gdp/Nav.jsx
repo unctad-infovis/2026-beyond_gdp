@@ -17,7 +17,7 @@ const Nav = ({ downloadUrl, items = [] }) => (
         </button>
       ))}
     </div>
-    {downloadUrl && <ButtonAnchor className="full_report" text="Download the report" url={downloadUrl} />}
+    {downloadUrl && <ButtonAnchor className="full_report" text="Download the report (PDF)" url={downloadUrl} />}
   </nav>
 );
 
