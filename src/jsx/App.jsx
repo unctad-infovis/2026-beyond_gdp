@@ -1,3 +1,4 @@
+import BackToTop from '@unctad-infovis/general-tools/components/BackToTop.jsx';
 import { useRef } from 'react';
 
 import Article from '../Article.mdx';
@@ -24,6 +25,7 @@ import './components/beyond_gdp/beyond_gdp.css';
 import '@unctad-infovis/general-tools/styles/styles.css';
 
 const components = {
+  BackToTop,
   BarPair,
   ChartData,
   ChartPair,
