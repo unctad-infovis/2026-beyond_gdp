@@ -99,7 +99,12 @@
   @media (max-width: 560px) {
     .dbr_head,
     .dbr_row {
-      grid-template-columns: 96px 1fr 1fr;
+      grid-template-columns: 110px 1fr 1fr;
+    }
+    .dbr_name_text {
+      overflow: visible;
+      text-overflow: clip;
+      white-space: normal;
     }
   }
 }
