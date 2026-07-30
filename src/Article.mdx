@@ -7,9 +7,19 @@ import { DEVELOPMENT_STATUS_PALETTE_VARS } from './jsx/components/charts/chartCo
 <Nav items={props.meta.nav} downloadUrl={props.meta.download_report_url} />
 <BackToTop selector=".bgdp_header" />
 <ProgressBar selector=".bgdp_main" />
+<ChapterIndicator
+  chapters={[
+    { number: '01', label: 'Introduction', selector: '.bgdp_chapter--intro' },
+    { number: '02', label: 'Data', selector: '.bgdp_chapter--data' },
+    { number: '03', label: 'Recommendation', selector: '.bgdp_chapter--recommendation' },
+    { number: '04', label: 'What next', selector: '.bgdp_chapter--next' }
+  ]}
+/>
 
 <div className="bgdp_main">
-<div className="container_section container_section--tint">
+<div className="bgdp_chapter bgdp_chapter--intro">
+<ChapterBanner number="01" title="Introduction" />
+<div className="container_section">
 <div className="container_section__wide bgdp_lead">
 
 ### Why go beyond GDP?
@@ -66,7 +76,10 @@ The proposed dashboard contains 31 indicators designed to help countries track p
 
 </div>
 </div>
+</div>
 
+<div className="bgdp_chapter bgdp_chapter--data">
+<ChapterBanner number="02" title="Data" />
 <SectionDivider anchorClass="anchor_data" tint={false} title="What the selected data show">
 
 The dashboard changes the questions we ask about progress. These examples compare economic output with outcomes for people, society and the planet, highlighting insights and data gaps from indicators on the new dashboard for tracking progress beyond GDP.
@@ -278,7 +291,11 @@ This dimension tracks whether progress can continue over time. It considers prod
 )}
 </ChartData>
 
-<SectionDivider anchorClass="anchor_gaps" eyebrow="Data gaps" title="How can we fix what we can't see?">
+</div>
+
+<div className="bgdp_chapter bgdp_chapter--recommendation">
+<ChapterBanner number="03" title="Recommendation" />
+<SectionDivider anchorClass="anchor_gaps" eyebrow="Data gaps" tint={false} title="How can we fix what we can't see?">
 
 The availability of Beyond GDP indicators varies widely across levels of development and dashboard dimensions.
 
@@ -309,6 +326,10 @@ The availability of Beyond GDP indicators varies widely across levels of develop
   ]}
 />
 
+</div>
+
+<div className="bgdp_chapter bgdp_chapter--next">
+<ChapterBanner number="04" title="What next" />
 <SectionDivider anchorClass="anchor_next" tint={false} title="UNCTAD's role in Beyond GDP">
 
 UNCTAD's work on Beyond GDP focuses on supporting countries' statistical and analytical capacities, as requested at the UNCTAD16 conference.
@@ -332,9 +353,10 @@ We also work with countries and civil society organizations to ensure efficient 
   ]}
 />
 
-<SectionDivider title="Moving beyond GDP requires a collective, long-term effort.">
+<SectionDivider tint={false} title="Moving beyond GDP requires a collective, long-term effort.">
 
 Governments, institutions and society need stronger data and evidence-based action.
 
 </SectionDivider>
+</div>
 </div>

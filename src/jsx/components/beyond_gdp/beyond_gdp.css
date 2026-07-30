@@ -1,4 +1,16 @@
 #app-root-2026-beyond_gdp .app {
+  .bgdp_chapter {
+    &.bgdp_chapter--intro,
+    &.bgdp_chapter--next {
+      background: #fff;
+    }
+    &.bgdp_chapter--data {
+      background: var(--un-color-blue-lightest);
+    }
+    &.bgdp_chapter--recommendation {
+      background: var(--un-color-yellow-lightest);
+    }
+  }
   .container_section__wide {
     box-sizing: border-box;
     margin: 0 auto;

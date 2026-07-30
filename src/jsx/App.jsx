@@ -3,6 +3,8 @@ import ProgressBar from '@unctad-infovis/general-tools/components/ProgressBar.js
 import { useRef } from 'react';
 
 import Article from '../Article.mdx';
+import ChapterBanner from './components/beyond_gdp/ChapterBanner.jsx';
+import ChapterIndicator from './components/beyond_gdp/ChapterIndicator.jsx';
 import ChartData from './components/beyond_gdp/ChartData.jsx';
 import ChartPair from './components/beyond_gdp/ChartPair.jsx';
 import ChartSection from './components/beyond_gdp/ChartSection.jsx';
@@ -28,6 +30,8 @@ import '@unctad-infovis/general-tools/styles/styles.css';
 const components = {
   BackToTop,
   BarPair,
+  ChapterBanner,
+  ChapterIndicator,
   ChartData,
   ChartPair,
   ChartSection,
@@ -54,7 +58,7 @@ const App = ({ meta }) => {
   window.appRef = appRef;
 
   return (
-    <div className="app" ref={appRef}>
+    <div className="app" ref={appRef} style={{ '--main-color': 'var(--un-color-yellow)' }}>
       <Article components={components} meta={meta} />
     </div>
   );
