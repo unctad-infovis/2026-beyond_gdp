@@ -58,6 +58,7 @@
       padding: 10px 12px;
     }
     .df_pillar_item--linked {
+      cursor: pointer;
       transition: box-shadow 0.14s ease;
       &:hover,
       &:focus-within {
@@ -119,6 +120,11 @@
     .df_pillar_head {
       background: var(--un-color-purple);
       color: #fff;
+    }
+    li.df_pillar_item--linked {
+      &:hover {
+        background: var(--un-color-purple-light);
+      }
     }
     .df_pillar_icon {
       background: var(--un-color-purple);

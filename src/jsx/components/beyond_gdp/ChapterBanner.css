@@ -8,13 +8,12 @@
     padding: clamp(24px, 4vw, 40px) 10px 0;
     .bgdp_chapter_banner_number {
       color: var(--main-color);
-      font-size: var(--un-font-size-xxl);
+      font-size: var(--un-font-size-xxxl);
       font-weight: var(--un-font-weight-boldest);
       line-height: 1;
     }
     .bgdp_chapter_banner_title {
-      color: var(--un-color-grey-darkest);
-      font-size: var(--un-font-size-xs);
+      font-size: var(--un-font-size-normal);
       font-weight: var(--un-font-weight-bold);
       letter-spacing: 0.14em;
       text-transform: uppercase;
