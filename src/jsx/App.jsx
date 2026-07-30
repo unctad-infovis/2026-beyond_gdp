@@ -1,4 +1,5 @@
 import BackToTop from '@unctad-infovis/general-tools/components/BackToTop.jsx';
+import ProgressBar from '@unctad-infovis/general-tools/components/ProgressBar.jsx';
 import { useRef } from 'react';
 
 import Article from '../Article.mdx';
@@ -38,6 +39,7 @@ const components = {
   Header,
   LineChartMulti,
   Nav,
+  ProgressBar,
   RevealList,
   RevealOnView,
   ScatterLog,
