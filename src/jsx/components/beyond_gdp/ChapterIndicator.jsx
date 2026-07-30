@@ -5,9 +5,11 @@ import './ChapterIndicator.css';
 // via IntersectionObserver on each chapter's wrapper — the rootMargin shrinks the observed
 // viewport down to a zero-height line at its very top, so a chapter only becomes active once
 // its own top edge scrolls up to/past that line (not merely once it's "in view" generally),
-// matching a standard scrollspy pattern.
+// matching a standard scrollspy pattern. Starts at `null` (nothing rendered) rather than
+// defaulting to the first chapter, so the pill doesn't appear at all until the reader has
+// actually scrolled into chapter 1 — not while still up in the hero/nav area.
 const ChapterIndicator = ({ chapters = [] }) => {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(null);
 
   useEffect(() => {
     const root = window.appRef?.current ?? document;
