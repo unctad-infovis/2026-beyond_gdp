@@ -4,7 +4,7 @@ import { scaleLinear, scaleLog } from 'd3-scale';
 import { select } from 'd3-selection';
 import { useEffect, useRef, useState } from 'react';
 import ChartCaption from './ChartCaption.jsx';
-import ChartTooltip, { shouldFlipTooltip } from './ChartTooltip.jsx';
+import ChartTooltip, { tooltipLeft } from './ChartTooltip.jsx';
 import './d3Locale.js';
 import formatNumber from './formatNumber.js';
 import './ScatterLog.css';
@@ -54,8 +54,8 @@ const ScatterLog = ({ isVisible = false, points = [], title, xFormat = defaultXF
 
   const handlePointMove = (event, p) => {
     const wrapRect = plotRef.current.getBoundingClientRect();
-    const left = event.clientX - wrapRect.left;
-    setHovered({ flip: shouldFlipTooltip(left, wrapRect.width), left, point: p, top: event.clientY - wrapRect.top });
+    const x = event.clientX - wrapRect.left;
+    setHovered({ left: tooltipLeft(x, wrapRect.width), point: p, top: event.clientY - wrapRect.top });
   };
 
   return (
@@ -84,7 +84,7 @@ const ScatterLog = ({ isVisible = false, points = [], title, xFormat = defaultXF
           </svg>
         )}
         {hovered && (
-          <ChartTooltip flip={hovered.flip} left={hovered.left} top={hovered.top}>
+          <ChartTooltip left={hovered.left} top={hovered.top}>
             <div className="chart_tooltip_heading">{hovered.point.label ?? hovered.point.key}</div>
             <div className="chart_tooltip_row">
               <span className="chart_tooltip_label">{xLabel}</span>

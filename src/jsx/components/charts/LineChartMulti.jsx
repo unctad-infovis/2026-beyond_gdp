@@ -11,7 +11,7 @@ import 'd3-transition';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ChartCaption from './ChartCaption.jsx';
 import ChartLegend from './ChartLegend.jsx';
-import ChartTooltip, { shouldFlipTooltip } from './ChartTooltip.jsx';
+import ChartTooltip, { tooltipLeft } from './ChartTooltip.jsx';
 import seriesColor, { seriesToLegendItems } from './chartColors.js';
 import './d3Locale.js';
 import formatNumber from './formatNumber.js';
@@ -155,7 +155,7 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', hove
         if (anchorTooltip) {
           const avgCy = rows.reduce((sum, r) => sum + yScale(r.point.value), 0) / rows.length;
           const mx = cx + margin.left;
-          setTooltip({ flip: shouldFlipTooltip(mx, totalWidth), rows: rows.map(r => ({ color: r.color, label: r.label, value: r.point.value })), x: mx, y: avgCy + margin.top, year });
+          setTooltip({ rows: rows.map(r => ({ color: r.color, label: r.label, value: r.point.value })), x: tooltipLeft(mx, totalWidth), y: avgCy + margin.top, year });
         }
       };
       showHoverRef.current = year => showHoverAtYear(year, { anchorTooltip: true });
@@ -183,7 +183,7 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', hove
           return;
         }
         showHoverAtYear(year);
-        setTooltip({ flip: shouldFlipTooltip(mx, totalWidth), rows: rows.map(r => ({ color: r.color, label: r.label, value: r.point.value })), x: mx, y: my, year });
+        setTooltip({ rows: rows.map(r => ({ color: r.color, label: r.label, value: r.point.value })), x: tooltipLeft(mx, totalWidth), y: my, year });
         onHoverChange?.(year);
       };
 
@@ -262,7 +262,7 @@ const LineChartMulti = ({ animDuration = 1400, data = [], dateKey = 'date', hove
       <div className="lcm_plot_wrap">
         <svg aria-label={title} className="lcm_svg" ref={svgRef} role="img" />
         {tooltip && (
-          <ChartTooltip flip={tooltip.flip} left={tooltip.x} top={tooltip.y}>
+          <ChartTooltip left={tooltip.x} top={tooltip.y}>
             <div className="chart_tooltip_heading">{tooltip.year}</div>
             {tooltip.rows.map(r => (
               <div className="chart_tooltip_row" key={r.label}>

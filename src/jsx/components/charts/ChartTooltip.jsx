@@ -1,15 +1,24 @@
 import './ChartTooltip.css';
 
-// Shared "flip past 60% of the chart's width" rule so a tooltip mirrors to the left of its
-// anchor point before it would otherwise run off the right edge. `x` and `totalWidth` should be
-// in the same coordinate space (both chart-local pixels).
-export const shouldFlipTooltip = (x, totalWidth) => x > totalWidth * 0.6;
+// Kept in sync with ChartTooltip.css's `max-width` so the position math below can reason about
+// the tooltip's footprint analytically, without waiting a render to measure it.
+const TOOLTIP_WIDTH = 202;
+const ANCHOR_GAP = 12;
 
-// Floating value card that follows the cursor on chart hover. `flip` mirrors it to the left
-// side of the cursor/point once the hover position crosses ~60% of the chart's width, so it
-// never runs off the right edge of the container.
-const ChartTooltip = ({ children, flip = false, left, top }) => (
-  <div className={`chart_tooltip${flip ? ' chart_tooltip--flip' : ''}`} style={{ left, top }}>
+// Computes the tooltip's absolute left position (same chart-local coordinate space as `x`/
+// `totalWidth`): sits just right of the anchor by default, flips to its left once that would
+// run past the right edge, then clamps the result so it never runs off either edge — including
+// the "dead zone" near the middle of a chart too narrow to fit the tooltip cleanly on either
+// side of the anchor, where a plain anchor+flip (no clamp) would still overflow one side.
+export const tooltipLeft = (x, totalWidth) => {
+  const preferred = totalWidth - x < TOOLTIP_WIDTH + ANCHOR_GAP ? x - ANCHOR_GAP - TOOLTIP_WIDTH : x + ANCHOR_GAP;
+  return Math.max(0, Math.min(preferred, totalWidth - TOOLTIP_WIDTH));
+};
+
+// Floating value card that follows the cursor on chart hover. `left`/`top` are the final,
+// already-clamped position (see `tooltipLeft` above) — no further offset is applied here.
+const ChartTooltip = ({ children, left, top }) => (
+  <div className="chart_tooltip" style={{ left, top }}>
     {children}
   </div>
 );
