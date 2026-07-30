@@ -19,9 +19,14 @@ const ChapterIndicator = ({ chapters = [] }) => {
     const observer = new IntersectionObserver(
       entries => {
         for (const entry of entries) {
+          const idx = elements.indexOf(entry.target);
+          if (idx === -1) continue;
           if (entry.isIntersecting) {
-            const idx = elements.indexOf(entry.target);
-            if (idx !== -1) setActiveIndex(idx);
+            setActiveIndex(idx);
+          } else if (idx === 0 && entry.boundingClientRect.top > 0) {
+            // Chapter 1's top has scrolled back below the line, i.e. we've scrolled back up
+            // above it into the hero/nav — hide the pill rather than leaving it stuck on "01".
+            setActiveIndex(null);
           }
         }
       },
