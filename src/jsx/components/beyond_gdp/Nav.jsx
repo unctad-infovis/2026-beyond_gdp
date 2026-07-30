@@ -11,8 +11,10 @@ const ChevronIcon = () => (
 );
 
 // Only "Data dashboard" carries `children` today. The whole pill is the trigger (no separate
-// arrow segment) — hover opens the dropdown for pointer users, and the button is also
-// click-toggleable so touch/keyboard users (who get no hover event) can still reach it.
+// arrow segment) — hover opens the dropdown for pointer users. Click always *opens* (never
+// toggles closed) so it can't fight the hover state: a mouse user hovering-then-clicking would
+// otherwise immediately re-close it via toggle. Touch/keyboard users (no hover event) rely on
+// that click-to-open, then close via outside-click/Escape/mouseleave/selecting an item.
 const NavDropdownButton = ({ item }) => {
   const [open, setOpen] = useState(false);
   const containerRef = useRef(null);
@@ -26,7 +28,7 @@ const NavDropdownButton = ({ item }) => {
   return (
     // biome-ignore lint/a11y/noStaticElementInteractions: mouse-only hover affordance; the dropdown button itself remains fully keyboard/touch operable via click and Escape
     <div className="bgdp_nav_item" onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)} ref={containerRef}>
-      <button aria-expanded={open} aria-haspopup="menu" className="bgdp_nav_btn bgdp_nav_btn--dropdown" onClick={() => setOpen(o => !o)} onKeyDown={e => e.key === 'Escape' && setOpen(false)} type="button">
+      <button aria-expanded={open} aria-haspopup="menu" className="bgdp_nav_btn bgdp_nav_btn--dropdown" onClick={() => setOpen(true)} onKeyDown={e => e.key === 'Escape' && setOpen(false)} type="button">
         {item.label}
         <ChevronIcon />
       </button>
