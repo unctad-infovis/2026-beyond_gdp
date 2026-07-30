@@ -46,6 +46,14 @@
   }
   .bgdp_nav_item {
     position: relative;
+    &::after {
+      content: '';
+      height: 8px;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 100%;
+    }
     .bgdp_nav_btn--dropdown {
       align-items: center;
       display: inline-flex;
@@ -74,7 +82,7 @@
     flex-direction: column;
     gap: 2px;
     left: 0;
-    margin: 0;
+    margin: 8px 0 0;
     max-width: calc(100vw - 20px);
     min-width: 240px;
     padding: 8px;
