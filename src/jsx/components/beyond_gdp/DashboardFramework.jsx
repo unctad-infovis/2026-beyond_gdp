@@ -1,10 +1,7 @@
-// TODO(interactive-dashboard): the client hasn't finalized requirements for the interactive
-// version (dimension selector, keyboard/touch behaviour, ARIA state) — see draft.txt's
-// "INTERACTIVE DASHBOARD" note. This renders the full data model as a static, non-interactive
-// layout for now; swap in a selector-driven component once the spec is confirmed.
 import useIsVisible from '@unctad-infovis/general-tools/helpers/UseIsVisible.js';
 import DASHBOARD_ICONS from './dashboardIcons.jsx';
 import './DashboardFramework.css';
+import scrollToAnchor from './scrollToAnchor.js';
 
 const DashboardFramework = ({ dimensions = [], foundationalPrinciples = [], title }) => {
   const [ref, inView] = useIsVisible(0.2);
@@ -19,11 +16,22 @@ const DashboardFramework = ({ dimensions = [], foundationalPrinciples = [], titl
               <div className="df_pillar_head">{dim.label}</div>
               <ul className="df_pillar_list">
                 {dim.components.map(c => {
-                  const Icon = DASHBOARD_ICONS[c];
+                  const item = typeof c === 'string' ? { label: c } : c;
+                  const Icon = DASHBOARD_ICONS[item.label];
                   return (
-                    <li key={c}>
-                      <span className="df_pillar_icon">{Icon && <Icon />}</span>
-                      {c}
+                    <li className={item.href ? 'df_pillar_item--linked' : undefined} key={item.label}>
+                      {item.href ? (
+                        <button className="df_pillar_link" onClick={() => scrollToAnchor(item.href)} type="button">
+                          <span className="df_pillar_icon">{Icon && <Icon />}</span>
+                          {item.label}
+                          <span aria-hidden="true" className="df_pillar_dot" />
+                        </button>
+                      ) : (
+                        <>
+                          <span className="df_pillar_icon">{Icon && <Icon />}</span>
+                          {item.label}
+                        </>
+                      )}
                     </li>
                   );
                 })}

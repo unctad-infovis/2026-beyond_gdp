@@ -14,8 +14,8 @@ const renderInsight = text =>
     )
   );
 
-const ChartSection = ({ children, description, expandable, fitChart = false, insight = [], note, source, title }) => (
-  <figure className="cs_container">
+const ChartSection = ({ anchorClass, children, description, expandable, fitChart = false, insight = [], note, source, title }) => (
+  <figure className={`cs_container${anchorClass ? ` ${anchorClass}` : ''}`}>
     <div className="cs_header">
       <h4 className="cs_title">{title}</h4>
       {description && <p className="cs_subtitle">{description}</p>}

@@ -81,13 +81,13 @@ The dashboard changes the questions we ask about progress. These examples compar
     { key: 'planet', label: 'Respect for the Planet' }
   ]}
   dimensions={[
-    { key: 'current_wellbeing', label: 'Current well-being', variant: 'yellow', components: ['Material conditions and work', 'Health', 'Education', 'Security', 'Subjective well-being', 'Social cohesion', 'Quality of institutions', 'Environmental quality'] },
-    { key: 'equity_inclusion', label: 'Equity and inclusion', variant: 'purple', components: ['Wealth inequality', 'Income inequality', 'Poverty', 'Work inclusion', 'Regional inequalities', 'Overlapping deprivations'] },
-    { key: 'sustainability_resilience', label: 'Sustainability and resilience', variant: 'green', components: ['Produced capital', 'Human capital', 'Social capital', 'Institutional capital', 'Natural capital'] }
+    { key: 'current_wellbeing', label: 'Current well-being', variant: 'yellow', components: ['Material conditions and work', { label: 'Health', href: '.anchor_health' }, 'Education', { label: 'Security', href: '.anchor_security' }, 'Subjective well-being', { label: 'Social cohesion', href: '.anchor_trust' }, 'Quality of institutions', 'Environmental quality'] },
+    { key: 'equity_inclusion', label: 'Equity and inclusion', variant: 'purple', components: [{ label: 'Wealth inequality', href: '.anchor_wealth_inequality' }, { label: 'Income inequality', href: '.anchor_wage_gap' }, 'Poverty', 'Work inclusion', 'Regional inequalities', { label: 'Overlapping deprivations', href: '.anchor_prejudice' }] },
+    { key: 'sustainability_resilience', label: 'Sustainability and resilience', variant: 'green', components: ['Produced capital', 'Human capital', 'Social capital', 'Institutional capital', { label: 'Natural capital', href: '.anchor_emissions' }] }
   ]}
 />
 
-<SectionDivider tint={false} title="Current well-being">
+<SectionDivider anchorClass="anchor_current_wellbeing" tint={false} title="Current well-being">
 
 This dimension covers material conditions and work, health, education, security, subjective well-being, social cohesion, the quality of institutions and environmental quality. Let's look at some selected data.
 
@@ -96,6 +96,7 @@ This dimension covers material conditions and work, health, education, security,
 <ChartData file="2026-beyond_gdp_healthy_life_expectancy.json">
 {data => (
   <ChartSection
+    anchorClass="anchor_health"
     title="Higher incomes don't always mean longer, healthier lives"
     description="Gross domestic product (GDP) per capita and healthy life expectancy in years, Costa Rica, Italy and the United States of America, dollars and years, 2000–2019."
     source="UN Trade and Development (UNCTAD) based on World Bank and WHO."
@@ -114,6 +115,7 @@ This dimension covers material conditions and work, health, education, security,
 <ChartData file="2026-beyond_gdp_homicides.json">
 {data => (
   <ChartSection
+    anchorClass="anchor_security"
     title="Safety and security can worsen even as GDP improves"
     description="Median gross domestic product (GDP) per capita and intentional homicides, Latin America and the Caribbean and Eastern Asia, index: 2015=100 and homicides per 100,000 people, 2015–2023."
     insight={["Sustained GDP growth doesn't always deliver more safety. In Latin America, homicides increased nearly 50% from 2015 to 2023, even as GDP rose 17%. In fact, ==median homicide rates reached their highest level on record in 2023==. This contrasts sharply with Eastern Asia, where homicide rates were 29 times lower."]}
@@ -131,6 +133,7 @@ This dimension covers material conditions and work, health, education, security,
 <ChartData file="2026-beyond_gdp_trust.json">
 {data => (
   <ChartSection
+    anchorClass="anchor_trust"
     title="Economic growth doesn't automatically improve social cohesion"
     description="Median gross domestic product (GDP) per capita and share of people who say most people can be trusted, Northern Africa and Western Asia, index: 2014=100 and percentage, 2014 and 2022."
     source="World Bank and World Values Survey."
@@ -181,7 +184,7 @@ This dimension covers material conditions and work, health, education, security,
 )}
 </ChartData>
 
-<SectionDivider tint={false} title="Equity and inclusion">
+<SectionDivider anchorClass="anchor_equity_inclusion" tint={false} title="Equity and inclusion">
 
 This dimension measures whether opportunities and outcomes are shared. It covers wealth and income inequality, poverty, work inclusion, regional inequalities and overlapping deprivations. Let's look at some selected data.
 
@@ -190,6 +193,7 @@ This dimension measures whether opportunities and outcomes are shared. It covers
 <ChartData file="2026-beyond_gdp_wealth_inequality.json">
 {data => (
   <ChartSection
+    anchorClass="anchor_wealth_inequality"
     title="Faster growth can come with wider wealth inequality"
     description="Median gross domestic product (GDP) per capita and share of wealth held by the bottom 99%, Eastern and Southern Europe, index: 2000=100 and percentage, 2000–2019."
     source="UN Trade and Development (UNCTAD) based on World Bank and World Inequality Database."
@@ -209,6 +213,7 @@ This dimension measures whether opportunities and outcomes are shared. It covers
 <ChartData file="2026-beyond_gdp_wage_gap.json">
 {data => (
   <ChartSection
+    anchorClass="anchor_wage_gap"
     title="Economic growth outpaces gains in women's pay"
     description="Average gross domestic product (GDP) per capita and women's average hourly earnings as a share of men's, developed economies, dollars and percentage, 2010–2013 and 2020–2023 averages."
     source="World Bank and International Labour Organization via the United Nations Global SDG Indicators Database."
@@ -227,6 +232,7 @@ This dimension measures whether opportunities and outcomes are shared. It covers
 <ChartData file="2026-beyond_gdp_prejudice.json">
 {data => (
   <ChartSection
+    anchorClass="anchor_prejudice"
     title="Economic prosperity doesn't protect people against prejudice"
     description="Gross domestic product (GDP) per capita and share of people reporting discrimination or harassment in the previous 12 months, selected countries, dollars on a logarithmic scale and percentage, 2014–2024 average."
     insight={["Higher GDP isn't systematically linked to less discrimination or harassment. Focusing only on economic growth creates a major blind spot in people's lived experience."]}
@@ -247,7 +253,7 @@ This dimension measures whether opportunities and outcomes are shared. It covers
 )}
 </ChartData>
 
-<SectionDivider tint={false} title="Sustainability and resilience">
+<SectionDivider anchorClass="anchor_sustainability_resilience" tint={false} title="Sustainability and resilience">
 
 This dimension tracks whether progress can continue over time. It considers produced, human, social, institutional and natural capital.
 
@@ -256,6 +262,7 @@ This dimension tracks whether progress can continue over time. It considers prod
 <ChartData file="2026-beyond_gdp_emissions.json">
 {data => (
   <ChartSection
+    anchorClass="anchor_emissions"
     title="Global emissions rise even as emissions per person level off"
     description="Greenhouse gas emissions, by development status, billions of tonnes of carbon dioxide equivalent and median tonnes of carbon dioxide equivalent per person, 2000–2017."
     source="UN Trade and Development (UNCTAD) based on UNFCCC Secretariat via UN Global SDG Indicators Database."

@@ -7,6 +7,13 @@
     "image_url": "assets/img/2026-beyond_gdp_hero.jpg",
     "titleHighlight": "beyond GDP"
   },
-  "nav": [{ "label": "What the data shows", "href": ".anchor_data" }, { "label": "Data gaps", "href": ".anchor_gaps" }, { "label": "What next", "href": ".anchor_next" }],
+  "nav": [
+    {
+      "label": "Data dashboard",
+      "href": ".anchor_data",
+      "children": [{ "label": "Current well-being", "href": ".anchor_current_wellbeing" }, { "label": "Equity and inclusion", "href": ".anchor_equity_inclusion" }, { "label": "Sustainability and resilience", "href": ".anchor_sustainability_resilience" }]
+    },
+    { "label": "Recommendations", "href": ".anchor_gaps" }
+  ],
   "download_report_url": "https://unctad.org"
 }
