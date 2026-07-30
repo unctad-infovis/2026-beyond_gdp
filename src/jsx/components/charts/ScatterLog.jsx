@@ -13,11 +13,12 @@ import useChartSize from './useChartSize.js';
 const defaultXFormat = v => `$${formatNumber(v)}`;
 const defaultYFormat = v => `${Math.round(v * 10) / 10}%`;
 
-// Log-scale x-axis scatterplot; circles fade/pop in with a per-point stagger capped at 400ms
-// total so a ~100-point dataset doesn't take forever to finish appearing. No trendline, per
-// the draft's explicit instruction not to add one unless statistically validated. Hovering a
-// point shows its exact x/y values, matching the cdde EconomyBubbleChart pattern (per-point
-// mouse listeners rather than a bisector, since each point is its own discrete target).
+// Log-scale x-axis scatterplot; circles fade/pop in one after another (18ms apart, capped at
+// 2s total) so the sequence actually reads as points appearing in turn rather than a near-
+// simultaneous pop. No trendline, per the draft's explicit instruction not to add one unless
+// statistically validated. Hovering a point shows its exact x/y values, matching the cdde
+// EconomyBubbleChart pattern (per-point mouse listeners rather than a bisector, since each
+// point is its own discrete target).
 const ScatterLog = ({ isVisible = false, points = [], title, xFormat = defaultXFormat, xLabel = '', yFormat = defaultYFormat, yLabel = '' }) => {
   const [plotRef, size] = useChartSize(600);
   const axesRef = useRef(null);
@@ -76,7 +77,7 @@ const ScatterLog = ({ isVisible = false, points = [], title, xFormat = defaultXF
                   onMouseLeave={() => setHovered(null)}
                   onMouseMove={e => handlePointMove(e, p)}
                   r={4}
-                  style={{ transitionDelay: `${Math.min(idx * 3, 280)}ms` }}
+                  style={{ transitionDelay: `${Math.min(idx * 18, 2000)}ms` }}
                 />
               ))}
             </g>
