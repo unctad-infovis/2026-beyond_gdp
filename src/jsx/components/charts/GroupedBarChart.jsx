@@ -9,13 +9,38 @@ import formatChartValue from './formatChartValue.js';
 import './GroupedBarChart.css';
 import useChartSize from './useChartSize.js';
 
+// Rough average glyph width at --un-font-size-xxxxs (10px), used to decide whether a category
+// label needs to wrap onto further lines rather than overlapping its neighbors on narrow charts
+// (e.g. GapChart's "Sustainability & resilience" on a 4-category mobile-width band). Budgeted
+// at 85% of the band width (not the full band) so adjacent labels keep a small gap even when
+// both wrap to a similarly wide first line.
+const LABEL_CHAR_WIDTH = 5.2;
+const wrapCategoryLabel = (label, maxWidth) => {
+  const budget = maxWidth * 0.85;
+  if (label.length * LABEL_CHAR_WIDTH <= budget) return [label];
+  const words = label.split(' ');
+  const lines = [];
+  let current = '';
+  for (const word of words) {
+    const next = current ? `${current} ${word}` : word;
+    if (current && next.length * LABEL_CHAR_WIDTH > budget) {
+      lines.push(current);
+      current = word;
+    } else {
+      current = next;
+    }
+  }
+  if (current) lines.push(current);
+  return lines;
+};
+
 // Bars are React <rect>s whose height/y respond to the `inView` boolean and animate via CSS
 // transition + per-bar transitionDelay (not a D3 .transition()), so prefers-reduced-motion is
 // honored natively via CSS rather than needing a JS guard — same pattern as gstp's TradeShareChart.
 const GroupedBarChart = ({ categories = [], goal, goalLabel, isVisible = false, palette, series = [], title, valueFormat = 'number', values = {}, yLabel = '', yMax }) => {
   const [plotRef, size] = useChartSize(300);
 
-  const margin = { bottom: 32, left: 48, right: 8, top: 24 };
+  const margin = { bottom: 50, left: 48, right: 8, top: 24 };
   const width = Math.max(size.width - margin.left - margin.right, 0);
   const height = Math.max(size.height - margin.top - margin.bottom, 0);
 
@@ -56,8 +81,12 @@ const GroupedBarChart = ({ categories = [], goal, goalLabel, isVisible = false, 
                       </g>
                     );
                   })}
-                  <text className="gbc_category_label" x={x0.bandwidth() / 2} y={height + 20}>
-                    {c.label}
+                  <text className="gbc_category_label" x={x0.bandwidth() / 2} y={height + 16}>
+                    {wrapCategoryLabel(c.label, x0.bandwidth()).map((line, i) => (
+                      <tspan dy={i === 0 ? 0 : '1.1em'} key={line} x={x0.bandwidth() / 2}>
+                        {line}
+                      </tspan>
+                    ))}
                   </text>
                 </g>
               ))}

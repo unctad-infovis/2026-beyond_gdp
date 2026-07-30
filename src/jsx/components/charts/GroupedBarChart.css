@@ -16,7 +16,7 @@
   }
   .gbc_category_label {
     fill: var(--un-color-grey-text);
-    font-size: var(--un-font-size-xxxs);
+    font-size: var(--un-font-size-xxxxs);
     text-anchor: middle;
   }
   .gbc_goal {
