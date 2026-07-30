@@ -1,7 +1,6 @@
 #app-root-2026-beyond_gdp .app {
   .bgdp_chapter_banner {
     align-items: center;
-    border-top: 4px solid var(--main-color);
     display: flex;
     gap: 16px;
     margin: 0 auto;

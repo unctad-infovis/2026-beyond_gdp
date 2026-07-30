@@ -3,8 +3,9 @@ import './ChapterIndicator.css';
 
 // Sticky "you are here" pill tracking which of the page's 4 chapters is currently in view,
 // via IntersectionObserver on each chapter's wrapper — the rootMargin shrinks the observed
-// viewport to a thin band around its vertical center, so whichever chapter crosses that band
-// becomes active (a standard scrollspy technique).
+// viewport down to a zero-height line at its very top, so a chapter only becomes active once
+// its own top edge scrolls up to/past that line (not merely once it's "in view" generally),
+// matching a standard scrollspy pattern.
 const ChapterIndicator = ({ chapters = [] }) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -22,7 +23,7 @@ const ChapterIndicator = ({ chapters = [] }) => {
           }
         }
       },
-      { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
+      { rootMargin: '0px 0px -100% 0px', threshold: 0 }
     );
     for (const el of elements) observer.observe(el);
     return () => observer.disconnect();

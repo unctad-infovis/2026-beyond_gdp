@@ -4,9 +4,9 @@ import { DEVELOPMENT_STATUS_PALETTE_VARS } from './jsx/components/charts/chartCo
 <Header title={props.meta.hero.title} subtitle={props.meta.hero.subtitle} byline={props.meta.hero.byline} image_url={props.meta.hero.image_url} titleHighlight={props.meta.hero.titleHighlight} />
 
 {/* TODO: download_report_url in meta.json is a placeholder (unctad.org) until the client provides the real report link. */}
+<ProgressBar selector=".bgdp_main" />
 <Nav items={props.meta.nav} downloadUrl={props.meta.download_report_url} />
 <BackToTop selector=".bgdp_header" />
-<ProgressBar selector=".bgdp_main" />
 <ChapterIndicator
   chapters={[
     { number: '01', label: 'Introduction', selector: '.bgdp_chapter--intro' },
