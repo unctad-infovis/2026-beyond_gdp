@@ -86,26 +86,12 @@
     }
   }
   .df_pillar_icon {
-    align-items: center;
-    border-radius: 50%;
-    box-sizing: border-box;
-    color: #fff;
-    display: flex;
     flex: 0 0 auto;
     height: 32px;
-    justify-content: center;
     width: 32px;
-    svg {
-      height: 16px;
-      width: 16px;
-    }
   }
   .df_pillar--yellow {
     .df_pillar_head {
-      background: var(--un-color-yellow);
-      color: var(--un-color-yellow-brand-shade);
-    }
-    .df_pillar_icon {
       background: var(--un-color-yellow);
       color: var(--un-color-yellow-brand-shade);
     }
@@ -126,9 +112,6 @@
         background: var(--un-color-purple-light);
       }
     }
-    .df_pillar_icon {
-      background: var(--un-color-purple);
-    }
     .df_pillar_dot {
       background: var(--un-color-purple);
     }
@@ -140,9 +123,6 @@
     .df_pillar_head {
       background: var(--un-color-green);
       color: #fff;
-    }
-    .df_pillar_icon {
-      background: var(--un-color-green);
     }
     .df_pillar_dot {
       background: var(--un-color-green);
@@ -176,22 +156,10 @@
     font-size: var(--un-font-size-xs);
     font-weight: var(--un-font-weight-bold);
     gap: 9px;
-    padding: 9px 20px 9px 9px;
-  }
-  .df_principles_chip_icon {
-    align-items: center;
-    background: var(--un-color-red);
-    border-radius: 50%;
-    box-sizing: border-box;
-    color: #fff;
-    display: flex;
-    flex: 0 0 auto;
-    height: 26px;
-    justify-content: center;
-    width: 26px;
-    svg {
-      height: 13px;
-      width: 13px;
+    padding: 9px 20px 9px 12px;
+    .df_pillar_icon {
+      height: 22px;
+      width: 22px;
     }
   }
   @media (max-width: 820px) {
