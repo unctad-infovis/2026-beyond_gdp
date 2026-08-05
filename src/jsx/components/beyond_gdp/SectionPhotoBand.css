@@ -1,0 +1,32 @@
+#app-root-2026-beyond_gdp .app {
+  .bgdp_photo_band {
+    background-position: center;
+    background-size: cover;
+    box-sizing: border-box;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 54% 100%, 50% calc(100% - 34px), 46% 100%, 0 100%);
+    height: clamp(280px, 45vh, 480px);
+    position: relative;
+    &:after {
+      background: linear-gradient(180deg, rgba(0, 73, 135, 0.12), rgba(0, 73, 135, 0.42));
+      content: '';
+      inset: 0;
+      position: absolute;
+    }
+    .bgdp_photo_band_credit {
+      bottom: 44px;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: var(--un-font-size-xxxxs);
+      letter-spacing: 0.05em;
+      position: absolute;
+      right: 10px;
+      writing-mode: vertical-rl;
+      z-index: 1;
+    }
+  }
+  @media (max-width: 720px) {
+    .bgdp_photo_band {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 56% 100%, 50% calc(100% - 20px), 44% 100%, 0 100%);
+      height: min(280px, 42vh);
+    }
+  }
+}

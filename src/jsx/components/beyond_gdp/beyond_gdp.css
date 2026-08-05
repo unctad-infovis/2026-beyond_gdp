@@ -33,6 +33,10 @@
       }
     }
   }
+  .bgdp_chart_strip {
+    background: var(--un-color-blue-lightest);
+    padding: clamp(24px, 4vw, 40px) 0 1px;
+  }
   .bullet_list {
     font-size: var(--un-font-size-normal);
     line-height: var(--un-line-height-normal);

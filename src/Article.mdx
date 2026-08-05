@@ -1,7 +1,11 @@
+import Footer from './jsx/components/beyond_gdp/Footer.jsx';
+import PrincipleCards from './jsx/components/beyond_gdp/PrincipleCards.jsx';
 import PREJUDICE_COUNTRY_NAMES from './jsx/components/beyond_gdp/prejudiceCountryNames.js';
+import Relay from './jsx/components/beyond_gdp/Relay.jsx';
+import SectionPhotoBand from './jsx/components/beyond_gdp/SectionPhotoBand.jsx';
 import { DEVELOPMENT_STATUS_PALETTE_VARS } from './jsx/components/charts/chartColors.js';
 
-<Header title={props.meta.hero.title} subtitle={props.meta.hero.subtitle} byline={props.meta.hero.byline} image_url={props.meta.hero.image_url} titleHighlight={props.meta.hero.titleHighlight} />
+<Header title={props.meta.hero.title} subtitle={props.meta.hero.subtitle} byline={props.meta.hero.byline} image_url={props.meta.hero.image_url} titleHighlight={props.meta.hero.titleHighlight} downloadUrl={props.meta.download_report_url} />
 
 {/* TODO: download_report_url in meta.json is a placeholder (unctad.org) until the client provides the real report link. */}
 <ProgressBar selector=".bgdp_main" />
@@ -18,7 +22,6 @@ import { DEVELOPMENT_STATUS_PALETTE_VARS } from './jsx/components/charts/chartCo
 
 <div className="bgdp_main">
 <div className="bgdp_chapter bgdp_chapter--intro">
-<ChapterBanner number="01" title="Introduction" />
 <div className="container_section">
 <div className="container_section__wide bgdp_lead">
 
@@ -59,11 +62,7 @@ It requires a new understanding of what we mean by progress.
 
 Progress builds on the foundational principles of peace, human rights and respect for the planet, recognizing that:
 
-<ul className="bullet_list">
-  <li>Well-being is collective as well as individual</li>
-  <li>People and planet are deeply interconnected</li>
-  <li>Cross-border spillovers matter in an interdependent world</li>
-</ul>
+<PrincipleCards items={[{ icon: 'Peace', title: 'Well-being is collective as well as individual' }, { icon: 'Respect for the Planet', title: 'People and planet are deeply interconnected' }, { icon: 'Human Rights', title: 'Cross-border spillovers matter in an interdependent world' }]} />
 
 The proposed dashboard contains 31 indicators designed to help countries track progress beyond GDP:
 
@@ -79,8 +78,9 @@ The proposed dashboard contains 31 indicators designed to help countries track p
 </div>
 
 <div className="bgdp_chapter bgdp_chapter--data">
-<ChapterBanner number="02" title="Data" />
-<SectionDivider anchorClass="anchor_data" tint={false} title="What the selected data show">
+<SectionPhotoBand image="assets/img/divider_sun_hand.jpg" />
+<ChapterBanner anchorClass="anchor_data" eyebrow="Dashboard" title="What the selected data show" />
+<SectionDivider tint={false}>
 
 The dashboard changes the questions we ask about progress. These examples compare economic output with outcomes for people, society and the planet, highlighting insights and data gaps from indicators on the new dashboard for tracking progress beyond GDP.
 
@@ -100,16 +100,19 @@ The dashboard changes the questions we ask about progress. These examples compar
   ]}
 />
 
-<SectionDivider anchorClass="anchor_current_wellbeing" tint={false} title="Current well-being">
+<SectionDivider anchorClass="anchor_current_wellbeing" image="assets/img/divider_bridge_crossing.jpg" tint={false} title="Current well-being">
 
 This dimension covers material conditions and work, health, education, security, subjective well-being, social cohesion, the quality of institutions and environmental quality. Let's look at some selected data.
 
 </SectionDivider>
 
+<div className="bgdp_chart_strip">
+
 <ChartData file="2026-beyond_gdp_healthy_life_expectancy.json">
 {data => (
   <ChartSection
     anchorClass="anchor_health"
+    dimensionChip={{ label: 'Health', variant: 'yellow' }}
     title="Higher incomes don't always mean longer, healthier lives"
     description="Gross domestic product (GDP) per capita and healthy life expectancy in years, Costa Rica, Italy and the United States of America, dollars and years, 2000–2019."
     source="UN Trade and Development (UNCTAD) based on World Bank and WHO."
@@ -129,6 +132,7 @@ This dimension covers material conditions and work, health, education, security,
 {data => (
   <ChartSection
     anchorClass="anchor_security"
+    dimensionChip={{ label: 'Security', variant: 'yellow' }}
     title="Safety and security can worsen even as GDP improves"
     description="Median gross domestic product (GDP) per capita and intentional homicides, Latin America and the Caribbean and Eastern Asia, index: 2015=100 and homicides per 100,000 people, 2015–2023."
     insight={["Sustained GDP growth doesn't always deliver more safety. In Latin America, homicides increased nearly 50% from 2015 to 2023, even as GDP rose 17%. In fact, ==median homicide rates reached their highest level on record in 2023==. This contrasts sharply with Eastern Asia, where homicide rates were 29 times lower."]}
@@ -147,6 +151,7 @@ This dimension covers material conditions and work, health, education, security,
 {data => (
   <ChartSection
     anchorClass="anchor_trust"
+    dimensionChip={{ label: 'Social cohesion', variant: 'yellow' }}
     title="Economic growth doesn't automatically improve social cohesion"
     description="Median gross domestic product (GDP) per capita and share of people who say most people can be trusted, Northern Africa and Western Asia, index: 2014=100 and percentage, 2014 and 2022."
     source="World Bank and World Values Survey."
@@ -197,16 +202,21 @@ This dimension covers material conditions and work, health, education, security,
 )}
 </ChartData>
 
-<SectionDivider anchorClass="anchor_equity_inclusion" tint={false} title="Equity and inclusion">
+</div>
+
+<SectionDivider anchorClass="anchor_equity_inclusion" image="assets/img/divider_yacht_aerial.jpg" tint={false} title="Equity and inclusion">
 
 This dimension measures whether opportunities and outcomes are shared. It covers wealth and income inequality, poverty, work inclusion, regional inequalities and overlapping deprivations. Let's look at some selected data.
 
 </SectionDivider>
 
+<div className="bgdp_chart_strip">
+
 <ChartData file="2026-beyond_gdp_wealth_inequality.json">
 {data => (
   <ChartSection
     anchorClass="anchor_wealth_inequality"
+    dimensionChip={{ label: 'Wealth inequality', variant: 'purple' }}
     title="Faster growth can come with wider wealth inequality"
     description="Median gross domestic product (GDP) per capita and share of wealth held by the bottom 99%, Eastern and Southern Europe, index: 2000=100 and percentage, 2000–2019."
     source="UN Trade and Development (UNCTAD) based on World Bank and World Inequality Database."
@@ -227,6 +237,7 @@ This dimension measures whether opportunities and outcomes are shared. It covers
 {data => (
   <ChartSection
     anchorClass="anchor_wage_gap"
+    dimensionChip={{ label: 'Income inequality', variant: 'purple' }}
     title="Economic growth outpaces gains in women's pay"
     description="Average gross domestic product (GDP) per capita and women's average hourly earnings as a share of men's, developed economies, dollars and percentage, 2010–2013 and 2020–2023 averages."
     source="World Bank and International Labour Organization via the United Nations Global SDG Indicators Database."
@@ -246,6 +257,7 @@ This dimension measures whether opportunities and outcomes are shared. It covers
 {data => (
   <ChartSection
     anchorClass="anchor_prejudice"
+    dimensionChip={{ label: 'Overlapping deprivations', variant: 'purple' }}
     title="Economic prosperity doesn't protect people against prejudice"
     description="Gross domestic product (GDP) per capita and share of people reporting discrimination or harassment in the previous 12 months, selected countries, dollars on a logarithmic scale and percentage, 2014–2024 average."
     insight={["Higher GDP isn't systematically linked to less discrimination or harassment. Focusing only on economic growth creates a major blind spot in people's lived experience."]}
@@ -266,16 +278,21 @@ This dimension measures whether opportunities and outcomes are shared. It covers
 )}
 </ChartData>
 
-<SectionDivider anchorClass="anchor_sustainability_resilience" tint={false} title="Sustainability and resilience">
+</div>
+
+<SectionDivider anchorClass="anchor_sustainability_resilience" image="assets/img/divider_heart_earth.jpg" tint={false} title="Sustainability and resilience">
 
 This dimension tracks whether progress can continue over time. It considers produced, human, social, institutional and natural capital.
 
 </SectionDivider>
 
+<div className="bgdp_chart_strip">
+
 <ChartData file="2026-beyond_gdp_emissions.json">
 {data => (
   <ChartSection
     anchorClass="anchor_emissions"
+    dimensionChip={{ label: 'Natural capital', variant: 'green' }}
     title="Global emissions rise even as emissions per person level off"
     description="Greenhouse gas emissions, by development status, billions of tonnes of carbon dioxide equivalent and median tonnes of carbon dioxide equivalent per person, 2000–2017."
     source="UN Trade and Development (UNCTAD) based on UNFCCC Secretariat via UN Global SDG Indicators Database."
@@ -293,15 +310,20 @@ This dimension tracks whether progress can continue over time. It considers prod
 
 </div>
 
+</div>
+
 <div className="bgdp_chapter bgdp_chapter--recommendation">
-<ChapterBanner number="03" title="Recommendation" />
-<SectionDivider anchorClass="anchor_gaps" eyebrow="Data gaps" tint={false} title="How can we fix what we can't see?">
+<SectionPhotoBand image="assets/img/divider_hourglass.jpg" />
+<ChapterBanner anchorClass="anchor_gaps" eyebrow="Data gaps" title="How can we fix what we can't see?" />
+<SectionDivider tint={false}>
 
 The availability of Beyond GDP indicators varies widely across levels of development and dashboard dimensions.
 
 </SectionDivider>
 
 {/* TODO: no reference date is given in the draft for this calculation – confirm the extraction/latest-observation date before publish. */}
+<div className="bgdp_chart_strip">
+
 <ChartData file="2026-beyond_gdp_gap1.json">
 {data => (
   <ChartSection
@@ -315,8 +337,11 @@ The availability of Beyond GDP indicators varies widely across levels of develop
 )}
 </ChartData>
 
-<RevealList
-  layout="rows"
+</div>
+
+<SectionDivider eyebrow="Who must act" tint={false} title="Closing the gap is a shared responsibility">
+
+<Relay
   items={[
     { title: 'Governments', description: 'to invest in statistics, data and innovation' },
     { title: 'Countries', description: 'to set up national progress-measurement initiatives' },
@@ -326,11 +351,14 @@ The availability of Beyond GDP indicators varies widely across levels of develop
   ]}
 />
 
+</SectionDivider>
+
 </div>
 
 <div className="bgdp_chapter bgdp_chapter--next">
-<ChapterBanner number="04" title="What next" />
-<SectionDivider anchorClass="anchor_next" tint={false} title="UNCTAD's role in Beyond GDP">
+<SectionPhotoBand image="assets/img/divider_bridge_crossing.jpg" />
+<ChapterBanner anchorClass="anchor_next" eyebrow="Driving change" title="UNCTAD's role in Beyond GDP" />
+<SectionDivider tint={false}>
 
 UNCTAD's work on Beyond GDP focuses on supporting countries' statistical and analytical capacities, as requested at the UNCTAD16 conference.
 
@@ -344,19 +372,19 @@ We also work with countries and civil society organizations to ensure efficient 
 
 {/* TODO: draft says "add links where available" but supplies none – fill in real URLs before publish. */}
 <RevealList
-  layout="grid"
+  layout="cards"
   items={[
-    { title: 'Country capacity support', description: 'We work closely with DESA, UNDP and the Executive Office of the Secretary-General on capacity support.', links: [] },
-    { title: 'Methodological collaboration', description: "We contribute to methodology development under the Statistical Commission and the United Nations Chief Statisticians' network.", links: [{ label: 'UN Statistical Commission', url: '' }] },
-    { title: 'Youth engagement', description: 'We advance youth engagement with the Geneva Beyond Lab.', links: [{ label: 'Geneva Beyond Lab', url: '' }] },
-    { title: 'International exchange and partnership', description: 'We support the Global Alliance on Beyond GDP, launched in Sevilla and spearheaded by Spain. Together with the OECD and SEGIB, the Alliance facilitates country exchanges and learning.', links: [{ label: 'Global Alliance on Beyond GDP', url: '' }] }
+    { title: 'Country capacity support', description: 'We work closely with DESA, UNDP and the Executive Office of the Secretary-General on capacity support.', icon: 'country.svg', links: [] },
+    { title: 'Methodological collaboration', description: "We contribute to methodology development under the Statistical Commission and the United Nations Chief Statisticians' network.", icon: 'community.svg', links: [{ label: 'UN Statistical Commission', url: '' }] },
+    { title: 'Youth engagement', description: 'We advance youth engagement with the Geneva Beyond Lab.', icon: 'individual.svg', links: [{ label: 'Geneva Beyond Lab', url: '' }] },
+    { title: 'International exchange and partnership', description: 'We support the Global Alliance on Beyond GDP, launched in Sevilla and spearheaded by Spain. Together with the OECD and SEGIB, the Alliance facilitates country exchanges and learning.', icon: 'global.svg', links: [{ label: 'Global Alliance on Beyond GDP', url: '' }] }
   ]}
 />
 
-<SectionDivider tint={false} title="Moving beyond GDP requires a collective, long-term effort.">
+<Footer downloadUrl={props.meta.download_report_url} title="Moving beyond GDP requires a collective, long-term effort.">
 
 Governments, institutions and society need stronger data and evidence-based action.
 
-</SectionDivider>
+</Footer>
 </div>
 </div>

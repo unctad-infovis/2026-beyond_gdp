@@ -5,16 +5,35 @@
     gap: clamp(16px, 3vw, 40px);
     margin: clamp(24px, 4vw, 32px) 0 0;
     .st_tile {
-      background: #fff;
-      border: 1px solid var(--un-color-blue-lightest);
-      border-radius: 8px;
+      background: var(--un-color-blue-lightest);
+      border-radius: 18px;
       box-sizing: border-box;
       opacity: 0;
-      padding: 18px 26px;
+      overflow: hidden;
+      padding: 22px 28px;
+      position: relative;
       transform: translateY(12px);
       transition:
         opacity 0.5s ease-out,
-        transform 0.5s ease-out;
+        transform 0.5s ease-out,
+        box-shadow 0.25s ease;
+      &:hover {
+        box-shadow: 0 14px 34px rgba(0, 120, 190, 0.14);
+        transform: translateY(-4px);
+      }
+      &:before {
+        background-color: var(--un-color-blue);
+        content: '';
+        display: block;
+        height: 130px;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='70 105 230 215'><path d='M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z'/></svg>") no-repeat center / contain;
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='70 105 230 215'><path d='M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z'/></svg>") no-repeat center / contain;
+        opacity: 0.1;
+        position: absolute;
+        right: -26px;
+        top: -26px;
+        width: 130px;
+      }
       @media (prefers-reduced-motion: reduce) {
         transition: none;
       }

@@ -1,0 +1,91 @@
+#app-root-2026-beyond_gdp .app {
+  .rly_relay {
+    display: flex;
+    margin: clamp(32px, 5vw, 44px) 0 26px;
+  }
+  .rly_seg {
+    box-sizing: border-box;
+    clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%, 28px 50%);
+    color: #fff;
+    flex: 1;
+    margin-left: -16px;
+    opacity: 0;
+    padding: 28px 30px 28px 48px;
+    position: relative;
+    transform: translateX(-12px);
+    transition:
+      opacity 0.35s ease-out,
+      transform 0.35s ease-out;
+    &:first-child {
+      clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 50%, calc(100% - 28px) 100%, 0 100%);
+      margin-left: 0;
+      padding-left: 32px;
+    }
+    &:hover {
+      transform: translateY(-5px);
+    }
+    .rly_relay--inview & {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    &:nth-child(1) {
+      background: var(--un-color-blue-darkest);
+    }
+    &:nth-child(2) {
+      background: color-mix(in srgb, var(--un-color-blue-darkest) 75%, var(--un-color-blue) 25%);
+    }
+    &:nth-child(3) {
+      background: color-mix(in srgb, var(--un-color-blue-darkest) 50%, var(--un-color-blue) 50%);
+    }
+    &:nth-child(4) {
+      background: color-mix(in srgb, var(--un-color-blue-darkest) 25%, var(--un-color-blue) 75%);
+    }
+    &:nth-child(5) {
+      background: var(--un-color-blue);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+  .rly_n {
+    color: var(--un-color-yellow-brand);
+    font-size: var(--un-font-size-xxs);
+    font-weight: var(--un-font-weight-bolder);
+    letter-spacing: 0.16em;
+  }
+  .rly_title {
+    font-size: var(--un-font-size-normal);
+    line-height: 1.2;
+    margin: 8px 0 0;
+    &:after {
+      background: var(--un-color-yellow-brand);
+      border-radius: 2px;
+      content: '';
+      display: block;
+      height: 3px;
+      margin: 8px 0 10px;
+      width: 22px;
+    }
+  }
+  .rly_description {
+    font-size: var(--un-font-size-xxs);
+    line-height: 1.5;
+    margin: 0;
+    opacity: 0.94;
+  }
+  @media (max-width: 1000px) {
+    .rly_relay {
+      flex-direction: column;
+    }
+    .rly_seg {
+      clip-path: polygon(0 0, 50% 24px, 100% 0, 100% calc(100% - 24px), 50% 100%, 0 calc(100% - 24px));
+      margin-left: 0;
+      margin-top: -14px;
+      padding: 26px 30px 34px;
+      &:first-child {
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 24px), 50% 100%, 0 calc(100% - 24px));
+        margin-top: 0;
+      }
+    }
+  }
+}

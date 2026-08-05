@@ -1,3 +1,6 @@
+import { resolveAsset } from '@unctad-infovis/general-tools/helpers/BasePath.js';
+import DASHBOARD_ICONS from './dashboardIcons.jsx';
+import scrollToAnchor from './scrollToAnchor.js';
 import './ChartSection.css';
 
 // Insight paragraphs may wrap a clause in ==double equals== to mark it as the key takeaway,
@@ -14,41 +17,58 @@ const renderInsight = text =>
     )
   );
 
-const ChartSection = ({ anchorClass, children, description, expandable, fitChart = false, insight = [], note, source, title }) => (
-  <figure className={`cs_container${anchorClass ? ` ${anchorClass}` : ''}`}>
-    <div className="cs_header">
-      <h4 className="cs_title">{title}</h4>
-      {description && <p className="cs_subtitle">{description}</p>}
-    </div>
-    {insight.map(p => (
-      <p className="cs_insight" key={p.slice(0, 40)}>
-        {renderInsight(p)}
-      </p>
-    ))}
-    <div className={`cs_chart${fitChart ? ' cs_chart--fit' : ''}`}>{children}</div>
-    {expandable && (
-      <details className="cs_expandable">
-        <summary>{expandable.label}</summary>
-        {expandable.items.map(item => (
-          <p key={item.slice(0, 40)}>{item}</p>
-        ))}
-      </details>
-    )}
-    {(source || note) && (
-      <figcaption className="cs_meta">
-        {source && (
-          <p className="cs_meta_row">
-            <em>Source:</em> {source}
-          </p>
-        )}
-        {note && (
-          <p className="cs_meta_row">
-            <em>Note:</em> {note}
-          </p>
-        )}
-      </figcaption>
-    )}
-  </figure>
-);
+const ChartSection = ({ anchorClass, children, description, dimensionChip, expandable, fitChart = false, insight = [], note, source, title }) => {
+  const chipIcon = dimensionChip && DASHBOARD_ICONS[dimensionChip.label];
+
+  return (
+    <figure className={`cs_container${anchorClass ? ` ${anchorClass}` : ''}`}>
+      {dimensionChip && (
+        <div className="cs_chiprow">
+          <span className={`cs_dimchip cs_dimchip--${dimensionChip.variant}`}>
+            {chipIcon && <img alt="" aria-hidden="true" className="cs_dimchip_icon" src={resolveAsset(`assets/img/${chipIcon}`)} />}
+            {dimensionChip.label}
+          </span>
+        </div>
+      )}
+      <div className="cs_header">
+        <h4 className="cs_title">{title}</h4>
+        {description && <p className="cs_subtitle">{description}</p>}
+      </div>
+      {insight.map(p => (
+        <p className="cs_insight" key={p.slice(0, 40)}>
+          {renderInsight(p)}
+        </p>
+      ))}
+      <div className={`cs_chart${fitChart ? ' cs_chart--fit' : ''}`}>{children}</div>
+      {expandable && (
+        <details className="cs_expandable">
+          <summary>{expandable.label}</summary>
+          {expandable.items.map(item => (
+            <p key={item.slice(0, 40)}>{item}</p>
+          ))}
+        </details>
+      )}
+      {(source || note) && (
+        <figcaption className="cs_meta">
+          {source && (
+            <p className="cs_meta_row">
+              <em>Source:</em> {source}
+            </p>
+          )}
+          {note && (
+            <p className="cs_meta_row">
+              <em>Note:</em> {note}
+            </p>
+          )}
+        </figcaption>
+      )}
+      <div className="cs_backrow">
+        <button className="cs_backdash" onClick={() => scrollToAnchor('.anchor_data')} type="button">
+          ← Back to dashboard
+        </button>
+      </div>
+    </figure>
+  );
+};
 
 export default ChartSection;

@@ -1,22 +1,43 @@
 #app-root-2026-beyond_gdp .app {
   .bgdp_chapter_banner {
-    align-items: center;
-    display: flex;
-    gap: 16px;
-    margin: 0 auto;
-    max-width: 1100px;
-    padding: clamp(24px, 4vw, 40px) 10px 0;
-    .bgdp_chapter_banner_number {
-      color: var(--main-color);
-      font-size: var(--un-font-size-xxxl);
-      font-weight: var(--un-font-weight-boldest);
-      line-height: 1;
+    background: linear-gradient(115deg, var(--un-color-blue-darkest) 0%, var(--un-color-blue-dark) 55%, var(--un-color-blue) 100%);
+    overflow: hidden;
+    position: relative;
+    .bgdp_chapter_banner_watermark {
+      background-color: #fff;
+      height: 340px;
+      mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='70 105 230 215'><path d='M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z'/></svg>") no-repeat center / contain;
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='70 105 230 215'><path d='M76.3,317.4l107.9-106.4-107-102.2h92.2s117.8,102.3,117.8,102.3l-110,106.4h-100.9v-.1Z'/></svg>") no-repeat center / contain;
+      opacity: 0.14;
+      position: absolute;
+      right: -40px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 340px;
+    }
+    .bgdp_chapter_banner_inner {
+      margin: 0 auto;
+      max-width: 1100px;
+      padding: clamp(40px, 6vw, 72px) 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .bgdp_chapter_banner_eyebrow {
+      color: var(--un-color-yellow-brand);
+      display: block;
+      font-size: var(--un-font-size-xxs);
+      font-weight: var(--un-font-weight-bolder);
+      letter-spacing: 0.3em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
     }
     .bgdp_chapter_banner_title {
-      font-size: var(--un-font-size-normal);
-      font-weight: var(--un-font-weight-bold);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
+      color: #fff;
+      font-size: clamp(var(--un-font-size-xxl), 4.4vw, var(--un-font-size-xxxl));
+      font-weight: var(--un-font-weight-boldest);
+      margin: 0;
+      max-width: 900px;
+      padding: 0;
     }
   }
 }

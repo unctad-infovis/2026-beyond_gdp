@@ -19,7 +19,10 @@ const DashboardFramework = ({ dimensions = [], foundationalPrinciples = [], titl
         <div className="df_pillars">
           {dimensions.map((dim, idx) => (
             <div className={`df_pillar df_pillar--${dim.variant}`} key={dim.key} style={{ transitionDelay: `${idx * 84}ms` }}>
-              <div className="df_pillar_head">{dim.label}</div>
+              <div className="df_pillar_head">
+                <span>{dim.label}</span>
+                <span className="df_pillar_count">{dim.components.length} components</span>
+              </div>
               <ul className="df_pillar_list">
                 {dim.components.map(c => {
                   const item = typeof c === 'string' ? { label: c } : c;
@@ -29,7 +32,9 @@ const DashboardFramework = ({ dimensions = [], foundationalPrinciples = [], titl
                         <button className="df_pillar_link" onClick={() => scrollToAnchor(item.href)} type="button">
                           <DashboardIcon label={item.label} />
                           {item.label}
-                          <span aria-hidden="true" className="df_pillar_dot" />
+                          <span aria-hidden="true" className="df_pillar_go">
+                            → see the data
+                          </span>
                         </button>
                       ) : (
                         <>
@@ -53,6 +58,9 @@ const DashboardFramework = ({ dimensions = [], foundationalPrinciples = [], titl
             </span>
           ))}
         </div>
+        <p className="df_foot">
+          Components with <b>→ see the data</b> are illustrated with selected indicators below.
+        </p>
       </div>
     </div>
   );
