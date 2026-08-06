@@ -79,12 +79,12 @@
     display: flex;
     gap: 6px;
     position: relative;
-    &--primary {
-      justify-content: flex-end;
-    }
-    &--secondary {
-      justify-content: flex-start;
-    }
+  }
+  .dbr_bar_track--primary {
+    justify-content: flex-end;
+  }
+  .dbr_bar_track--secondary {
+    justify-content: flex-start;
   }
   .dbr_bar {
     border-radius: 2px;
