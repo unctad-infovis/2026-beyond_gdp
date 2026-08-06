@@ -67,7 +67,8 @@
       width: 22px;
     }
   }
-  .rly_description {
+  .rly_seg .rly_description {
+    color: #fff;
     font-size: var(--un-font-size-xxs);
     line-height: 1.5;
     margin: 0;
