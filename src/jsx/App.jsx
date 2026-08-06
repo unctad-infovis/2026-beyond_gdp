@@ -4,7 +4,6 @@ import { useRef } from 'react';
 
 import Article from '../Article.mdx';
 import ChapterBanner from './components/beyond_gdp/ChapterBanner.jsx';
-import ChapterIndicator from './components/beyond_gdp/ChapterIndicator.jsx';
 import ChartData from './components/beyond_gdp/ChartData.jsx';
 import ChartPair from './components/beyond_gdp/ChartPair.jsx';
 import ChartSection from './components/beyond_gdp/ChartSection.jsx';
@@ -31,7 +30,6 @@ const components = {
   BackToTop,
   BarPair,
   ChapterBanner,
-  ChapterIndicator,
   ChartData,
   ChartPair,
   ChartSection,

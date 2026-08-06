@@ -11,14 +11,6 @@ import { DEVELOPMENT_STATUS_PALETTE_VARS } from './jsx/components/charts/chartCo
 <ProgressBar selector=".bgdp_main" />
 <Nav items={props.meta.nav} downloadUrl={props.meta.download_report_url} />
 <BackToTop selector=".bgdp_header" />
-<ChapterIndicator
-  chapters={[
-    { number: '01', label: 'Introduction', selector: '.bgdp_chapter--intro' },
-    { number: '02', label: 'Data', selector: '.bgdp_chapter--data' },
-    { number: '03', label: 'Recommendation', selector: '.bgdp_chapter--recommendation' },
-    { number: '04', label: 'What next', selector: '.bgdp_chapter--next' }
-  ]}
-/>
 
 <div className="bgdp_main">
 <div className="bgdp_chapter bgdp_chapter--intro">
