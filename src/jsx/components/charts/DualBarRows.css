@@ -89,7 +89,7 @@
   .dbr_bar {
     border-radius: 2px;
     display: block;
-    height: 12px;
+    height: 20px;
     min-width: 2px;
     transition: width 0.42s ease-out;
     &.dbr_bar--primary {

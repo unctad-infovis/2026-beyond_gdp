@@ -47,11 +47,14 @@
     letter-spacing: 0.02em;
     padding: 14px 18px;
   }
+  .df_pillar_name {
+    max-width: 150px;
+  }
   .df_pillar_count {
     background: rgba(255, 255, 255, 0.25);
     border-radius: 999px;
     flex: none;
-    font-size: var(--un-font-size-xxxxs);
+    font-size: var(--un-font-size-xxxs);
     font-weight: var(--un-font-weight-bold);
     letter-spacing: 0.05em;
     padding: 3px 10px;
@@ -84,20 +87,23 @@
     }
   }
   .df_pillar_link {
-    align-items: center;
     all: unset;
+    align-items: center;
     cursor: pointer;
     display: flex;
     gap: 12px;
     width: 100%;
   }
   .df_pillar_go {
+    align-items: center;
+    display: flex;
     flex: none;
-    font-size: var(--un-font-size-xxxxs);
+    font-size: var(--un-font-size-xxxs);
     font-weight: var(--un-font-weight-bold);
     margin-left: auto;
     opacity: 0.6;
     transition: opacity 0.18s ease;
+    vertical-align: middle;
     white-space: nowrap;
     @media (prefers-reduced-motion: reduce) {
       transition: none;
@@ -115,7 +121,7 @@
   .df_pillar--yellow {
     .df_pillar_head {
       background: linear-gradient(100deg, #e89a0c, var(--un-color-yellow));
-      color: var(--un-color-yellow-brand-shade);
+      color: #fff;
     }
     .df_pillar_go {
       color: var(--un-color-yellow-brand-shade);
@@ -164,6 +170,7 @@
   }
   .df_principles_label {
     color: #fff;
+    flex: 1;
     font-size: var(--un-font-size-xs);
     font-weight: var(--un-font-weight-boldest);
     letter-spacing: 0.06em;

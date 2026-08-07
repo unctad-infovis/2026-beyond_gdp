@@ -12,16 +12,14 @@
     z-index: 10;
   }
   .chart_tooltip_heading {
-    color: var(--un-color-grey-text);
-    font-size: var(--un-font-size-xxxs);
+    color: #000;
+    font-size: var(--un-font-size-xxs);
     font-weight: var(--un-font-weight-bold);
-    letter-spacing: 0.06em;
     margin-bottom: 6px;
-    text-transform: uppercase;
-    white-space: nowrap;
+    white-space: wrap;
   }
   .chart_tooltip_row {
-    align-items: flex-start;
+    align-items: center;
     color: var(--un-color-blue-darkest);
     display: flex;
     font-size: var(--un-font-size-xxs);

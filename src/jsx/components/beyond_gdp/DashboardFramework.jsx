@@ -20,7 +20,7 @@ const DashboardFramework = ({ dimensions = [], foundationalPrinciples = [], titl
           {dimensions.map((dim, idx) => (
             <div className={`df_pillar df_pillar--${dim.variant}`} key={dim.key} style={{ transitionDelay: `${idx * 84}ms` }}>
               <div className="df_pillar_head">
-                <span>{dim.label}</span>
+                <span className="df_pillar_name">{dim.label}</span>
                 <span className="df_pillar_count">{dim.components.length} components</span>
               </div>
               <ul className="df_pillar_list">
@@ -31,7 +31,7 @@ const DashboardFramework = ({ dimensions = [], foundationalPrinciples = [], titl
                       {item.href ? (
                         <button className="df_pillar_link" onClick={() => scrollToAnchor(item.href)} type="button">
                           <DashboardIcon label={item.label} />
-                          {item.label}
+                          <span>{item.label}</span>
                           <span aria-hidden="true" className="df_pillar_go">
                             → see the data
                           </span>

@@ -1,7 +1,7 @@
 #app-root-2026-beyond_gdp .app {
   .sdv_image_wrap {
     margin: 0 0 20px;
-    max-width: 700px;
+    max-width: 100%;
     position: relative;
   }
   .sdv_image {
@@ -57,7 +57,8 @@
       font-size: var(--un-font-size-normal);
       line-height: var(--un-line-height-normal);
       margin: 0 0 20px 0;
-      max-width: 700px;
+      max-width: 100%;
+      width: 100%;
       padding: 0;
     }
   }

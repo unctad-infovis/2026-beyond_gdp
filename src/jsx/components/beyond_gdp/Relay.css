@@ -54,9 +54,10 @@
     letter-spacing: 0.16em;
   }
   .rly_title {
-    font-size: var(--un-font-size-normal);
+    font-size: var(--un-font-size-xl);
     line-height: 1.2;
     margin: 8px 0 0;
+    padding: 0px;
     &:after {
       background: var(--un-color-yellow-brand);
       border-radius: 2px;
@@ -64,7 +65,7 @@
       display: block;
       height: 3px;
       margin: 8px 0 10px;
-      width: 22px;
+      width: 40px;
     }
   }
   .rly_seg .rly_description {

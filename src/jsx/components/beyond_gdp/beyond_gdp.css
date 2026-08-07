@@ -7,7 +7,7 @@
       max-width: 100%;
     }
     p {
-      max-width: 760px;
+      max-width: 100%;
       margin: 0 0 20px 0;
     }
   }
@@ -15,6 +15,10 @@
     box-sizing: border-box;
     padding: clamp(40px, 6vw, 64px) 10px;
     width: 100%;
+    h3 {
+      font-weight: var(--un-font-weight-boldest);
+      font-size: var(--un-font-size-xxxl);
+    }
     &.container_section--tint {
       background: var(--un-color-blue-lightest);
       border-bottom: 1px solid #ece7e2;
@@ -34,7 +38,7 @@
     }
   }
   .bgdp_chart_strip {
-    background: var(--un-color-blue-lightest);
+    background: #f3f8fd;
     padding: clamp(24px, 4vw, 40px) 0 1px;
   }
   .bullet_list {

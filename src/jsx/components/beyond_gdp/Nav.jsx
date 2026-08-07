@@ -45,7 +45,7 @@ const NavDropdownButton = ({ item }) => {
   );
 };
 
-const Nav = ({ downloadUrl, items = [] }) => (
+const Nav = ({ items = [] }) => (
   <nav className="bgdp_nav">
     <div className="bgdp_nav_links">
       {items.map(item =>
@@ -58,7 +58,6 @@ const Nav = ({ downloadUrl, items = [] }) => (
         )
       )}
     </div>
-    {downloadUrl && <ButtonAnchor className="full_report" text="Download the report (PDF)" url={downloadUrl} />}
   </nav>
 );
 
