@@ -121,21 +121,20 @@ This dimension covers material conditions and work, health, education, security,
 )}
 </ChartData>
 
-{/* TODO: draft narrative and this chart's underlying data disagree on the region name – "Eastern and South-Eastern Asia" (draft prose) vs "Eastern Asia" (actual xlsx data label, used here as source of truth). Confirm the intended grouping name with the client. */}
 <ChartData file="2026-beyond_gdp_homicides.json">
 {data => (
   <ChartSection
     anchorClass="anchor_security"
     dimensionChip={{ label: 'Security', variant: 'yellow' }}
     title="Safety and security can worsen even as GDP improves"
-    description="Median gross domestic product (GDP) per capita and intentional homicides, Latin America and the Caribbean and Eastern Asia, index: 2015=100 and homicides per 100,000 people, 2015–2023."
-    insight={["Sustained GDP growth doesn't always deliver more safety. In Latin America, homicides increased nearly 50% from 2015 to 2023, even as GDP rose 17%. In fact, ==median homicide rates reached their highest level on record in 2023==. This contrasts sharply with Eastern Asia, where homicide rates were 29 times lower."]}
-    expandable={{ label: 'Countries in calculation', items: ['Eastern Asia: Japan, Malaysia, Mongolia, Myanmar, Republic of Korea, Singapore.', 'Latin America: Argentina, Barbados, Brazil, Chile, Colombia, Costa Rica, Dominica, Ecuador, Grenada, Guyana, Honduras, Jamaica, Mexico, Panama, Paraguay, Plurinational State of Bolivia, Saint Lucia, Suriname, Uruguay.'] }}
+    description="Median gross domestic product (GDP) per capita and intentional homicides, Latin America and the Caribbean and Eastern and South-Eastern Asia, index: 2015=100 and homicides per 100,000 people, 2015–2023."
+    insight={["Sustained GDP growth doesn't always deliver more safety. In Latin America, homicides increased nearly 50% from 2015 to 2023, even as GDP rose 17%. In fact, ==median homicide rates reached their highest level on record in 2023==. This contrasts sharply with Eastern and South-Eastern Asia, where homicide rates were 29 times lower."]}
+    expandable={{ label: 'Countries in calculation', items: ['Eastern and South-Eastern Asia: Japan, Malaysia, Mongolia, Myanmar, Republic of Korea, Singapore.', 'Latin America: Argentina, Barbados, Brazil, Chile, Colombia, Costa Rica, Dominica, Ecuador, Grenada, Guyana, Honduras, Jamaica, Mexico, Panama, Paraguay, Plurinational State of Bolivia, Saint Lucia, Suriname, Uruguay.'] }}
   >
     <ChartPair
       rightDelayMs={1400}
-      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita index, index 2015=100" yLabel="Gross domestic product (GDP) per capita, index 2015=100" yMin={90} yMax={121} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern Asia', label: 'Eastern Asia' }]} />}
-      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="homicides" isVisible={vis} title="Number of homicides per 100 000 people" yLabel="Number of homicides per 100 000 people" yMin={0} yMax={20} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern Asia', label: 'Eastern Asia' }]} />}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita index, index 2015=100" yLabel="Gross domestic product (GDP) per capita, index 2015=100" yMin={90} yMax={121} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern and South-Eastern Asia', label: 'Eastern and South-Eastern Asia' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="homicides" isVisible={vis} title="Number of homicides per 100 000 people" yLabel="Number of homicides per 100 000 people" yMin={0} yMax={20} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern and South-Eastern Asia', label: 'Eastern and South-Eastern Asia' }]} />}
     />
   </ChartSection>
 )}
