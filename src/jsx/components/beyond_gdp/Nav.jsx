@@ -1,4 +1,3 @@
-import ButtonAnchor from '@unctad-infovis/general-tools/components/ButtonAnchor.jsx';
 import useClickOutside from '@unctad-infovis/general-tools/helpers/UseClickOutside.js';
 import { useRef, useState } from 'react';
 import scrollToAnchor from './scrollToAnchor.js';
