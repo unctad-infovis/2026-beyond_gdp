@@ -1,57 +1,57 @@
 [
   {
     "date": 2015,
-    "UNCTAD_region": "Eastern Asia",
+    "UNCTAD_region": "Eastern and South-Eastern Asia",
     "gdp_per_capita": 100,
-    "homicides": 0.73552614730237
+    "homicides": 1.16500193770106
   },
   {
     "date": 2016,
-    "UNCTAD_region": "Eastern Asia",
-    "gdp_per_capita": 102.762900759394,
-    "homicides": 0.693986349015599
+    "UNCTAD_region": "Eastern and South-Eastern Asia",
+    "gdp_per_capita": 102.728286303331,
+    "homicides": 1.06420693870184
   },
   {
     "date": 2017,
-    "UNCTAD_region": "Eastern Asia",
-    "gdp_per_capita": 105.992723787686,
-    "homicides": 0.584621875068617
+    "UNCTAD_region": "Eastern and South-Eastern Asia",
+    "gdp_per_capita": 106.160638422629,
+    "homicides": 0.877989272577208
   },
   {
     "date": 2018,
-    "UNCTAD_region": "Eastern Asia",
-    "gdp_per_capita": 108.88610863396,
-    "homicides": 0.59836299503258
+    "UNCTAD_region": "Eastern and South-Eastern Asia",
+    "gdp_per_capita": 109.147589879429,
+    "homicides": 0.78989937888392
   },
   {
     "date": 2019,
-    "UNCTAD_region": "Eastern Asia",
-    "gdp_per_capita": 111.018639115951,
-    "homicides": 0.573715197653771
+    "UNCTAD_region": "Eastern and South-Eastern Asia",
+    "gdp_per_capita": 111.498669823158,
+    "homicides": 0.750366091072485
   },
   {
     "date": 2020,
-    "UNCTAD_region": "Eastern Asia",
-    "gdp_per_capita": 110.08935556111,
-    "homicides": 0.593924062354197
+    "UNCTAD_region": "Eastern and South-Eastern Asia",
+    "gdp_per_capita": 108.957516545279,
+    "homicides": 0.670233344227695
   },
   {
     "date": 2021,
-    "UNCTAD_region": "Eastern Asia",
-    "gdp_per_capita": 115.316124653824,
-    "homicides": 0.472531479878428
+    "UNCTAD_region": "Eastern and South-Eastern Asia",
+    "gdp_per_capita": 113.462261808871,
+    "homicides": 0.590675015007876
   },
   {
     "date": 2022,
-    "UNCTAD_region": "Eastern Asia",
-    "gdp_per_capita": 118.683754042113,
-    "homicides": 0.49630655708926
+    "UNCTAD_region": "Eastern and South-Eastern Asia",
+    "gdp_per_capita": 118.031415644023,
+    "homicides": 0.594019526936027
   },
   {
     "date": 2023,
-    "UNCTAD_region": "Eastern Asia",
-    "gdp_per_capita": 120.469162919262,
-    "homicides": 0.477306316584835
+    "UNCTAD_region": "Eastern and South-Eastern Asia",
+    "gdp_per_capita": 120.021425233648,
+    "homicides": 0.605899373649356
   },
   {
     "date": 2015,
