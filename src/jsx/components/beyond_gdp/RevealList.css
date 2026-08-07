@@ -80,9 +80,13 @@
       margin: 4px 0;
     }
     a {
+      text-decoration: none;
       color: var(--un-color-blue-text);
-      font-size: var(--un-font-size-xxxs);
+      font-size: var(--un-font-size-xs);
       font-weight: var(--un-font-weight-bold);
+    }
+    a:hover {
+      text-decoration: underline;
     }
   }
   .rl_container--cards .rl_item_title,
