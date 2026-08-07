@@ -30,7 +30,7 @@ Episodic shocks, such as financial crises and the COVID-19 pandemic, have reveal
 <StatTiles tiles={[{ value: 31, label: 'Indicators' }, { value: 4, label: 'Dimensions' }, { value: 2027, label: 'First national reporting', format: 'year' }]} />
 
 </div>
-<Timeline
+{/*<Timeline
   title="Milestones on the way to Beyond GDP"
   milestones={[
     { date: 'September 2024', title: 'Pact for the Future', label: 'With the Pact for the Future, UN Member States asked the UN Secretary-General to convene a High-Level Expert Group on Beyond GDP to "develop recommendations for a limited set of country-owned, universally applicable indicators of sustainable development that complement and go beyond gross domestic product (GDP)". The UN Department of Economic and Social Affairs (DESA), UN Trade and Development (UNCTAD), the UN Development Programme (UNDP) and the Executive Office of the Secretary-General supported the group as its co-secretariat.' },
@@ -40,12 +40,10 @@ Episodic shocks, such as financial crises and the COVID-19 pandemic, have reveal
     { date: 'July 2026', title: 'Capacity-building effort launched', label: "A global effort to develop countries' technical capacities to measure progress Beyond GDP is launched by DESA, UNCTAD, UNDP and the Executive Office of the Secretary-General to collect feedback on the feasibility and relevance of the metrics to shape indicator refinement." },
     { date: 'From 2027', title: 'National reporting begins', label: 'Data reporting is recommended to start in 2027, as governments are invited to establish national progress-measuring initiatives using the proposed dashboard, tailored to country-specific needs and priorities.', current: true }
   ]}
-/>
+/>*/}
 </div>
 
 {/* TODO: draft has no explicit heading for this timeline beyond "PROPOSAL: Present the below as an expandable timeline" – confirm the heading with the client before publish. */}
-
-<SectionPhotoBand image="assets/img/divider_heart_earth.jpg" />
 
 <div className="container_section">
 <div className="container_section__wide">
@@ -72,8 +70,9 @@ The proposed dashboard contains 31 indicators designed to help countries track p
 </div>
 
 <div className="bgdp_chapter bgdp_chapter--data">
-<SectionPhotoBand image="assets/img/divider_hourglass.jpg" />
 <ChapterBanner anchorClass="anchor_data" eyebrow="Dashboard" title="What the selected data show" />
+<SectionPhotoBand image="assets/img/divider_heart_earth.jpg" />
+
 <SectionDivider tint={false}>
 
 The dashboard changes the questions we ask about progress. These examples compare economic output with outcomes for people, society and the planet, highlighting insights and data gaps from indicators on the new dashboard for tracking progress beyond GDP.
@@ -110,7 +109,7 @@ This dimension covers material conditions and work, health, education, security,
     title="Higher incomes don't always mean longer, healthier lives"
     description="Gross domestic product (GDP) per capita and healthy life expectancy in years, Costa Rica, Italy and the United States of America, dollars and years, 2000–2019."
     source="UN Trade and Development (UNCTAD) based on World Bank and WHO."
-    insight={["Higher GDP doesn't always translate into more well-being. Costa Rica's GDP per capita is less than one quarter of the United States level. Yet ==its healthy life expectancy is higher==. In Italy, healthy life expectancy continued to improve despite economic slowdown."]}
+    insight={["Higher GDP doesn't always translate into more well-being. Costa Rica's GDP per capita is less than one quarter of the United States level. Yet its healthy life expectancy is higher. In Italy, healthy life expectancy continued to improve despite economic slowdown."]}
   >
     <ChartPair
       rightDelayMs={1400}
@@ -128,7 +127,7 @@ This dimension covers material conditions and work, health, education, security,
     dimensionChip={{ label: 'Security', variant: 'yellow' }}
     title="Safety and security can worsen even as GDP improves"
     description="Median gross domestic product (GDP) per capita and intentional homicides, Latin America and the Caribbean and Eastern and South-Eastern Asia, index: 2015=100 and homicides per 100,000 people, 2015–2023."
-    insight={["Sustained GDP growth doesn't always deliver more safety. In Latin America, homicides increased nearly 50% from 2015 to 2023, even as GDP rose 17%. In fact, ==median homicide rates reached their highest level on record in 2023==. This contrasts sharply with Eastern and South-Eastern Asia, where homicide rates were 29 times lower."]}
+    insight={["Sustained GDP growth doesn't always deliver more safety. In Latin America, homicides increased nearly 50% from 2015 to 2023, even as GDP rose 17%. In fact, median homicide rates reached their highest level on record in 2023. This contrasts sharply with Eastern and South-Eastern Asia, where homicide rates were 29 times lower."]}
     expandable={{ label: 'Countries in calculation', items: ['Eastern and South-Eastern Asia: Japan, Malaysia, Mongolia, Myanmar, Republic of Korea, Singapore.', 'Latin America: Argentina, Barbados, Brazil, Chile, Colombia, Costa Rica, Dominica, Ecuador, Grenada, Guyana, Honduras, Jamaica, Mexico, Panama, Paraguay, Plurinational State of Bolivia, Saint Lucia, Suriname, Uruguay.'] }}
   >
     <ChartPair
@@ -234,7 +233,7 @@ This dimension measures whether opportunities and outcomes are shared. It covers
     title="Economic growth outpaces gains in women's pay"
     description="Average gross domestic product (GDP) per capita and women's average hourly earnings as a share of men's, developed economies, dollars and percentage, 2010–2013 and 2020–2023 averages."
     source="World Bank and International Labour Organization via the United Nations Global SDG Indicators Database."
-    insight={["GDP growth can be slower for one segment of the population. Average GDP per capita in developed economies rose 12% over a 10-year period, but ==women's pay relative to men's improved only 1%, less than one tenth as much==."]}
+    insight={["GDP growth can be slower for one segment of the population. Average GDP per capita in developed economies rose 12% over a 10-year period, but women's pay relative to men's improved only 1%, less than one tenth as much."]}
     expandable={{ label: 'Countries in calculation', items: ['Bosnia and Herzegovina, Czechia, Finland, France, Greece, Hungary, Italy, Portugal, Republic of Korea, Republic of Moldova, Romania, Slovakia, Spain, Sweden, Switzerland, United Kingdom of Great Britain and Northern Ireland, United States of America.'] }}
   >
     <ChartPair
@@ -306,8 +305,8 @@ This dimension tracks whether progress can continue over time. It considers prod
 </div>
 
 <div className="bgdp_chapter bgdp_chapter--recommendation">
-<SectionPhotoBand image="assets/img/divider_bridge_crossing.jpg" />
 <ChapterBanner anchorClass="anchor_gaps" eyebrow="Data gaps" title="How can we fix what we can't see?" />
+<SectionPhotoBand image="assets/img/divider_bridge_crossing.jpg" />
 <SectionDivider tint={false}>
 
 The availability of Beyond GDP indicators varies widely across levels of development and dashboard dimensions.
@@ -332,7 +331,9 @@ The availability of Beyond GDP indicators varies widely across levels of develop
 
 </div>
 
-<SectionDivider eyebrow="Who must act" tint={false} title="Closing the gap is a shared responsibility">
+<SectionDivider eyebrow="Who must act" tint={false} title="A shared effort to move beyond GDP">
+
+The high-level expert group's recommendations call on:
 
 <Relay
   items={[
