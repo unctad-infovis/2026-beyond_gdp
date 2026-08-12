@@ -6,12 +6,6 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 54% 100%, 50% calc(100% - 34px), 46% 100%, 0 100%);
     height: clamp(280px, 45vh, 480px);
     position: relative;
-    &:after {
-      background: linear-gradient(180deg, rgba(0, 73, 135, 0.12), rgba(0, 73, 135, 0.42));
-      content: '';
-      inset: 0;
-      position: absolute;
-    }
     .bgdp_photo_band_credit {
       bottom: 44px;
       color: rgba(255, 255, 255, 0.85);
