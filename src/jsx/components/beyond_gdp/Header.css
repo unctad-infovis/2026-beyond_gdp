@@ -24,11 +24,12 @@
     }
     .bgdp_header_title {
       color: #fff;
-      font-size: clamp(var(--un-font-size-xxxl), 7vw, var(--un-font-size-xxxxl));
+      /* Hardcoded (not a token) to match the design proposal's 108px hero scale — no font-size token reaches this size. */
+      font-size: clamp(52px, 8.5vw, 108px);
       font-weight: var(--un-font-weight-boldest);
       line-height: var(--un-line-height-small);
       margin: 0 0 12px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 1);
+      text-shadow: 0 2px 30px rgba(0, 40, 70, 0.35);
     }
     .bgdp_header_title_highlight {
       color: var(--un-color-yellow-brand);
