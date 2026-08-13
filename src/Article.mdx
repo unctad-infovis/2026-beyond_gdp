@@ -3,7 +3,7 @@ import PrincipleCards from './jsx/components/beyond_gdp/PrincipleCards.jsx';
 import PREJUDICE_COUNTRY_NAMES from './jsx/components/beyond_gdp/prejudiceCountryNames.js';
 import Relay from './jsx/components/beyond_gdp/Relay.jsx';
 import SectionPhotoBand from './jsx/components/beyond_gdp/SectionPhotoBand.jsx';
-import { DEVELOPMENT_STATUS_PALETTE_VARS } from './jsx/components/charts/chartColors.js';
+import { DEVELOPMENT_STATUS_PALETTE_VARS, PAIR_PALETTE_VARS } from './jsx/components/charts/chartColors.js';
 
 <Header title={props.meta.hero.title} subtitle={props.meta.hero.subtitle} byline={props.meta.hero.byline} image_url={props.meta.hero.image_url} titleHighlight={props.meta.hero.titleHighlight} downloadUrl={props.meta.download_report_url} />
 
@@ -157,6 +157,7 @@ This dimension covers material conditions and work, health, education, security,
           title="Gross domestic product (GDP) per capita, index 2014=100"
           yLabel="Gross domestic product (GDP) per capita, index 2014=100"
           yMax={150}
+          palette={PAIR_PALETTE_VARS}
           categories={[{ key: 'Northern Africa', label: 'Northern Africa' }, { key: 'Western Asia', label: 'Western Asia' }]}
           series={data.years.map(y => ({ key: String(y), label: String(y) }))}
           values={Object.fromEntries(Object.entries(data.regions).map(([region, r]) => [region, Object.fromEntries(data.years.map((y, i) => [String(y), r.gdp_index[i]]))]))}
@@ -169,6 +170,7 @@ This dimension covers material conditions and work, health, education, security,
           yLabel="Share who trust most people, per cent"
           yMax={15}
           valueFormat=""
+          palette={PAIR_PALETTE_VARS}
           categories={[{ key: 'Northern Africa', label: 'Northern Africa' }, { key: 'Western Asia', label: 'Western Asia' }]}
           series={data.years.map(y => ({ key: String(y), label: String(y) }))}
           values={Object.fromEntries(Object.entries(data.regions).map(([region, r]) => [region, Object.fromEntries(data.years.map((y, i) => [String(y), r.trust_pct[i]]))]))}
