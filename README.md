@@ -8,6 +8,19 @@ Looking Beyond GDP is a UNCTAD minisite illustrating the UN Secretary-General's 
 
 Content is authored in MDX (`src/Article.mdx`) and rendered as a standalone React application embeddable within UNCTAD's Drupal platform. Charts are native D3 (line, grouped bar, bar-pair, dual-bar-rows, log-scale scatter), each animating in on scroll and offering hover tooltips with exact values.
 
+## Embedding
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.min.js?v=1"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp.min.css?v=1">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+Update the `?v=` query parameter to match the current build version to bust the cache.
+
 ## Rights of usage
 
 Contact Teemo Tebest.
