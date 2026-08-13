@@ -112,6 +112,11 @@
       max-width: calc(600px + 2px + 2 * clamp(16px, 3vw, 28px));
     }
   }
+  .cs_share {
+    display: flex;
+    justify-content: flex-start;
+    margin: 0 0 16px;
+  }
   .cs_loading {
     background: #fff;
     border: 1px solid var(--un-color-grey-lightest);
