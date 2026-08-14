@@ -27,17 +27,44 @@ These limitations are reflected in real-world outcomes. GDP growth has frequentl
 
 Episodic shocks, such as financial crises and the COVID-19 pandemic, have revealed systemic weaknesses. Long-term structural pressures, including environmental degradation, inequality, geopolitical tensions and democratic challenges, have further underscored the limitations of relying on GDP alone.
 
-<StatTiles tiles={[{ value: 31, label: 'Indicators' }, { value: 4, label: 'Dimensions' }, { value: 2027, label: 'First national reporting', format: 'year' }]} />
+<StatTiles tiles={[{ value: 31, label: 'Indicators', url: 'https://www.un.org/sites/un2.un.org/files/high-level_expert_group_on_beyond_gdp_final_report.pdf#page=24' }, { value: 4, label: 'Dimensions', url: 'https://www.un.org/sites/un2.un.org/files/high-level_expert_group_on_beyond_gdp_final_report.pdf#page=20' }, { value: 2026, label: 'Country engagement', format: 'year', url: 'https://www.un.org/sites/un2.un.org/files/high-level_expert_group_on_beyond_gdp_final_report.pdf#page=35' }]} />
 
 </div>
 <Timeline
   title="Milestones on the way to Beyond GDP"
   milestones={[
-    { date: 'September 2015', title: 'SDG target 17.19 adopted', label: 'Under the 2030 Agenda for Sustainable Development, Sustainable Development Goal (SDG) target 17.19 aims to do the following: "By 2030, build on existing initiatives to develop measurements of progress on sustainable development that complement gross domestic product, and support statistical capacity-building in developing countries."' },
-    { date: 'September 2024', title: 'Pact for the Future', label: 'With the Pact for the Future, UN Member States asked the UN Secretary-General to convene a High-Level Expert Group on Beyond GDP to "develop recommendations for a limited set of country-owned, universally applicable indicators of sustainable development that complement and go beyond gross domestic product (GDP)".' },
-    { date: '7 May 2026', title: 'Final report released', label: 'The expert group delivered its report, Counting what counts: A compass of progress for people and planet. The UN Department of Economic and Social Affairs (DESA), UN Trade and Development (UNCTAD), the UN Development Programme (UNDP) and the Executive Office of the Secretary-General served as the co-secretariat.' },
-    { date: 'June 2026', title: 'Country engagement begins', label: 'In coordination with the Executive Office of the Secretary-General, UNCTAD and UNDP began engaging with the first countries to experiment with the metrics and collect feedback on their feasibility and relevance in national contexts, to help shape the refinement of global indicators, a process led by DESA under the UN Statistical Commission.' },
-    { date: 'From 2027', title: 'National reporting begins', label: 'The expert group recommends that reporting data on the metrics begin in 2027. Governments are invited to establish national progress-measuring initiatives using the proposed dashboard, tailored to country-specific needs and priorities.', current: true }
+    {
+      date: 'September 2015',
+      title: 'SDG target 17.19 adopted',
+      label: (
+        <>
+          Under the <a href="https://sdgs.un.org/2030agenda" rel="noreferrer" target="_blank">2030 Agenda for Sustainable Development</a>, Sustainable Development Goal (SDG) target 17.19 aims to "By 2030, build on existing initiatives to develop measurements of progress on sustainable development that complement gross domestic product, and support statistical capacity-building in developing countries."
+        </>
+      )
+    },
+    {
+      date: 'September 2024',
+      title: 'Pact for the Future',
+      label: (
+        <>
+          With the <a href="https://www.un.org/sites/un2.un.org/files/sotf-pact_for_the_future_adopted.pdf" rel="noreferrer" target="_blank">Pact for the Future</a>, UN Member States asked the UN Secretary-General to convene a <a href="https://www.un.org/en/beyondGDP" rel="noreferrer" target="_blank">High-Level Expert Group on Beyond GDP</a> to "develop recommendations for a limited set of country-owned, universally applicable indicators of sustainable development that complement and go beyond gross domestic product (GDP)".
+        </>
+      )
+    },
+    {
+      date: '7 May 2026',
+      title: 'Final report released',
+      label: (
+        <>
+          The expert group delivered its report, <a href="https://unctad.org/publication/counting-what-counts-compass-progress-people-and-planet">Counting what counts: A compass of progress for people and planet</a>. The UN Department of Economic and Social Affairs (DESA), UN Trade and Development (UNCTAD), the UN Development Programme (UNDP) and the Executive Office of the Secretary-General served as the co-secretariat.
+        </>
+      )
+    },
+    {
+      date: 'June 2026',
+      title: 'Country engagement begins',
+      label: 'In coordination with the Executive Office of the Secretary-General, UNCTAD and UNDP began engaging with the first countries to experiment with the metrics and collect feedback on their feasibility and relevance in national contexts, to help shape the refinement of global indicators, a process led by DESA under the UN Statistical Commission. At the same time, an intergovernmental process was initiated in preparation for the 81st UN General Assembly to agree on global norms for measuring progress.'
+    }
   ]}
 />
 </div>
@@ -69,7 +96,7 @@ The proposed dashboard contains 31 indicators designed to help countries track p
 </div>
 
 <div className="bgdp_chapter bgdp_chapter--data">
-<ChapterBanner anchorClass="anchor_data" eyebrow="Dashboard" title="What the selected data show" />
+<ChapterBanner anchorClass="anchor_data" eyebrow="Insights" title="What the selected data show" />
 <SectionPhotoBand image="assets/img/divider_heart_earth.jpg" />
 
 <SectionDivider tint={false}>
@@ -108,7 +135,7 @@ This dimension covers material conditions and work, health, education, security,
     title="Higher incomes don't always mean longer, healthier lives"
     description="Gross domestic product (GDP) per capita and healthy life expectancy in years, Costa Rica, Italy and the United States of America, dollars and years, 2000–2019."
     source="UN Trade and Development (UNCTAD) based on World Bank and WHO."
-    insight={["Higher GDP doesn't always translate into more well-being. Costa Rica's GDP per capita is less than one quarter of the United States level. Yet its healthy life expectancy is higher. In Italy, healthy life expectancy continued to improve despite economic slowdown."]}
+    insight={["Higher GDP doesn't always translate into more well-being. Costa Rica's GDP per capita is less than one quarter of the United States' level. Yet its healthy life expectancy is higher. In Italy, healthy life expectancy continued to improve despite economic slowdown."]}
   >
     <ChartPair
       rightDelayMs={1400}
@@ -128,11 +155,12 @@ This dimension covers material conditions and work, health, education, security,
     description="Median gross domestic product (GDP) per capita and intentional homicides, Latin America and the Caribbean and Eastern and South-Eastern Asia, index: 2015=100 and homicides per 100,000 people, 2015–2023."
     insight={["Sustained GDP growth doesn't always deliver more safety. In Latin America, homicides increased nearly 50% from 2015 to 2023, even as GDP rose 17%. In fact, median homicide rates reached their highest level on record in 2023. This contrasts sharply with Eastern and South-Eastern Asia, where homicide rates were 29 times lower."]}
     expandable={{ label: 'Countries in calculation', items: ['Eastern and South-Eastern Asia: Japan, Malaysia, Mongolia, Myanmar, Republic of Korea, Singapore.', 'Latin America: Argentina, Barbados, Brazil, Chile, Colombia, Costa Rica, Dominica, Ecuador, Grenada, Guyana, Honduras, Jamaica, Mexico, Panama, Paraguay, Plurinational State of Bolivia, Saint Lucia, Suriname, Uruguay.'] }}
+    source="World Bank."
   >
     <ChartPair
       rightDelayMs={1400}
       leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita index, index 2015=100" yLabel="Gross domestic product (GDP) per capita, index 2015=100" yMin={90} yMax={121} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern and South-Eastern Asia', label: 'Eastern and South-Eastern Asia' }]} />}
-      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="homicides" isVisible={vis} title="Number of homicides per 100 000 people" yLabel="Number of homicides per 100 000 people" yMin={0} yMax={20} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern and South-Eastern Asia', label: 'Eastern and South-Eastern Asia' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="homicides" isVisible={vis} title="Number of victims of homicide per 100 000 people" yLabel="Number of victims of homicide per 100 000 people" yMin={0} yMax={20} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'Latin America and the Caribbean' }, { key: 'Eastern and South-Eastern Asia', label: 'Eastern and South-Eastern Asia' }]} />}
     />
   </ChartSection>
 )}
@@ -166,8 +194,8 @@ This dimension covers material conditions and work, health, education, security,
       rightChart={vis => (
         <GroupedBarChart
           isVisible={vis}
-          title="Share who trust most people, per cent"
-          yLabel="Share who trust most people, per cent"
+          title="Share of people who say most people can be trusted, per cent"
+          yLabel="Share of people who say most people can be trusted, per cent"
           yMax={15}
           valueFormat=""
           palette={PAIR_PALETTE_VARS}
@@ -253,6 +281,7 @@ This dimension measures whether opportunities and outcomes are shared. It covers
     title="Economic prosperity doesn't protect people against prejudice"
     description="Gross domestic product (GDP) per capita and share of people reporting discrimination or harassment in the previous 12 months, selected countries, dollars on a logarithmic scale and percentage, 2014–2024 average."
     insight={["Higher GDP isn't systematically linked to less discrimination or harassment. Focusing only on economic growth creates a major blind spot in people's lived experience."]}
+    source="World Bank and Office of the United Nations High Commissioner for Human Rights (OHCHR)."
     fitChart
   >
     <RevealOnView>

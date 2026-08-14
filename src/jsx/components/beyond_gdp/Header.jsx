@@ -22,7 +22,7 @@ const Header = ({ byline, downloadUrl, image_url, subtitle, title, titleHighligh
       <p className="bgdp_header_subtitle">{subtitle}</p>
       {byline && <p className="bgdp_header_byline">{byline}</p>}
       <div className="bgdp_header_ctas">
-        <ButtonAnchor className="bgdp_header_cta bgdp_header_cta--primary" text="Explore the dashboard" url=".anchor_data" />
+        <ButtonAnchor className="bgdp_header_cta bgdp_header_cta--primary" text="Explore insights" url=".anchor_data" />
         {downloadUrl && <ButtonAnchor className="bgdp_header_cta bgdp_header_cta--ghost" text="Download report (PDF)" url={downloadUrl} />}
       </div>
       <ButtonShare url={window.location.href} defaultOpen position="static" iconBg="rgba(0,0,0,0.45)" iconHoverBg="color-mix(in srgb, var(--un-color-yellow-brand) 75%, transparent)" iconColor="#fff" iconHoverColor="#000" size={36} />

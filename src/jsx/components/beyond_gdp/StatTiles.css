@@ -41,6 +41,26 @@
         opacity: 1;
         transform: translateY(0);
       }
+      &.st_tile--link {
+        color: inherit;
+        text-decoration: none;
+        &:after {
+          background-color: var(--un-color-blue);
+          bottom: 14px;
+          content: '';
+          display: block;
+          height: 16px;
+          mask:
+            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path d='M432 320h-32a16 16 0 0 0-16 16v96H64V160h96a16 16 0 0 0 16-16V112a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v288a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48v-96a16 16 0 0 0-16-16zM488 0h-128c-21.4 0-32.1 25.9-17 41l35.7 35.7L135 320.4a24 24 0 0 0 0 34L157.7 377a24 24 0 0 0 34 0L435.3 133.3 471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z'/></svg>")
+            no-repeat center / contain;
+          -webkit-mask:
+            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><path d='M432 320h-32a16 16 0 0 0-16 16v96H64V160h96a16 16 0 0 0 16-16V112a16 16 0 0 0-16-16H48a48 48 0 0 0-48 48v288a48 48 0 0 0 48 48h288a48 48 0 0 0 48-48v-96a16 16 0 0 0-16-16zM488 0h-128c-21.4 0-32.1 25.9-17 41l35.7 35.7L135 320.4a24 24 0 0 0 0 34L157.7 377a24 24 0 0 0 34 0L435.3 133.3 471 169c15 15 41 4.5 41-17V24a24 24 0 0 0-24-24z'/></svg>")
+            no-repeat center / contain;
+          position: absolute;
+          right: 14px;
+          width: 16px;
+        }
+      }
       .st_tile_value {
         color: var(--un-color-blue-text-dark);
         font-size: var(--un-font-size-xxxxl);

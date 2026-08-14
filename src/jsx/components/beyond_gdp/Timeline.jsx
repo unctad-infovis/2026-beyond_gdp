@@ -25,8 +25,9 @@ const Timeline = ({ milestones = [], title }) => {
             <li className={`tl_step${m.current ? ' tl_step--current' : ''}${currentIndex !== -1 && idx < currentIndex ? ' tl_step--done' : ''}`} key={m.date} style={{ transitionDelay: `${idx * 90}ms` }}>
               <span aria-hidden="true" className="tl_step_marker" />
               <span className="tl_step_date">{m.date}</span>
-              <h3 className="tl_step_title">{m.title}</h3>
-              <p className="tl_step_text">{m.label}</p>
+              <p className="tl_step_text">
+                <strong className="tl_step_title">{m.title}.</strong> {m.label}
+              </p>
             </li>
           ))}
         </ol>

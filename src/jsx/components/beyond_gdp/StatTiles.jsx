@@ -11,11 +11,20 @@ import './StatTiles.css';
 const StatTile = ({ delay, tile }) => {
   const [current, ref] = useCountUp(tile.value);
   const displayValue = tile.format === 'year' ? Math.round(current) : formatNumber(current);
-
-  return (
-    <div className="st_tile" ref={ref} style={{ transitionDelay: `${delay}ms` }}>
+  const content = (
+    <>
       <p className="st_tile_value">{displayValue}</p>
       <p className="st_tile_label">{tile.label}</p>
+    </>
+  );
+
+  return tile.url ? (
+    <a className="st_tile st_tile--link" href={tile.url} ref={ref} rel="noreferrer" style={{ transitionDelay: `${delay}ms` }} target="_blank">
+      {content}
+    </a>
+  ) : (
+    <div className="st_tile" ref={ref} style={{ transitionDelay: `${delay}ms` }}>
+      {content}
     </div>
   );
 };

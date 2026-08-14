@@ -9,7 +9,7 @@
   },
   "nav": [
     {
-      "label": "Data dashboard",
+      "label": "Data insights",
       "href": ".anchor_data",
       "children": [{ "label": "Current well-being", "href": ".anchor_current_wellbeing" }, { "label": "Equity and inclusion", "href": ".anchor_equity_inclusion" }, { "label": "Sustainability and resilience", "href": ".anchor_sustainability_resilience" }]
     },

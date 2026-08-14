@@ -10,7 +10,7 @@ const Footer = ({ children, downloadUrl, title }) => (
       <div className="bgdp_footer_body">{children}</div>
       <div className="bgdp_footer_ctas">
         {downloadUrl && <ButtonAnchor className="bgdp_footer_cta bgdp_footer_cta--primary" text="Download the report (PDF)" url={downloadUrl} />}
-        <ButtonAnchor className="bgdp_footer_cta bgdp_footer_cta--ghost" text="Explore the dashboard" url=".anchor_data" />
+        <ButtonAnchor className="bgdp_footer_cta bgdp_footer_cta--ghost" text="Explore insights" url=".anchor_data" />
       </div>
     </div>
   </footer>
