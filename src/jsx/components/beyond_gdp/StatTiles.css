@@ -63,7 +63,7 @@
       }
       .st_tile_value {
         color: var(--un-color-blue-text-dark);
-        font-size: var(--un-font-size-xxxxl);
+        font-size: clamp(var(--un-font-size-xxl), 8vw, var(--un-font-size-xxxxl));
         font-weight: var(--un-font-weight-boldest);
         line-height: 1;
         margin: 0 0 8px;
@@ -76,6 +76,11 @@
         margin: 0;
         text-transform: uppercase;
       }
+    }
+  }
+  @media (max-width: 720px) {
+    .st_grid {
+      grid-template-columns: 1fr;
     }
   }
 }
