@@ -9,6 +9,7 @@
     min-height: clamp(520px, 85vh, 900px);
     position: relative;
     &:after {
+      background: linear-gradient(180deg, rgba(0, 20, 40, 0.55) 0%, rgba(0, 20, 40, 0.35) 45%, rgba(0, 20, 40, 0.6) 100%);
       content: '';
       inset: 0;
       position: absolute;
