@@ -33,7 +33,7 @@ const DashboardFramework = ({ dimensions = [], foundationalPrinciples = [], titl
                           <DashboardIcon label={item.label} />
                           <span>{item.label}</span>
                           <span aria-hidden="true" className="df_pillar_go">
-                            → see the data
+                            → see example data
                           </span>
                         </button>
                       ) : (
@@ -59,7 +59,7 @@ const DashboardFramework = ({ dimensions = [], foundationalPrinciples = [], titl
           ))}
         </div>
         <p className="df_foot">
-          Components with <b>→ see the data</b> are illustrated with selected indicators below.
+          Components with <b>→ see example data</b> are illustrated with selected indicators below.
         </p>
       </div>
     </div>
