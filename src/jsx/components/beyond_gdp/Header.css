@@ -5,7 +5,7 @@
     background-size: cover;
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     min-height: clamp(520px, 85vh, 900px);
     position: relative;
     &:after {
@@ -18,11 +18,11 @@
     }
     .bgdp_header_inner {
       box-sizing: border-box;
-      margin: 0 auto;
+      margin: 0;
       max-width: 900px;
-      padding: clamp(56px, 10vw, 96px) 20px;
+      padding: clamp(56px, 10vw, 96px) 20px clamp(56px, 10vw, 96px) clamp(24px, 7vw, 120px);
       position: relative;
-      text-align: center;
+      text-align: left;
       z-index: 1;
     }
     .bgdp_header_title {
@@ -46,7 +46,7 @@
     .bgdp_header_byline {
       color: #fff;
       font-size: var(--un-font-size-xl);
-      margin: 0 auto;
+      margin: 0;
       max-width: 640px;
     }
     .bgdp_header_ctas {
@@ -54,7 +54,7 @@
       display: flex;
       flex-wrap: wrap;
       gap: 14px;
-      justify-content: center;
+      justify-content: flex-start;
       margin: clamp(24px, 4vw, 38px) 0 0;
       .container_button_download {
         margin: 0;
@@ -94,7 +94,7 @@
     }
     .share_wrapper {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       margin: 20px 0 0;
       width: 100%;
       .share_label {
