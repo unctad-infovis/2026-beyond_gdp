@@ -47,6 +47,14 @@
       text-decoration: underline;
     }
   }
+  .cs_card {
+    background: #fff;
+    border: 1px solid var(--un-color-grey-lightest);
+    border-radius: 16px;
+    box-sizing: border-box;
+    margin: 0 0 16px;
+    padding: clamp(16px, 3vw, 28px);
+  }
   .cs_header {
     margin-bottom: 10px;
     padding-left: 42px;
@@ -101,15 +109,10 @@
     padding: 0 3px;
   }
   .cs_chart {
-    background: #fff;
-    border: 1px solid var(--un-color-grey-lightest);
-    border-radius: 16px;
     box-sizing: border-box;
-    margin: 0 0 16px;
-    padding: clamp(16px, 3vw, 28px);
     &.cs_chart--fit {
-      margin: 0 auto 16px;
-      max-width: calc(600px + 2px + 2 * clamp(16px, 3vw, 28px));
+      margin: 0 auto;
+      max-width: 600px;
     }
   }
   .cs_share {

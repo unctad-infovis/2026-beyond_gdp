@@ -31,30 +31,32 @@ const ChartSection = ({ anchorClass, children, description, dimensionChip, expan
           </span>
         </div>
       )}
-      <div className="cs_header">
-        <h4 className="cs_title">{title}</h4>
-        {description && <p className="cs_subtitle">{description}</p>}
-      </div>
-      {insight.map(p => (
-        <p className="cs_insight" key={p.slice(0, 40)}>
-          {renderInsight(p)}
-        </p>
-      ))}
-      <div className={`cs_chart${fitChart ? ' cs_chart--fit' : ''}`}>
-        <div className="cs_share">
-          <ButtonShare
-            borderRadius="6px"
-            defaultOpen
-            iconBg="var(--un-color-blue-lightest)"
-            iconColor="var(--un-color-blue-text-dark)"
-            iconHoverBg="var(--un-color-blue)"
-            iconHoverColor="#fff"
-            position="static"
-            size={30}
-            url={anchorClass ? `${window.location.origin}${window.location.pathname}#${anchorClass}` : window.location.href}
-          />
+      <div className="cs_card">
+        <div className="cs_header">
+          <h4 className="cs_title">{title}</h4>
+          {description && <p className="cs_subtitle">{description}</p>}
         </div>
-        {children}
+        {insight.map(p => (
+          <p className="cs_insight" key={p.slice(0, 40)}>
+            {renderInsight(p)}
+          </p>
+        ))}
+        <div className={`cs_chart${fitChart ? ' cs_chart--fit' : ''}`}>
+          <div className="cs_share">
+            <ButtonShare
+              borderRadius="6px"
+              defaultOpen
+              iconBg="var(--un-color-blue-lightest)"
+              iconColor="var(--un-color-blue-text-dark)"
+              iconHoverBg="var(--un-color-blue)"
+              iconHoverColor="#fff"
+              position="static"
+              size={30}
+              url={anchorClass ? `${window.location.origin}${window.location.pathname}#${anchorClass}` : window.location.href}
+            />
+          </div>
+          {children}
+        </div>
       </div>
       {expandable && (
         <details className="cs_expandable">
