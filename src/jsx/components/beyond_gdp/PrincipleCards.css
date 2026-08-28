@@ -9,7 +9,7 @@
   .pc_card {
     background: #fff;
     border-radius: 0 0 16px 16px;
-    border-top: 5px solid var(--un-color-red);
+    border-top: 5px solid var(--un-color-blue);
     box-shadow: 0 4px 24px rgba(35, 31, 32, 0.07);
     box-sizing: border-box;
     padding: 26px;
