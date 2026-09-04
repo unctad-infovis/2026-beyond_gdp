@@ -131,14 +131,14 @@ This dimension covers material conditions and work, health, education, security,
     anchorClass="anchor_health"
     dimensionChip={{ label: 'Health', variant: 'yellow' }}
     title="Higher incomes don't always mean longer, healthier lives"
-    description="Gross domestic product (GDP) per capita and healthy life expectancy in years, Costa Rica, Italy and the United States of America, dollars and years, 2000–2019."
+    description="Median gross domestic product (GDP) per capita and healthy life expectancy in years, Northern America, Northern Europe and Southern Europe, dollars and years, 2000–2019."
     source="UN Trade and Development (UNCTAD) based on World Bank and WHO."
-    insight={["Higher GDP doesn't always translate into more well-being. Costa Rica's GDP per capita is less than one quarter of the United States' level. Yet its healthy life expectancy is higher. In Italy, healthy life expectancy continued to improve despite economic slowdown."]}
+    insight={["Higher GDP doesn't always translate into more well-being. Southern Europe's GDP per capita is less than one half of the Northern America's and Northern Europe's. Yet its healthy life expectancy is higher than the former's and has caught up to the latter's. In Southern Europe, healthy life expectancy continued to improve despite economic slowdown."]}
   >
     <ChartPair
       rightDelayMs={1400}
-      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="iso3" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita, dollars" yLabel="Gross domestic product (GDP) per capita, dollars" hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} palette={['--un-color-blue-brand', '--un-color-blue-darkest', '--un-color-yellow']} series={[{ key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }, { key: 'CRI', label: 'Costa Rica' }]} />}
-      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="iso3" valueKey="healthy_life_exp" isVisible={vis} title="Healthy life expectancy, years" yLabel="Healthy life expectancy, years" yMin={64} yMax={72} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} palette={['--un-color-blue-brand', '--un-color-blue-darkest', '--un-color-yellow']} series={[{ key: 'ITA', label: 'Italy' }, { key: 'USA', label: 'United States of America' }, { key: 'CRI', label: 'Costa Rica' }]} />}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="region" valueKey="gdp_per_capita" isVisible={vis} title="Gross domestic product (GDP) per capita, dollars" yLabel="Gross domestic product (GDP) per capita, dollars" hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} palette={['--un-color-blue-brand', '--un-color-blue-darkest', '--un-color-yellow']} series={[{ key: 'NAM', label: 'Northern America' }, { key: 'NEU', label: 'Northern Europe' }, { key: 'SEU', label: 'Southern Europe' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="region" valueKey="healthy_life_exp" isVisible={vis} title="Healthy life expectancy, years" yLabel="Healthy life expectancy, years" yMin={64} yMax={72} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} palette={['--un-color-blue-brand', '--un-color-blue-darkest', '--un-color-yellow']} series={[{ key: 'NAM', label: 'Northern America' }, { key: 'NEU', label: 'Northern Europe' }, { key: 'SEU', label: 'Southern Europe' }]} />}
     />
   </ChartSection>
 )}
