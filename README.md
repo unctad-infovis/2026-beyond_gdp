@@ -56,11 +56,16 @@ Run it manually whenever the source spreadsheet changes, then rebuild.
 
 The following packages are used in this project by default.
 
+### Shared UNCTAD packages
+
+* **@unctad-infovis/general-tools** — shared React components (`ButtonAnchor`, `ButtonShare`, `ChartDataWrapper`, `Image`, `ProgressBar`, `Quote`, `Select`, `Tooltip`, `UNCTADSiteHeader`, `BackToTop`, …), helpers (`BasePath`, `LoadFile`, `CsvToJson`, `FormatNr`, `RoundNr`, `UseIsVisible`, …) and base design-token styles
+* **@unctad-infovis/minisite-tools** — report/minisite layout components (`Header`, `HeaderChapter`, `Footer`, `SideScrollingText`)
+
+These packages are published from the [`un-init-project`](https://github.com/unctad-infovis/un-init-project) monorepo to GitHub Packages, so installing needs an `.npmrc` with `@unctad-infovis:registry=https://npm.pkg.github.com` and a `GITHUB_PACKAGES_TOKEN` environment variable.
+
 ### Project specific
 
 * **d3** — used to build the line, bar and scatter chart primitives
-* **@unctad-infovis/general-tools** — shared UNCTAD React components, helpers and base design-token styles (share button, flags, `useIsVisible`, number formatting, etc.)
-* **@unctad-infovis/minisite-tools** — shared report/minisite layout components
 
 ### Build & Dev Server
 
