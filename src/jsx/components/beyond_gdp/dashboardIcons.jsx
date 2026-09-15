@@ -25,7 +25,7 @@ const DASHBOARD_ICONS = {
   'Natural capital': 'natural_capital.svg',
   Peace: 'peace.svg',
   'Human Rights': 'human_rights.svg',
-  'Respect for the Planet': 'respect_for_the_planet.svg'
+  'Respect for the Planet': 'respect_for_the_planet_red.svg'
 };
 
 export default DASHBOARD_ICONS;
