@@ -1,0 +1,2 @@
+function o(o,l){let t;if(void 0===l)for(const e of o)null!=e&&(t<e||void 0===t&&e>=e)&&(t=e);else{let e=-1;for(let f of o)null!=(f=l(f,++e,o))&&(t<f||void 0===t&&f>=f)&&(t=f)}return t}export{o as t};
+//# sourceMappingURL=2026-beyond_gdp.max-C4IZLW4m.js.map

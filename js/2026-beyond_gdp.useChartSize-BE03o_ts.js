@@ -1,0 +1,2 @@
+import{u as e}from"./2026-beyond_gdp.styles-By_orO9m.js";var t=e(),n=e=>{const n=(0,t.useRef)(null),[r,s]=(0,t.useState)({height:e,width:0});return(0,t.useEffect)(()=>{const e=n.current;if(!e)return;const t=new ResizeObserver(e=>s({height:e[0].contentRect.height,width:e[0].contentRect.width}));return t.observe(e),()=>t.disconnect()},[]),[n,r]};export{n as t};
+//# sourceMappingURL=2026-beyond_gdp.useChartSize-BE03o_ts.js.map
