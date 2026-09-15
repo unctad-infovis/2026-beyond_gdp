@@ -13,13 +13,33 @@ export default defineConfig(({ command }) => ({
     outDir: 'dist',
     rollupOptions: {
       input: {
-        index: './index.html'
+        index: './index.html',
+        'chart-health': './chart-health.html',
+        'chart-security': './chart-security.html',
+        'chart-trust': './chart-trust.html',
+        'chart-satisfaction': './chart-satisfaction.html',
+        'chart-wealth-inequality': './chart-wealth-inequality.html',
+        'chart-wage-gap': './chart-wage-gap.html',
+        'chart-prejudice': './chart-prejudice.html',
+        'chart-emissions': './chart-emissions.html',
+        'chart-data-gaps': './chart-data-gaps.html'
       },
       output: {
-        entryFileNames: `js/${name}.min.js`,
-        chunkFileNames: `js/${name}.[name].js`,
+        // index's filename stays stable — already live in production and hardcoded into
+        // unctad.org. Shared chunks (react/general-tools/ChartSection/ChartPair/D3 primitives,
+        // deduplicated across all 10 entries) get a content hash instead: each entry's own
+        // `import` for a shared chunk is a bare, query-string-less path, so a manual `?v=` bump
+        // on the outer <script> tag can never bust a shared chunk's cache — this is the exact
+        // incident already hit and documented in 2026-global_trade_update's README (bumping ?v=
+        // on entry scripts didn't surface a fix that actually lived in the shared chunk; only a
+        // genuinely new URL, via content hash, fixed it).
+        entryFileNames: chunk => (chunk.name === 'index' ? `js/${name}.min.js` : `js/${name}.${chunk.name}.min.js`),
+        chunkFileNames: `js/${name}.[name]-[hash].js`,
         assetFileNames: assetInfo => {
-          if (assetInfo.name?.endsWith('.css')) return `css/${name}.min.css`;
+          if (assetInfo.name?.endsWith('.css')) {
+            const base = assetInfo.name.replace('.css', '').replaceAll('-', '_');
+            return base === 'index' ? `css/${name}.min.css` : `css/${name}_${base}.min.css`;
+          }
           return `assets/[name][extname]`;
         }
       }

@@ -1,4 +1,4 @@
-#app-root-2026-beyond_gdp .app {
+.app-root-2026-beyond_gdp .app {
   .bgdp_chapter_banner {
     background: linear-gradient(115deg, var(--un-color-blue-darkest) 0%, var(--un-color-blue-dark) 55%, var(--un-color-blue) 100%);
     overflow: hidden;

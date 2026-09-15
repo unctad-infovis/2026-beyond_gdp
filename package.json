@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "postbuild": "node -e \"const fs=require('fs'),p='dist/index.html',h=fs.readFileSync(p,'utf8');fs.writeFileSync(p,h.replace(/href=\\\"\\//g,'href=\\\"./').replace(/src=\\\"\\//g,'src=\\\"./'));\"",
+    "postbuild": "node -e \"const fs=require('fs'),path=require('path');for(const f of fs.readdirSync('dist').filter(f=>f.endsWith('.html'))){const p=path.join('dist',f),h=fs.readFileSync(p,'utf8');fs.writeFileSync(p,h.replace(/href=\\\"\\//g,'href=\\\"./').replace(/src=\\\"\\//g,'src=\\\"./'));}\"",
     "start": "vite --open",
     "start_public": "vite --open --host",
     "preview": "vite preview",

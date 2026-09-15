@@ -18,7 +18,7 @@ const renderInsight = text =>
     )
   );
 
-const ChartSection = ({ anchorClass, children, description, dimensionChip, expandable, fitChart = false, insight = [], note, source, title }) => {
+const ChartSection = ({ anchorClass, children, description, dimensionChip, expandable, fitChart = false, insight = [], note, source, standalone = false, title }) => {
   const chipIcon = dimensionChip && DASHBOARD_ICONS[dimensionChip.label];
 
   return (
@@ -42,7 +42,7 @@ const ChartSection = ({ anchorClass, children, description, dimensionChip, expan
             iconHoverColor="#fff"
             position="static"
             size={30}
-            url={anchorClass ? `${window.location.origin}${window.location.pathname}#${anchorClass}` : window.location.href}
+            url={!standalone && anchorClass ? `${window.location.origin}${window.location.pathname}#${anchorClass}` : window.location.href}
           />
         </div>
         <div className="cs_header">
@@ -78,11 +78,13 @@ const ChartSection = ({ anchorClass, children, description, dimensionChip, expan
           )}
         </figcaption>
       )}
-      <div className="cs_backrow">
-        <button className="cs_backdash" onClick={() => scrollToAnchor('.anchor_data')} type="button">
-          ← Back to dashboard
-        </button>
-      </div>
+      {!standalone && (
+        <div className="cs_backrow">
+          <button className="cs_backdash" onClick={() => scrollToAnchor('.anchor_data')} type="button">
+            ← Back to dashboard
+          </button>
+        </div>
+      )}
     </figure>
   );
 };
