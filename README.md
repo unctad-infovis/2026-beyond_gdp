@@ -14,6 +14,17 @@ Besides the full minisite (below), each of the 9 charts is also built as its own
 
 ```html
 <script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.min.js?v=1"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=1">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=1">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=1">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ScatterLog.min.css?v=1">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=1">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=1">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_DualBarRowsLoader.min.css?v=1">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=1">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=1">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_GroupedBarChart.min.css?v=1">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_BarPair.min.css?v=1">
 <link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp.min.css?v=1">
 <div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp">
   Loading...
@@ -21,7 +32,7 @@ Besides the full minisite (below), each of the 9 charts is also built as its own
 <noscript>Your browser does not support Javascript!</noscript>
 ```
 
-Update the `?v=` query parameter on the entry `.js`/`.css` files to match the current build version to bust the cache. Don't add a `?v=` to (or hand-write a preload link for) the shared chunk file(s) each entry imports internally (visible in `dist/js/` as e.g. `2026-beyond_gdp.styles-XXXXXXXX.js`) — their filename carries a content hash that changes on every build specifically so they never need manual versioning; a query string on that file would do nothing anyway, since each entry's own `import` statement for it is a bare, query-string-less path resolved independently of the outer `<script>` tag's URL. (This was a real incident on `2026-global_trade_update`: bumping `?v=` on the entry scripts alone did not surface a content fix that actually lived in the shared chunk — only a rebuild's new content hash, i.e. a genuinely new URL, fixed it. `2026-beyond_gdp`'s build config follows the same pattern to avoid repeating that incident.)
+The full page now needs all of the above stylesheet links, not just the last one — since the 9 standalone chart entries were added, Vite splits shared chart CSS (`ChartPair`, `LineChartMulti`, `GroupedBarChart`, etc.) into their own chunk files instead of bundling everything into `2026-beyond_gdp.min.css`, because those chunks are now shared across multiple entries. `2026-beyond_gdp.min.css` still exists but now only holds what's exclusive to the full page (header/nav/footer/etc.) — regenerate this list from `dist/index.html`'s own `<link rel="stylesheet">` tags (skip `modulepreload` links) if it changes on a future build. Update the `?v=` query parameter on the entry `.js`/`.css` files to match the current build version to bust the cache. Don't add a `?v=` to (or hand-write a preload link for) the shared chunk file(s) each entry imports internally (visible in `dist/js/` as e.g. `2026-beyond_gdp.styles-XXXXXXXX.js`) — their filename carries a content hash that changes on every build specifically so they never need manual versioning; a query string on that file would do nothing anyway, since each entry's own `import` statement for it is a bare, query-string-less path resolved independently of the outer `<script>` tag's URL. (This was a real incident on `2026-global_trade_update`: bumping `?v=` on the entry scripts alone did not surface a content fix that actually lived in the shared chunk — only a rebuild's new content hash, i.e. a genuinely new URL, fixed it. `2026-beyond_gdp`'s build config follows the same pattern to avoid repeating that incident.)
 
 ### Embedding individual charts
 
