@@ -1,2 +1,0 @@
-import{d as r,s}from"./2026-beyond_gdp.styles-By_orO9m.js";var e=r(),d=({children:r,threshold:d=.2})=>{const[t,o]=s(d);return(0,e.jsx)("div",{ref:t,children:r(o)})};export{d as t};
-//# sourceMappingURL=2026-beyond_gdp.RevealOnView-Bpf5WE0j.js.map
