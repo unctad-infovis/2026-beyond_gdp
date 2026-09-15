@@ -1,12 +1,13 @@
 .app-root-2026-beyond_gdp .app {
   .chart_legend {
+    column-gap: 16px;
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
     margin: 0 0 12px;
+    row-gap: 6px;
     &.chart_legend--stacked {
       flex-direction: column;
-      gap: 0;
+      row-gap: 0;
     }
   }
   .chart_legend_item {
