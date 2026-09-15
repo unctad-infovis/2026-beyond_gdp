@@ -12,20 +12,22 @@ Content is authored in MDX (`src/Article.mdx`) and rendered as a standalone Reac
 
 Besides the full minisite (below), each of the 9 charts is also built as its own standalone embeddable widget — see "Embedding individual charts" further down, for use in news articles and other pages that only need one chart.
 
+**Current live version: `?v=12`.** Every snippet in this README is kept at this number to match what's actually pasted into the live Drupal pages (the full "Looking Beyond GDP" publication page and the embedded charts in the English/French/Spanish news article). Whenever a new build is deployed to `storage.unctad.org` with a content change, bump `?v=` by one **everywhere it appears in this README, and in every live Drupal embed simultaneously** — a mismatch between what's documented here and what's actually pasted into Drupal is exactly the kind of drift that caused the full-page embed to go stale (still on `?v=11` with only one CSS link) after this file's CSS was split into 11 files.
+
 ```html
-<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.min.js?v=1"></script>
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ScatterLog.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_DualBarRowsLoader.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_GroupedBarChart.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_BarPair.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp.min.css?v=1">
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.min.js?v=12"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ScatterLog.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_DualBarRowsLoader.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_GroupedBarChart.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_BarPair.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp.min.css?v=12">
 <div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp">
   Loading...
 </div>
@@ -45,13 +47,13 @@ Each chart's stylesheet list below isn't arbitrary — a chart pulls in a differ
 #### Health
 
 ```html
-<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-health.min.js?v=1"></script>
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=1">
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-health.min.js?v=12"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=12">
 <div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-health">
   Loading...
 </div>
@@ -61,13 +63,13 @@ Each chart's stylesheet list below isn't arbitrary — a chart pulls in a differ
 #### Security
 
 ```html
-<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-security.min.js?v=1"></script>
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=1">
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-security.min.js?v=12"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=12">
 <div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-security">
   Loading...
 </div>
@@ -77,13 +79,13 @@ Each chart's stylesheet list below isn't arbitrary — a chart pulls in a differ
 #### Social cohesion
 
 ```html
-<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-trust.min.js?v=1"></script>
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_GroupedBarChart.min.css?v=1">
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-trust.min.js?v=12"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_GroupedBarChart.min.css?v=12">
 <div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-trust">
   Loading...
 </div>
@@ -93,9 +95,9 @@ Each chart's stylesheet list below isn't arbitrary — a chart pulls in a differ
 #### Satisfaction with public services
 
 ```html
-<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-satisfaction.min.js?v=1"></script>
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_DualBarRowsLoader.min.css?v=1">
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-satisfaction.min.js?v=12"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_DualBarRowsLoader.min.css?v=12">
 <div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-satisfaction">
   Loading...
 </div>
@@ -105,13 +107,13 @@ Each chart's stylesheet list below isn't arbitrary — a chart pulls in a differ
 #### Wealth inequality
 
 ```html
-<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-wealth-inequality.min.js?v=1"></script>
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=1">
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-wealth-inequality.min.js?v=12"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=12">
 <div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-wealth-inequality">
   Loading...
 </div>
@@ -121,13 +123,13 @@ Each chart's stylesheet list below isn't arbitrary — a chart pulls in a differ
 #### Wage gap
 
 ```html
-<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-wage-gap.min.js?v=1"></script>
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_BarPair.min.css?v=1">
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-wage-gap.min.js?v=12"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_BarPair.min.css?v=12">
 <div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-wage-gap">
   Loading...
 </div>
@@ -137,11 +139,11 @@ Each chart's stylesheet list below isn't arbitrary — a chart pulls in a differ
 #### Prejudice
 
 ```html
-<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-prejudice.min.js?v=1"></script>
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ScatterLog.min.css?v=1">
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-prejudice.min.js?v=12"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ScatterLog.min.css?v=12">
 <div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-prejudice">
   Loading...
 </div>
@@ -151,13 +153,13 @@ Each chart's stylesheet list below isn't arbitrary — a chart pulls in a differ
 #### Emissions
 
 ```html
-<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-emissions.min.js?v=1"></script>
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=1">
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-emissions.min.js?v=12"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=12">
 <div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-emissions">
   Loading...
 </div>
@@ -167,12 +169,12 @@ Each chart's stylesheet list below isn't arbitrary — a chart pulls in a differ
 #### Data gaps
 
 ```html
-<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-data-gaps.min.js?v=1"></script>
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=1">
-<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_GroupedBarChart.min.css?v=1">
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-data-gaps.min.js?v=12"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=12">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_GroupedBarChart.min.css?v=12">
 <div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-data-gaps">
   Loading...
 </div>
