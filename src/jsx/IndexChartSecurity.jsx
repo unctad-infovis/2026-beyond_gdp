@@ -16,7 +16,7 @@ root.render(
         <ChartSection
           standalone
           anchorClass="anchor_security"
-          dimensionChip={{ label: 'Security', variant: 'yellow' }}
+          dimensionChip={{ icon: 'security', label: 'Security', variant: 'yellow' }}
           title="Safety and security can worsen even as GDP improves"
           description="Median gross domestic product (GDP) per capita and intentional homicides, Latin America and the Caribbean and Eastern and South-Eastern Asia, index: 2015=100 and homicides per 100,000 people, 2015–2023."
           insight={["Sustained GDP growth doesn't always deliver more safety. In Latin America, homicides increased nearly 50% from 2015 to 2023, even as GDP rose 17%. In fact, median homicide rates reached their highest level on record in 2023. This contrasts sharply with Eastern and South-Eastern Asia, where homicide rates were 29 times lower."]}

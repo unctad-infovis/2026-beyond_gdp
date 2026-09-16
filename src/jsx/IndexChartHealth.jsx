@@ -16,7 +16,7 @@ root.render(
         <ChartSection
           standalone
           anchorClass="anchor_health"
-          dimensionChip={{ label: 'Health', variant: 'yellow' }}
+          dimensionChip={{ icon: 'health', label: 'Health', variant: 'yellow' }}
           title="Higher incomes don't always mean longer, healthier lives"
           description="Median gross domestic product (GDP) per capita and healthy life expectancy in years, Northern America, Northern Europe and Southern Europe, dollars and years, 2000–2019."
           source="UN Trade and Development (UNCTAD) based on World Bank and WHO."

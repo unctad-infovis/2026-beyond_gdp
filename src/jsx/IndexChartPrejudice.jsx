@@ -17,7 +17,7 @@ root.render(
         <ChartSection
           standalone
           anchorClass="anchor_prejudice"
-          dimensionChip={{ label: 'Overlapping deprivations', variant: 'purple' }}
+          dimensionChip={{ icon: 'overlapping_deprivations', label: 'Overlapping deprivations', variant: 'purple' }}
           title="Economic prosperity doesn't protect people against prejudice"
           description="Gross domestic product (GDP) per capita and share of people reporting discrimination or harassment in the previous 12 months, selected countries, dollars on a logarithmic scale and percentage, 2014–2024 average."
           insight={["Higher GDP isn't systematically linked to less discrimination or harassment. Focusing only on economic growth creates a major blind spot in people's lived experience."]}

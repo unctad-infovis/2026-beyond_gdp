@@ -17,7 +17,7 @@ root.render(
         <ChartSection
           standalone
           anchorClass="anchor_emissions"
-          dimensionChip={{ label: 'Natural capital', variant: 'green' }}
+          dimensionChip={{ icon: 'natural_capital', label: 'Natural capital', variant: 'green' }}
           title="Global emissions rise even as emissions per person level off"
           description="Greenhouse gas emissions, by development status, billions of tonnes of carbon dioxide equivalent and median tonnes of carbon dioxide equivalent per person, 2000–2017."
           source="UN Trade and Development (UNCTAD) based on UNFCCC Secretariat via UN Global SDG Indicators Database."

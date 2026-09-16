@@ -3,29 +3,32 @@
 // tmp/svg/), each already carrying its own fill color (yellow/purple/green for the three
 // dimensions, red for the foundational principles), so these are rendered as plain <img>s
 // rather than currentColor-driven inline SVGs.
+// Keyed by a stable language-neutral slug (not the display label) so translated labels never
+// affect icon lookup — every dimensionChip/dimension-component/foundationalPrinciple entry
+// carries a matching `icon` field alongside its (translatable) `label`.
 const DASHBOARD_ICONS = {
-  'Material conditions and work': 'material_conditions_and_work.svg',
-  Health: 'health.svg',
-  Education: 'education.svg',
-  Security: 'security.svg',
-  'Subjective well-being': 'subjective_well_being.svg',
-  'Social cohesion': 'social_cohesion.svg',
-  'Quality of institutions': 'quality_of_institutions.svg',
-  'Environmental quality': 'environmental_quality.svg',
-  'Wealth inequality': 'wealth_inequality.svg',
-  'Income inequality': 'income_inequality.svg',
-  Poverty: 'poverty.svg',
-  'Work inclusion': 'work_inclusion.svg',
-  'Regional inequalities': 'regional_inequalities.svg',
-  'Overlapping deprivations': 'overlapping_deprivations.svg',
-  'Produced capital': 'produced_capital.svg',
-  'Human capital': 'human_capital.svg',
-  'Social capital': 'social_capital.svg',
-  'Institutional capital': 'institutional_capital.svg',
-  'Natural capital': 'natural_capital.svg',
-  Peace: 'peace.svg',
-  'Human Rights': 'human_rights.svg',
-  'Respect for the Planet': 'respect_for_the_planet_red.svg'
+  material_conditions_and_work: 'material_conditions_and_work.svg',
+  health: 'health.svg',
+  education: 'education.svg',
+  security: 'security.svg',
+  subjective_well_being: 'subjective_well_being.svg',
+  social_cohesion: 'social_cohesion.svg',
+  quality_of_institutions: 'quality_of_institutions.svg',
+  environmental_quality: 'environmental_quality.svg',
+  wealth_inequality: 'wealth_inequality.svg',
+  income_inequality: 'income_inequality.svg',
+  poverty: 'poverty.svg',
+  work_inclusion: 'work_inclusion.svg',
+  regional_inequalities: 'regional_inequalities.svg',
+  overlapping_deprivations: 'overlapping_deprivations.svg',
+  produced_capital: 'produced_capital.svg',
+  human_capital: 'human_capital.svg',
+  social_capital: 'social_capital.svg',
+  institutional_capital: 'institutional_capital.svg',
+  natural_capital: 'natural_capital.svg',
+  peace: 'peace.svg',
+  human_rights: 'human_rights.svg',
+  planet: 'respect_for_the_planet_red.svg'
 };
 
 export default DASHBOARD_ICONS;

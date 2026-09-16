@@ -4,13 +4,14 @@ import DASHBOARD_ICONS from './dashboardIcons.jsx';
 import './DashboardFramework.css';
 import scrollToAnchor from './scrollToAnchor.js';
 
-const DashboardIcon = ({ label }) => {
-  const filename = DASHBOARD_ICONS[label];
+const DashboardIcon = ({ icon }) => {
+  const filename = DASHBOARD_ICONS[icon];
   return filename ? <img alt="" aria-hidden="true" className="df_pillar_icon" src={resolveAsset(`assets/img/${filename}`)} /> : null;
 };
 
-const DashboardFramework = ({ dimensions = [], foundationalPrinciples = [], title }) => {
+const DashboardFramework = ({ componentsLabel = 'components', dimensions = [], foot = 'Components with {seeDataLabel} are illustrated with selected indicators below.', foundationalPrinciples = [], principlesLabel = 'Foundational principles', seeDataLabel = '→ see example data', title }) => {
   const [ref, inView] = useIsVisible(0.2);
+  const [footBefore, footAfter] = foot.split('{seeDataLabel}');
 
   return (
     <div className={`df_bg${inView ? ' df_container--inview' : ''}`} ref={ref}>
@@ -21,45 +22,42 @@ const DashboardFramework = ({ dimensions = [], foundationalPrinciples = [], titl
             <div className={`df_pillar df_pillar--${dim.variant}`} key={dim.key} style={{ transitionDelay: `${idx * 84}ms` }}>
               <div className="df_pillar_head">
                 <span className="df_pillar_name">{dim.label}</span>
-                <span className="df_pillar_count">{dim.components.length} components</span>
+                <span className="df_pillar_count">{dim.components.length} {componentsLabel}</span>
               </div>
               <ul className="df_pillar_list">
-                {dim.components.map(c => {
-                  const item = typeof c === 'string' ? { label: c } : c;
-                  return (
-                    <li className={item.href ? 'df_pillar_item--linked' : undefined} key={item.label}>
-                      {item.href ? (
-                        <button className="df_pillar_link" onClick={() => scrollToAnchor(item.href)} type="button">
-                          <DashboardIcon label={item.label} />
-                          <span>{item.label}</span>
-                          <span aria-hidden="true" className="df_pillar_go">
-                            → see example data
-                          </span>
-                        </button>
-                      ) : (
-                        <>
-                          <DashboardIcon label={item.label} />
-                          {item.label}
-                        </>
-                      )}
-                    </li>
-                  );
-                })}
+                {dim.components.map(item => (
+                  <li className={item.href ? 'df_pillar_item--linked' : undefined} key={item.icon}>
+                    {item.href ? (
+                      <button className="df_pillar_link" onClick={() => scrollToAnchor(item.href)} type="button">
+                        <DashboardIcon icon={item.icon} />
+                        <span>{item.label}</span>
+                        <span aria-hidden="true" className="df_pillar_go">
+                          {seeDataLabel}
+                        </span>
+                      </button>
+                    ) : (
+                      <>
+                        <DashboardIcon icon={item.icon} />
+                        {item.label}
+                      </>
+                    )}
+                  </li>
+                ))}
               </ul>
             </div>
           ))}
         </div>
         <div className="df_principles">
-          <span className="df_principles_label">Foundational principles</span>
+          <span className="df_principles_label">{principlesLabel}</span>
           {foundationalPrinciples.map(p => (
             <span className="df_principles_chip" key={p.key}>
-              <DashboardIcon label={p.label} />
+              <DashboardIcon icon={p.icon} />
               {p.label}
             </span>
           ))}
         </div>
         <p className="df_foot">
-          Components with <b>→ see example data</b> are illustrated with selected indicators below.
+          {footBefore}<b>{seeDataLabel}</b>{footAfter}
         </p>
       </div>
     </div>

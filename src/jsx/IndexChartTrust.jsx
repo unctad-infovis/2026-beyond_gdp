@@ -17,7 +17,7 @@ root.render(
         <ChartSection
           standalone
           anchorClass="anchor_trust"
-          dimensionChip={{ label: 'Social cohesion', variant: 'yellow' }}
+          dimensionChip={{ icon: 'social_cohesion', label: 'Social cohesion', variant: 'yellow' }}
           title="Economic growth doesn't automatically improve social cohesion"
           description="Median gross domestic product (GDP) per capita and share of people who say most people can be trusted, Northern Africa and Western Asia, index: 2014=100 and percentage, 2014 and 2022."
           source="World Bank and World Values Survey."

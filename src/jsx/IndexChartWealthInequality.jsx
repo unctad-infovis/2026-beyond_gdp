@@ -16,7 +16,7 @@ root.render(
         <ChartSection
           standalone
           anchorClass="anchor_wealth_inequality"
-          dimensionChip={{ label: 'Wealth inequality', variant: 'purple' }}
+          dimensionChip={{ icon: 'wealth_inequality', label: 'Wealth inequality', variant: 'purple' }}
           title="Faster growth can come with wider wealth inequality"
           description="Median gross domestic product (GDP) per capita and share of wealth held by the bottom 99%, Eastern and Southern Europe, index: 2000=100 and percentage, 2000–2019."
           source="UN Trade and Development (UNCTAD) based on World Bank and World Inequality Database."

@@ -11,7 +11,7 @@ import formatNumber from './formatNumber.js';
 // capped per-row stagger so a long list (30+ rows) doesn't take forever to finish appearing.
 // An optional round flag renders next to the name (pass `flagCode` as an ISO2 code per row).
 // Column headers are clickable to re-sort the rows by that measure (toggles direction on repeat clicks).
-const DualBarRows = ({ highlight = [], isVisible = false, primaryFormat = v => Math.round(v), primaryLabel, rows = [], secondaryFormat = formatNumber, secondaryLabel }) => {
+const DualBarRows = ({ highlight = [], isVisible = false, primaryFormat = v => Math.round(v), primaryLabel, rows = [], secondaryFormat = formatNumber, secondaryLabel, sortByLabel = 'Sort by' }) => {
   const [sortKey, setSortKey] = useState('primaryValue');
   const [sortDir, setSortDir] = useState('desc');
 
@@ -29,7 +29,7 @@ const DualBarRows = ({ highlight = [], isVisible = false, primaryFormat = v => M
   const secondaryMax = max(sorted, r => r.secondaryValue) ?? 1;
 
   const headButton = (key, label) => (
-    <button className={`dbr_head_label${sortKey === key ? ' dbr_head_label--active' : ''}`} onClick={() => toggleSort(key)} title={`Sort by ${label}`} type="button">
+    <button className={`dbr_head_label${sortKey === key ? ' dbr_head_label--active' : ''}`} onClick={() => toggleSort(key)} title={`${sortByLabel} ${label}`} type="button">
       {label}
       <span aria-hidden="true" className="dbr_sort_arrow">
         {sortKey === key && sortDir === 'asc' ? '▲' : '▼'}

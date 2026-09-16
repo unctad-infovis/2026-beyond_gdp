@@ -18,8 +18,8 @@ const renderInsight = text =>
     )
   );
 
-const ChartSection = ({ anchorClass, children, description, dimensionChip, expandable, fitChart = false, insight = [], note, source, standalone = false, title }) => {
-  const chipIcon = dimensionChip && DASHBOARD_ICONS[dimensionChip.label];
+const ChartSection = ({ anchorClass, backLabel = '← Back to dashboard', children, description, dimensionChip, expandable, fitChart = false, insight = [], noteLabel = 'Note:', note, source, sourceLabel = 'Source:', standalone = false, title }) => {
+  const chipIcon = dimensionChip && DASHBOARD_ICONS[dimensionChip.icon];
 
   return (
     <figure className={`cs_container${anchorClass ? ` ${anchorClass}` : ''}`}>
@@ -68,12 +68,12 @@ const ChartSection = ({ anchorClass, children, description, dimensionChip, expan
         <figcaption className="cs_meta">
           {source && (
             <p className="cs_meta_row">
-              <em>Source:</em> {source}
+              <em>{sourceLabel}</em> {source}
             </p>
           )}
           {note && (
             <p className="cs_meta_row">
-              <em>Note:</em> {note}
+              <em>{noteLabel}</em> {note}
             </p>
           )}
         </figcaption>
@@ -81,7 +81,7 @@ const ChartSection = ({ anchorClass, children, description, dimensionChip, expan
       {!standalone && (
         <div className="cs_backrow">
           <button className="cs_backdash" onClick={() => scrollToAnchor('.anchor_data')} type="button">
-            ← Back to dashboard
+            {backLabel}
           </button>
         </div>
       )}

@@ -5,7 +5,7 @@ import './Timeline.css';
 // like an actual timeline). Every milestone's full text is always visible, ordered top to
 // bottom; entries before the one flagged `current` are marked done, that one is marked
 // current, and the rest read as upcoming.
-const Timeline = ({ milestones = [], title }) => {
+const Timeline = ({ eyebrow = 'Timeline', milestones = [], title }) => {
   const [trackRef, trackInView] = useIsVisible(0.2);
   const currentIndex = milestones.findIndex(m => m.current);
 
@@ -14,7 +14,7 @@ const Timeline = ({ milestones = [], title }) => {
       <div className="tl_intro">
         <div className="tl_eyebrow">
           <span className="tl_eyebrow_line" />
-          Timeline
+          {eyebrow}
         </div>
         <h2 className="tl_title">{title}</h2>
       </div>

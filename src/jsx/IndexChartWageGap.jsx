@@ -16,7 +16,7 @@ root.render(
         <ChartSection
           standalone
           anchorClass="anchor_wage_gap"
-          dimensionChip={{ label: 'Income inequality', variant: 'purple' }}
+          dimensionChip={{ icon: 'income_inequality', label: 'Income inequality', variant: 'purple' }}
           title="Economic growth outpaces gains in women's pay"
           description="Average gross domestic product (GDP) per capita and women's average hourly earnings as a share of men's, developed economies, dollars and percentage, 2010–2013 and 2020–2023 averages."
           source="World Bank and International Labour Organization via the United Nations Global SDG Indicators Database."

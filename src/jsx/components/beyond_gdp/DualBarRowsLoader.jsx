@@ -7,17 +7,19 @@ const HIGHLIGHT_ISO3 = [];
 
 // Shapes the raw satisfaction.json rows (iso3-keyed) into DualBarRows' generic row shape.
 // Visibility is delegated to RevealOnView since this chart renders standalone (not inside a ChartPair).
-const DualBarRowsLoader = ({ data }) => {
+// countryNames/countryIso2 default to the English lookup tables; French/Spanish callers pass
+// their own translated tables (countryNames.fr.js/countryNames.es.js) instead.
+const DualBarRowsLoader = ({ countryIso2 = COUNTRY_ISO2, countryNames = COUNTRY_NAMES, data, primaryLabel = 'Satisfaction with public services', secondaryLabel = 'Gross domestic product (GDP) per capita', sortByLabel }) => {
   const rows = data.map(d => ({
     key: d.iso3,
-    name: COUNTRY_NAMES[d.iso3] ?? d.iso3,
-    flagCode: COUNTRY_ISO2[d.iso3],
+    name: countryNames[d.iso3] ?? d.iso3,
+    flagCode: countryIso2[d.iso3],
     primaryValue: d['Satisfaction with public services'],
     secondaryValue: d['GDP per capita']
   }));
 
   return (
-    <RevealOnView>{isVisible => <DualBarRows rows={rows} highlight={HIGHLIGHT_ISO3} isVisible={isVisible} primaryLabel="Satisfaction with public services" secondaryLabel="Gross domestic product (GDP) per capita" primaryFormat={v => `${Math.round(v)}%`} secondaryFormat={v => `$${formatNumber(v)}`} />}</RevealOnView>
+    <RevealOnView>{isVisible => <DualBarRows rows={rows} highlight={HIGHLIGHT_ISO3} isVisible={isVisible} primaryLabel={primaryLabel} secondaryLabel={secondaryLabel} sortByLabel={sortByLabel} primaryFormat={v => `${Math.round(v)}%`} secondaryFormat={v => `$${formatNumber(v)}`} />}</RevealOnView>
   );
 };
 
