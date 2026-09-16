@@ -16,6 +16,7 @@ import RevealOnView from './components/beyond_gdp/RevealOnView.jsx';
 import SectionDivider from './components/beyond_gdp/SectionDivider.jsx';
 import StatTiles from './components/beyond_gdp/StatTiles.jsx';
 import Timeline from './components/beyond_gdp/Timeline.jsx';
+import TranslationDisclaimer from './components/beyond_gdp/TranslationDisclaimer.jsx';
 import BarPair from './components/charts/BarPair.jsx';
 import DualBarRows from './components/charts/DualBarRows.jsx';
 import GroupedBarChart from './components/charts/GroupedBarChart.jsx';
@@ -46,7 +47,8 @@ const components = {
   ScatterLog,
   SectionDivider,
   StatTiles,
-  Timeline
+  Timeline,
+  TranslationDisclaimer
 };
 
 const App = ({ Article, meta }) => {
