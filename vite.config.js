@@ -22,7 +22,25 @@ export default defineConfig(({ command }) => ({
         'chart-wage-gap': './chart-wage-gap.html',
         'chart-prejudice': './chart-prejudice.html',
         'chart-emissions': './chart-emissions.html',
-        'chart-data-gaps': './chart-data-gaps.html'
+        'chart-data-gaps': './chart-data-gaps.html',
+        'chart-health-fr': './chart-health-fr.html',
+        'chart-security-fr': './chart-security-fr.html',
+        'chart-trust-fr': './chart-trust-fr.html',
+        'chart-satisfaction-fr': './chart-satisfaction-fr.html',
+        'chart-wealth-inequality-fr': './chart-wealth-inequality-fr.html',
+        'chart-wage-gap-fr': './chart-wage-gap-fr.html',
+        'chart-prejudice-fr': './chart-prejudice-fr.html',
+        'chart-emissions-fr': './chart-emissions-fr.html',
+        'chart-data-gaps-fr': './chart-data-gaps-fr.html',
+        'chart-health-es': './chart-health-es.html',
+        'chart-security-es': './chart-security-es.html',
+        'chart-trust-es': './chart-trust-es.html',
+        'chart-satisfaction-es': './chart-satisfaction-es.html',
+        'chart-wealth-inequality-es': './chart-wealth-inequality-es.html',
+        'chart-wage-gap-es': './chart-wage-gap-es.html',
+        'chart-prejudice-es': './chart-prejudice-es.html',
+        'chart-emissions-es': './chart-emissions-es.html',
+        'chart-data-gaps-es': './chart-data-gaps-es.html'
       },
       output: {
         // index's filename stays stable — already live in production and hardcoded into

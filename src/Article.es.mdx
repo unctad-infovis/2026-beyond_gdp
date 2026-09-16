@@ -1,0 +1,444 @@
+import Footer from './jsx/components/beyond_gdp/Footer.jsx';
+import PrincipleCards from './jsx/components/beyond_gdp/PrincipleCards.jsx';
+import PREJUDICE_COUNTRY_NAMES_ES from './jsx/components/beyond_gdp/prejudiceCountryNames.es.js';
+import COUNTRY_NAMES_ES from './jsx/components/beyond_gdp/countryNames.es.js';
+import Relay from './jsx/components/beyond_gdp/Relay.jsx';
+import SectionPhotoBand from './jsx/components/beyond_gdp/SectionPhotoBand.jsx';
+import { DEVELOPMENT_STATUS_PALETTE_VARS, PAIR_PALETTE_VARS } from './jsx/components/charts/chartColors.js';
+
+<Header title={props.meta.hero.title} subtitle={props.meta.hero.subtitle} byline={props.meta.hero.byline} image_url={props.meta.hero.image_url} titleHighlight={props.meta.hero.titleHighlight} downloadUrl={props.meta.download_report_url} exploreLabel="Explorar los datos" downloadLabel="Descargar el informe (PDF)" />
+
+<ProgressBar selector=".bgdp_main" />
+<Nav items={props.meta.nav} downloadUrl={props.meta.download_report_url} />
+<BackToTop selector=".bgdp_header" />
+
+<div className="bgdp_main">
+<div className="bgdp_chapter bgdp_chapter--intro">
+<div className="container_section">
+<div className="container_section__wide bgdp_lead">
+
+### ¿Por qué ir más allá del PIB?
+
+El producto interno bruto (PIB) ha sido durante mucho tiempo el principal indicador utilizado para medir el progreso y evaluar el desempeño de los países.
+
+El PIB mide la producción económica. Pero no muestra si las personas viven bien, si la producción y el consumo dañan el planeta, si las oportunidades se comparten o si el progreso puede continuar en el tiempo.
+
+Estas limitaciones se reflejan en resultados concretos. El crecimiento del PIB se ha visto acompañado con frecuencia de desigualdad persistente, degradación ecológica y una disminución de la confianza pública en las instituciones.
+
+Los choques episódicos, como las crisis financieras y la pandemia de COVID-19, han puesto de manifiesto debilidades sistémicas. Las presiones estructurales de largo plazo, incluidas la degradación ambiental, la desigualdad, las tensiones geopolíticas y los desafíos democráticos, han subrayado aún más las limitaciones de depender únicamente del PIB.
+
+<StatTiles tiles={[{ value: 31, label: 'Indicadores', url: 'https://www.un.org/sites/un2.un.org/files/high-level_expert_group_on_beyond_gdp_final_report.pdf#page=24' }, { value: 4, label: 'Dimensiones', url: 'https://www.un.org/sites/un2.un.org/files/high-level_expert_group_on_beyond_gdp_final_report.pdf#page=20' }, { value: 2026, label: 'Participación de países', format: 'year', url: 'https://www.un.org/sites/un2.un.org/files/high-level_expert_group_on_beyond_gdp_final_report.pdf#page=35' }]} />
+
+</div>
+<Timeline
+  eyebrow="Cronología"
+  title="Hitos recientes en el camino hacia más allá del PIB"
+  milestones={[
+    {
+      date: 'Septiembre de 2015',
+      title: 'Adopción de la meta 17.19 de los ODS',
+      label: (
+        <>
+          En el marco de la <a href="https://sdgs.un.org/2030agenda" rel="noreferrer" target="_blank">Agenda 2030 para el Desarrollo Sostenible</a>, la meta 17.19 del Objetivo de Desarrollo Sostenible (ODS) busca "de aquí a 2030, aprovechar las iniciativas existentes para elaborar mediciones del progreso en materia de desarrollo sostenible que complementen el producto interno bruto, y apoyar la creación de capacidad estadística en los países en desarrollo".
+        </>
+      )
+    },
+    {
+      date: 'Septiembre de 2024',
+      title: 'Pacto para el Futuro',
+      label: (
+        <>
+          Con el <a href="https://www.un.org/sites/un2.un.org/files/sotf-pact_for_the_future_adopted.pdf" rel="noreferrer" target="_blank">Pacto para el Futuro</a>, los Estados Miembros de las Naciones Unidas pidieron al Secretario General de las Naciones Unidas que convocara un <a href="https://www.un.org/en/beyondGDP" rel="noreferrer" target="_blank">Grupo de Expertos de Alto Nivel sobre Más Allá del PIB</a> para "elaborar recomendaciones para un conjunto limitado de indicadores de desarrollo sostenible, de propiedad de los países y universalmente aplicables, que complementen y vayan más allá del producto interno bruto (PIB)".
+        </>
+      )
+    },
+    {
+      date: '7 de mayo de 2026',
+      title: 'Publicación del informe final',
+      label: (
+        <>
+          El grupo de expertos presentó su informe, <a href="https://unctad.org/publication/counting-what-counts-compass-progress-people-and-planet">Contar lo que cuenta: una brújula del progreso para las personas y el planeta</a>. El Departamento de Asuntos Económicos y Sociales de las Naciones Unidas (DAES), ONU Comercio y Desarrollo (UNCTAD), el Programa de las Naciones Unidas para el Desarrollo (PNUD) y la Oficina Ejecutiva del Secretario General ejercieron la cosecretaría.
+        </>
+      )
+    },
+    {
+      date: 'Junio de 2026',
+      title: 'Comienza la participación de los países',
+      label: 'En coordinación con la Oficina Ejecutiva del Secretario General, UNCTAD y el PNUD comenzaron a colaborar con los primeros países para experimentar con los indicadores y recopilar comentarios sobre su viabilidad y pertinencia en los contextos nacionales, con miras a contribuir al perfeccionamiento de los indicadores mundiales, un proceso liderado por el DAES bajo los auspicios de la Comisión de Estadística de las Naciones Unidas. Al mismo tiempo, se inició un proceso intergubernamental de cara al 81.º período de sesiones de la Asamblea General de las Naciones Unidas para acordar normas mundiales de medición del progreso.'
+    }
+  ]}
+/>
+</div>
+
+<div className="container_section">
+<div className="container_section__wide">
+
+### ¿Qué significa ir más allá del PIB?
+
+Esto exige una nueva forma de entender lo que entendemos por progreso.
+
+El progreso se basa en los principios fundamentales de la paz, los derechos humanos y el respeto por el planeta, reconociendo que:
+
+<PrincipleCards items={[{ icon: 'community.svg', title: 'El bienestar es tanto colectivo como individual' }, { icon: 'respect_for_the_planet.svg', title: 'Las personas y el planeta están profundamente interconectados' }, { icon: 'global.svg', title: 'Los efectos transfronterizos importan en un mundo interdependiente' }]} />
+
+El panel propuesto contiene 31 indicadores diseñados para ayudar a los países a hacer seguimiento del progreso más allá del PIB:
+
+<ul className="bullet_list">
+  <li>Alrededor de la mitad de los indicadores proceden directamente de los Objetivos de Desarrollo Sostenible (ODS), lo que permite a los países comenzar de inmediato</li>
+  <li>Es de propiedad de los países y adaptable</li>
+  <li>Mide directamente los resultados de bienestar, la equidad y la inclusión</li>
+  <li>Hace seguimiento de la sostenibilidad y la resiliencia a través del capital natural, humano, social e institucional</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div className="bgdp_chapter bgdp_chapter--data">
+<ChapterBanner anchorClass="anchor_data" eyebrow="Análisis" title="Lo que muestran los datos seleccionados" />
+<SectionPhotoBand image="assets/img/divider_hands_circle.jpg" />
+
+<SectionDivider tint={false}>
+
+El panel cambia las preguntas que nos hacemos sobre el progreso. Los ejemplos que aparecen a continuación comparan la producción económica con resultados para las personas, la sociedad y el planeta, destacando hallazgos y lagunas de datos de los indicadores del nuevo panel de seguimiento del progreso más allá del PIB.
+
+</SectionDivider>
+
+<DashboardFramework
+  title="El panel Más allá del PIB hace seguimiento de tres dimensiones del progreso, respaldadas por principios fundamentales"
+  componentsLabel="componentes"
+  principlesLabel="Principios fundamentales"
+  seeDataLabel="→ ver datos de ejemplo"
+  foot="Los componentes marcados con {seeDataLabel} se ilustran a continuación con indicadores seleccionados."
+  foundationalPrinciples={[
+    { key: 'peace', icon: 'peace', label: 'Paz' },
+    { key: 'human_rights', icon: 'human_rights', label: 'Derechos humanos' },
+    { key: 'planet', icon: 'planet', label: 'Respeto por el planeta' }
+  ]}
+  dimensions={[
+    { key: 'current_wellbeing', label: 'Bienestar actual', variant: 'yellow', components: [{ label: 'Condiciones materiales y trabajo', icon: 'material_conditions_and_work' }, { label: 'Salud', href: '.anchor_health', icon: 'health' }, { label: 'Educación', icon: 'education' }, { label: 'Seguridad', href: '.anchor_security', icon: 'security' }, { label: 'Bienestar subjetivo', icon: 'subjective_well_being' }, { label: 'Cohesión social', href: '.anchor_trust', icon: 'social_cohesion' }, { label: 'Calidad de las instituciones', icon: 'quality_of_institutions' }, { label: 'Calidad ambiental', icon: 'environmental_quality' }] },
+    { key: 'equity_inclusion', label: 'Equidad e inclusión', variant: 'purple', components: [{ label: 'Desigualdad de la riqueza', href: '.anchor_wealth_inequality', icon: 'wealth_inequality' }, { label: 'Desigualdad de ingresos', href: '.anchor_wage_gap', icon: 'income_inequality' }, { label: 'Pobreza', icon: 'poverty' }, { label: 'Inclusión laboral', icon: 'work_inclusion' }, { label: 'Desigualdades regionales', icon: 'regional_inequalities' }, { label: 'Privaciones superpuestas', href: '.anchor_prejudice', icon: 'overlapping_deprivations' }] },
+    { key: 'sustainability_resilience', label: 'Sostenibilidad y resiliencia', variant: 'green', components: [{ label: 'Capital producido', icon: 'produced_capital' }, { label: 'Capital humano', icon: 'human_capital' }, { label: 'Capital social', icon: 'social_capital' }, { label: 'Capital institucional', icon: 'institutional_capital' }, { label: 'Capital natural', href: '.anchor_emissions', icon: 'natural_capital' }] }
+  ]}
+/>
+
+<SectionDivider anchorClass="anchor_current_wellbeing" image="assets/img/divider_couple.jpg" tint={false} title="Bienestar actual">
+
+Esta dimensión abarca las condiciones materiales y el trabajo, la salud, la educación, la seguridad, el bienestar subjetivo, la cohesión social, la calidad de las instituciones y la calidad ambiental. Veamos algunos datos seleccionados.
+
+</SectionDivider>
+
+<div className="bgdp_chart_strip">
+
+<ChartData file="2026-beyond_gdp_healthy_life_expectancy.json">
+{data => (
+  <ChartSection
+    anchorClass="anchor_health"
+    dimensionChip={{ icon: 'health', label: 'Salud', variant: 'yellow' }}
+    title="Unos ingresos más altos no siempre significan una vida más larga y saludable"
+    description="Producto interno bruto (PIB) per cápita mediano y esperanza de vida saludable en años, América del Norte, Europa del Norte y Europa del Sur, dólares y años, 2000-2019."
+    source="ONU Comercio y Desarrollo (UNCTAD), con base en el Banco Mundial y la OMS."
+    sourceLabel="Fuente:"
+    noteLabel="Nota:"
+    backLabel="← Volver al panel"
+    insight={['Un PIB más alto no siempre se traduce en más bienestar. El PIB per cápita de Europa del Sur es menos de la mitad del de América del Norte y Europa del Norte. Sin embargo, su esperanza de vida saludable es más alta que la de América del Norte y ha alcanzado a la de Europa del Norte. En Europa del Sur, la esperanza de vida saludable siguió mejorando pese a la desaceleración económica.']}
+  >
+    <ChartPair
+      rightDelayMs={1400}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="region" valueKey="gdp_per_capita" isVisible={vis} title="Producto interno bruto (PIB) per cápita, dólares" yLabel="Producto interno bruto (PIB) per cápita, dólares" hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} palette={['--un-color-blue-brand', '--un-color-blue-darkest', '--un-color-yellow']} series={[{ key: 'NAM', label: 'América del Norte' }, { key: 'NEU', label: 'Europa del Norte' }, { key: 'SEU', label: 'Europa del Sur' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="region" valueKey="healthy_life_exp" isVisible={vis} title="Esperanza de vida saludable, años" yLabel="Esperanza de vida saludable, años" yMin={64} yMax={72} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} palette={['--un-color-blue-brand', '--un-color-blue-darkest', '--un-color-yellow']} series={[{ key: 'NAM', label: 'América del Norte' }, { key: 'NEU', label: 'Europa del Norte' }, { key: 'SEU', label: 'Europa del Sur' }]} />}
+    />
+  </ChartSection>
+)}
+</ChartData>
+
+<ChartData file="2026-beyond_gdp_homicides.json">
+{data => (
+  <ChartSection
+    anchorClass="anchor_security"
+    dimensionChip={{ icon: 'security', label: 'Seguridad', variant: 'yellow' }}
+    title="La seguridad puede empeorar incluso cuando el PIB mejora"
+    description="Producto interno bruto (PIB) per cápita mediano y homicidios intencionales, América Latina y el Caribe y Asia Oriental y Sudoriental, índice: 2015=100 y homicidios por cada 100.000 habitantes, 2015-2023."
+    insight={['Un crecimiento sostenido del PIB no siempre se traduce en más seguridad. En América Latina, los homicidios aumentaron casi un 50% entre 2015 y 2023, aun cuando el PIB creció un 17%. De hecho, la tasa mediana de homicidios alcanzó su nivel más alto registrado en 2023. Esto contrasta fuertemente con Asia Oriental y Sudoriental, donde las tasas de homicidios eran 29 veces más bajas.']}
+    expandable={{ label: 'Países incluidos en el cálculo', items: ['Asia Oriental y Sudoriental: Japón, Malasia, Mongolia, Myanmar, República de Corea, Singapur.', 'América Latina: Argentina, Barbados, Brasil, Chile, Colombia, Costa Rica, Dominica, Ecuador, Granada, Guyana, Honduras, Jamaica, México, Panamá, Paraguay, Estado Plurinacional de Bolivia, Santa Lucía, Suriname, Uruguay.'] }}
+    source="Banco Mundial."
+    sourceLabel="Fuente:"
+    noteLabel="Nota:"
+    backLabel="← Volver al panel"
+  >
+    <ChartPair
+      rightDelayMs={1400}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Producto interno bruto (PIB) per cápita, índice 2015=100" yLabel="Producto interno bruto (PIB) per cápita, índice 2015=100" yMin={90} yMax={121} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'América Latina y el Caribe' }, { key: 'Eastern and South-Eastern Asia', label: 'Asia Oriental y Sudoriental' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="homicides" isVisible={vis} title="Número de víctimas de homicidio por cada 100.000 habitantes" yLabel="Número de víctimas de homicidio por cada 100.000 habitantes" yMin={0} yMax={20} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Latin America and the Caribbean', label: 'América Latina y el Caribe' }, { key: 'Eastern and South-Eastern Asia', label: 'Asia Oriental y Sudoriental' }]} />}
+    />
+  </ChartSection>
+)}
+</ChartData>
+
+<ChartData file="2026-beyond_gdp_trust.json">
+{data => (
+  <ChartSection
+    anchorClass="anchor_trust"
+    dimensionChip={{ icon: 'social_cohesion', label: 'Cohesión social', variant: 'yellow' }}
+    title="El crecimiento económico no mejora automáticamente la cohesión social"
+    description="Producto interno bruto (PIB) per cápita mediano y proporción de personas que afirman que se puede confiar en la mayoría de la gente, África del Norte y Asia Occidental, índice: 2014=100 y porcentaje, 2014 y 2022."
+    source="Banco Mundial y Encuesta Mundial de Valores."
+    sourceLabel="Fuente:"
+    noteLabel="Nota:"
+    backLabel="← Volver al panel"
+    insight={['La confianza no se compra. Un crecimiento económico similar puede coincidir con cambios distintos en la cohesión social. El PIB mediano aumentó un 10,5% en África del Norte entre 2014 y 2022, pero la confianza en las personas cayó más de un 17%. Mientras tanto, tanto el PIB per cápita como la confianza aumentaron más de un 20% durante el mismo período en Asia Occidental.']}
+    expandable={{ label: 'Países incluidos en el cálculo', items: ['África del Norte: Egipto, Libia, Marruecos, Túnez.', 'Asia Occidental: Armenia, Azerbaiyán, Georgia, Iraq, Jordania, Líbano, Türkiye.'] }}
+  >
+    <ChartPair
+      rightDelayMs={1400}
+      leftChart={vis => (
+        <GroupedBarChart
+          isVisible={vis}
+          title="Producto interno bruto (PIB) per cápita, índice 2014=100"
+          yLabel="Producto interno bruto (PIB) per cápita, índice 2014=100"
+          yMax={150}
+          palette={PAIR_PALETTE_VARS}
+          categories={[{ key: 'Northern Africa', label: 'África del Norte' }, { key: 'Western Asia', label: 'Asia Occidental' }]}
+          series={data.years.map(y => ({ key: String(y), label: String(y) }))}
+          values={Object.fromEntries(Object.entries(data.regions).map(([region, r]) => [region, Object.fromEntries(data.years.map((y, i) => [String(y), r.gdp_index[i]]))]))}
+        />
+      )}
+      rightChart={vis => (
+        <GroupedBarChart
+          isVisible={vis}
+          title="Proporción de personas que afirman que se puede confiar en la mayoría de la gente, porcentaje"
+          yLabel="Proporción de personas que afirman que se puede confiar en la mayoría de la gente, porcentaje"
+          yMax={15}
+          valueFormat=""
+          palette={PAIR_PALETTE_VARS}
+          categories={[{ key: 'Northern Africa', label: 'África del Norte' }, { key: 'Western Asia', label: 'Asia Occidental' }]}
+          series={data.years.map(y => ({ key: String(y), label: String(y) }))}
+          values={Object.fromEntries(Object.entries(data.regions).map(([region, r]) => [region, Object.fromEntries(data.years.map((y, i) => [String(y), r.trust_pct[i]]))]))}
+        />
+      )}
+    />
+  </ChartSection>
+)}
+</ChartData>
+
+<ChartData file="2026-beyond_gdp_satisfaction.json">
+{data => (
+  <ChartSection
+    title="Más prosperidad no garantiza más satisfacción con los servicios públicos"
+    description="Proporción de personas satisfechas con su última experiencia de los servicios públicos y producto interno bruto (PIB) per cápita, países seleccionados, porcentaje y dólares, promedio 2015-2024."
+    source="Banco Mundial y Programa de las Naciones Unidas para el Desarrollo, a través de la Base de Datos Mundial de Indicadores de los ODS de las Naciones Unidas."
+    sourceLabel="Fuente:"
+    noteLabel="Nota:"
+    backLabel="← Volver al panel"
+    note="La satisfacción declarada puede reflejar un efecto de disconfirmación de expectativas. Las personas con expectativas más altas pueden declarar una satisfacción menor, incluso cuando la calidad objetiva del servicio es superior."
+    insight={['La confianza en las instituciones importa. Y esta no siempre va acompañada de niveles más altos de prosperidad económica. Bulgaria y México declaran una mayor satisfacción con los servicios públicos que algunos países más ricos, como Noruega e Italia.']}
+  >
+    <DualBarRowsLoader data={data} countryNames={COUNTRY_NAMES_ES} primaryLabel="Satisfacción con los servicios públicos" secondaryLabel="Producto interno bruto (PIB) per cápita" sortByLabel="Ordenar por" />
+  </ChartSection>
+)}
+</ChartData>
+
+</div>
+
+<SectionDivider anchorClass="anchor_equity_inclusion" image="assets/img/divider_buildings_sky.jpg" tint={false} title="Equidad e inclusión">
+
+Esta dimensión mide si las oportunidades y los resultados se comparten. Abarca la desigualdad de la riqueza y de ingresos, la pobreza, la inclusión laboral, las desigualdades regionales y las privaciones superpuestas. Veamos algunos datos seleccionados.
+
+</SectionDivider>
+
+<div className="bgdp_chart_strip">
+
+<ChartData file="2026-beyond_gdp_wealth_inequality.json">
+{data => (
+  <ChartSection
+    anchorClass="anchor_wealth_inequality"
+    dimensionChip={{ icon: 'wealth_inequality', label: 'Desigualdad de la riqueza', variant: 'purple' }}
+    title="Un crecimiento más rápido puede venir acompañado de una mayor desigualdad de la riqueza"
+    description="Producto interno bruto (PIB) per cápita mediano y proporción de la riqueza en poder del 99% más pobre, Europa del Este y Europa del Sur, índice: 2000=100 y porcentaje, 2000-2019."
+    source="ONU Comercio y Desarrollo (UNCTAD), con base en el Banco Mundial y la World Inequality Database."
+    sourceLabel="Fuente:"
+    noteLabel="Nota:"
+    backLabel="← Volver al panel"
+    insight={['Una marea creciente no siempre eleva a todos los barcos: el crecimiento económico puede coincidir con una desigualdad creciente. Por ejemplo, el PIB per cápita creció más rápido en Europa del Este que en Europa del Sur. Sin embargo, la proporción de la riqueza en poder del 99% más pobre disminuyó de forma más pronunciada en Europa del Este.']}
+    expandable={{ label: 'Países incluidos en el cálculo', items: ['Europa del Este: Belarús, Bulgaria, Chequia, Hungría, Polonia, República de Moldova, Rumania, Federación de Rusia, Eslovaquia, Ucrania.', 'Europa del Sur: Albania, Andorra, Bosnia y Herzegovina, Croacia, Chipre, Grecia, Italia, Malta, Montenegro, Macedonia del Norte, Portugal, San Marino, Serbia, Eslovenia, España.'] }}
+  >
+    <ChartPair
+      rightDelayMs={1400}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="gdp_per_capita" isVisible={vis} title="Producto interno bruto (PIB) per cápita, índice 2000=100" yLabel="Producto interno bruto (PIB) per cápita, índice 2000=100" yMin={90} yMax={250} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Eastern Europe', label: 'Europa del Este' }, { key: 'Southern Europe', label: 'Europa del Sur' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="UNCTAD_region" valueKey="wealth_99_perc" isVisible={vis} title="Proporción de la riqueza en poder del 99% más pobre, porcentaje" yLabel="Proporción de la riqueza en poder del 99% más pobre, porcentaje" yMin={75} yMax={78} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} series={[{ key: 'Eastern Europe', label: 'Europa del Este' }, { key: 'Southern Europe', label: 'Europa del Sur' }]} />}
+    />
+  </ChartSection>
+)}
+</ChartData>
+
+<ChartData file="2026-beyond_gdp_wage_gap.json">
+{data => (
+  <ChartSection
+    anchorClass="anchor_wage_gap"
+    dimensionChip={{ icon: 'income_inequality', label: 'Desigualdad de ingresos', variant: 'purple' }}
+    title="El crecimiento económico supera los avances en la remuneración de las mujeres"
+    description="Producto interno bruto (PIB) per cápita promedio e ingresos por hora promedio de las mujeres como proporción de los de los hombres, economías desarrolladas, dólares y porcentaje, promedios 2010-2013 y 2020-2023."
+    source="Banco Mundial y Organización Internacional del Trabajo, a través de la Base de Datos Mundial de Indicadores de los ODS de las Naciones Unidas."
+    sourceLabel="Fuente:"
+    noteLabel="Nota:"
+    backLabel="← Volver al panel"
+    insight={['El crecimiento del PIB puede ser más lento para un segmento de la población. El PIB per cápita promedio de las economías desarrolladas aumentó un 12% en un período de 10 años, pero la remuneración de las mujeres en relación con la de los hombres solo mejoró un 1%, menos de una décima parte de ese avance.']}
+    expandable={{ label: 'Países incluidos en el cálculo', items: ['Bosnia y Herzegovina, Chequia, Finlandia, Francia, Grecia, Hungría, Italia, Portugal, República de Corea, República de Moldova, Rumania, Eslovaquia, España, Suecia, Suiza, Reino Unido de Gran Bretaña e Irlanda del Norte, Estados Unidos de América.'] }}
+  >
+    <ChartPair
+      rightDelayMs={840}
+      leftChart={vis => <BarPair isVisible={vis} title="Producto interno bruto (PIB) per cápita, dólares" yLabel="Producto interno bruto (PIB) per cápita, dólares" periods={data.periods} values={data.series.gdp_per_capita} valueFormat="" />}
+      rightChart={vis => <BarPair isVisible={vis} title="Ingresos por hora de las mujeres, como proporción de los de los hombres, porcentaje" yLabel="Ingresos por hora de las mujeres, como proporción de los de los hombres" periods={data.periods} values={data.series.wage_gap_pct} valueFormat="percent" />}
+    />
+  </ChartSection>
+)}
+</ChartData>
+
+<ChartData file="2026-beyond_gdp_prejudice.json">
+{data => (
+  <ChartSection
+    anchorClass="anchor_prejudice"
+    dimensionChip={{ icon: 'overlapping_deprivations', label: 'Privaciones superpuestas', variant: 'purple' }}
+    title="La prosperidad económica no protege a las personas contra los prejuicios"
+    description="Producto interno bruto (PIB) per cápita y proporción de personas que declaran haber sufrido discriminación o acoso en los últimos 12 meses, países seleccionados, dólares en escala logarítmica y porcentaje, promedio 2014-2024."
+    insight={['Un PIB más alto no está sistemáticamente vinculado a una menor discriminación o acoso. Centrarse únicamente en el crecimiento económico crea un punto ciego importante en la experiencia vivida de las personas.']}
+    source="Banco Mundial y Oficina del Alto Comisionado de las Naciones Unidas para los Derechos Humanos (ACNUDH)."
+    sourceLabel="Fuente:"
+    noteLabel="Nota:"
+    backLabel="← Volver al panel"
+    fitChart
+  >
+    <RevealOnView>
+      {vis => (
+        <ScatterLog
+          points={data.map(d => ({ key: d.iso3, label: PREJUDICE_COUNTRY_NAMES_ES[d.iso3] ?? d.iso3, x: d['GDP per capita (log scale)'], y: d['Share reporting discrimination or harassment'] }))}
+          title="Producto interno bruto (PIB) per cápita y proporción de personas que declaran haber sufrido discriminación o acoso"
+          xLabel="Producto interno bruto (PIB) per cápita, dólares"
+          yLabel="Proporción de personas que declaran haber sufrido discriminación o acoso, porcentaje"
+          isVisible={vis}
+        />
+      )}
+    </RevealOnView>
+  </ChartSection>
+)}
+</ChartData>
+
+</div>
+
+<SectionDivider anchorClass="anchor_sustainability_resilience" image="assets/img/divider_hourglass.jpg" tint={false} title="Sostenibilidad y resiliencia">
+
+Esta dimensión hace seguimiento de si el progreso puede continuar en el tiempo. Considera el capital producido, humano, social, institucional y natural.
+
+</SectionDivider>
+
+<div className="bgdp_chart_strip">
+
+<ChartData file="2026-beyond_gdp_emissions.json">
+{data => (
+  <ChartSection
+    anchorClass="anchor_emissions"
+    dimensionChip={{ icon: 'natural_capital', label: 'Capital natural', variant: 'green' }}
+    title="Las emisiones mundiales aumentan incluso cuando las emisiones por persona se estabilizan"
+    description="Emisiones de gases de efecto invernadero, por estatus de desarrollo, miles de millones de toneladas de dióxido de carbono equivalente y toneladas medianas de dióxido de carbono equivalente por persona, 2000-2017."
+    source="ONU Comercio y Desarrollo (UNCTAD), con base en la secretaría de la CMNUCC, a través de la Base de Datos Mundial de Indicadores de los ODS de las Naciones Unidas."
+    sourceLabel="Fuente:"
+    noteLabel="Nota:"
+    backLabel="← Volver al panel"
+    note="Unidades asumidas a partir de la maqueta preliminar (toneladas de CO₂e por persona; miles de millones de toneladas de CO₂e en total); no confirmadas explícitamente en el gráfico de origen."
+    insight={['El panorama cambia si se observan las emisiones por persona o las emisiones totales. Las emisiones por persona se han estabilizado en muchos países, pero el crecimiento económico y demográfico sigue impulsando al alza las emisiones totales. Mantenerse dentro de los límites planetarios exige mayor ambición y acción.']}
+  >
+    <ChartPair
+      rightDelayMs={1400}
+      leftChart={(vis, hover) => <LineChartMulti data={data} seriesKey="developing" valueKey="total_ghg_emissions" isVisible={vis} title="Emisiones totales de gases de efecto invernadero (GEI), miles de millones de toneladas de CO₂e" yLabel="Emisiones totales de gases de efecto invernadero (GEI), miles de millones de toneladas de CO₂e" yMax={30} hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} stackedLegend palette={DEVELOPMENT_STATUS_PALETTE_VARS} series={[{ key: 'Developed', label: 'Desarrollados' }, { key: 'LDCs', label: 'Países menos adelantados (PMA)' }, { key: 'Other developing', label: 'Otros países en desarrollo' }]} />}
+      rightChart={(vis, hover) => <LineChartMulti data={data} seriesKey="developing" valueKey="ghg_per_capita" isVisible={vis} title="Emisiones de gases de efecto invernadero (GEI) per cápita, toneladas de CO₂e por persona" yLabel="Emisiones de gases de efecto invernadero (GEI) per cápita, toneladas de CO₂e por persona" hoveredYear={hover.hoveredYear} onHoverChange={hover.onHoverChange} stackedLegend palette={DEVELOPMENT_STATUS_PALETTE_VARS} series={[{ key: 'Developed', label: 'Desarrollados' }, { key: 'LDCs', label: 'Países menos adelantados (PMA)' }, { key: 'Other developing', label: 'Otros países en desarrollo' }]} />}
+    />
+  </ChartSection>
+)}
+</ChartData>
+
+</div>
+
+</div>
+
+<div className="bgdp_chapter bgdp_chapter--recommendation">
+<ChapterBanner anchorClass="anchor_gaps" eyebrow="Lagunas de datos" title="¿Cómo corregir lo que no podemos ver?" />
+<SectionPhotoBand image="assets/img/divider_iceberg.jpg" />
+<SectionDivider tint={false}>
+
+La disponibilidad de los indicadores Más allá del PIB varía ampliamente según los niveles de desarrollo y las dimensiones del panel.
+
+</SectionDivider>
+
+<div className="bgdp_chart_strip">
+
+<ChartData file="2026-beyond_gdp_gap1.json">
+{data => (
+  <ChartSection
+    title="Los países en desarrollo disponen de menos datos Más allá del PIB"
+    description="Indicadores del panel Más allá del PIB con al menos un dato disponible públicamente, por dimensión y estatus de desarrollo, porcentaje."
+    source="Cálculos de ONU Comercio y Desarrollo (UNCTAD) a partir de datos disponibles internacionalmente"
+    sourceLabel="Fuente:"
+    noteLabel="Nota:"
+    backLabel="← Volver al panel"
+    insight={['Aunque el análisis se basa en gran medida en el marco de indicadores de los ODS, la disponibilidad de datos sigue siendo limitada. Con base en los datos recopilados en abril de 2026 para los indicadores internacionales disponibles, las brechas de cobertura entre países desarrollados y en desarrollo son especialmente pronunciadas en el bienestar actual y en la sostenibilidad y la resiliencia. Actualmente, menos de la mitad de los países en desarrollo cuentan con cobertura en estas dos dimensiones clave.']}
+  >
+    <GapChart data={data} title="Los países en desarrollo disponen de menos datos Más allá del PIB" yLabel="Indicadores con datos disponibles, porcentaje" dimensionLabels={['Bienestar actual', 'Equidad e inclusión', 'Principios fundamentales', 'Sostenibilidad y resiliencia']} devStatusLabels={['Desarrollados', 'En desarrollo']} goalLabel="Meta: 100%" />
+  </ChartSection>
+)}
+</ChartData>
+
+</div>
+
+<SectionDivider eyebrow="Quién debe actuar" tint={false} title="Un esfuerzo compartido para ir más allá del PIB">
+
+Ir más allá del PIB se basa en décadas de esfuerzos internacionales por incorporar la sostenibilidad y el bienestar en la forma en que medimos y entendemos el progreso. En 1987, la Comisión Mundial sobre el Medio Ambiente y el Desarrollo publicó <a href="http://www.un-documents.net/our-common-future.pdf" rel="noreferrer" target="_blank">Nuestro futuro común</a> (el Informe Brundtland), que popularizó el concepto de desarrollo sostenible al vincular el desarrollo económico con las preocupaciones ambientales. En 2009, el informe Stiglitz-Sen-Fitoussi, <a href="https://ec.europa.eu/eurostat/documents/8131721/8131772/Stiglitz-Sen-Fitoussi-Commission-report.pdf" rel="noreferrer" target="_blank">Mismeasuring Our Lives: Why GDP Doesn't Add Up</a>, introdujo una serie de conceptos, desde medidas sostenibles del bienestar económico hasta medidas del ahorro y la riqueza y un "PIB verde". Juntos, estos trabajos cambiaron la forma de pensar el progreso, sentando las bases de la agenda moderna Más allá del PIB.
+
+Llevar a la práctica la agenda Más allá del PIB requiere una acción coordinada entre los países, el sistema de las Naciones Unidas, la comunidad estadística, la sociedad civil y otras partes interesadas. La participación de los países es fundamental para adaptar el marco a las prioridades nacionales, fortalecer los sistemas de datos y estadísticas, y utilizarlo para orientar la toma de decisiones. Las recomendaciones del Grupo de Expertos de Alto Nivel hacen un llamado a:
+
+<Relay
+  items={[
+    { title: 'Los gobiernos', description: 'a invertir en estadísticas, datos e innovación' },
+    { title: 'Los países', description: 'a establecer iniciativas nacionales de medición del progreso' },
+    { title: 'Las Naciones Unidas', description: 'a apoyar la implementación, incluido un proceso mundial de desarrollo de capacidades y presentación de informes' },
+    { title: 'La comunidad estadística', description: 'a mejorar los métodos y llenar las lagunas de datos' },
+    { title: 'La sociedad civil y otras partes interesadas', description: 'a apoyar la medición y la rendición de cuentas' }
+  ]}
+/>
+
+</SectionDivider>
+
+</div>
+
+<div className="bgdp_chapter bgdp_chapter--next">
+<ChapterBanner anchorClass="anchor_next" eyebrow="Impulsar el cambio" title="El papel de UNCTAD en Más allá del PIB" />
+<SectionDivider tint={false}>
+
+El trabajo de UNCTAD en materia de Más allá del PIB se centra en apoyar las capacidades estadísticas y analíticas de los países, según lo solicitado en la conferencia UNCTAD16.
+
+Trabajamos en estrecha colaboración con el DAES, el PNUD y la Oficina Ejecutiva del Secretario General en el apoyo a las capacidades. También contribuimos al desarrollo de metodologías en el marco de la Comisión de Estadística y de la red de Estadísticos Jefes de las Naciones Unidas, y promovemos la participación juvenil a través del Beyond Lab de las Naciones Unidas en Ginebra.
+
+Apoyamos la Alianza Mundial para Más allá del PIB, lanzada en Sevilla y liderada por España. Junto con la Organización de Cooperación y Desarrollo Económicos (OCDE) y la Secretaría General Iberoamericana (SEGIB), la Alianza facilita el intercambio y el aprendizaje entre países.
+
+También trabajamos con países y organizaciones de la sociedad civil para garantizar un apoyo eficiente y promover enfoques mundiales compartidos.
+
+</SectionDivider>
+
+<RevealList
+  layout="cards"
+  items={[
+    { title: 'Apoyo a las capacidades de los países', description: 'Trabajamos en estrecha colaboración con el DAES, el PNUD y la Oficina Ejecutiva del Secretario General en el apoyo a las capacidades.', icon: 'country.svg', links: [{ label: 'Más información', url: 'https://unctad.org/statistics/beyond-gdp' }] },
+    { title: 'Colaboración metodológica', description: 'Contribuimos al desarrollo de metodologías en el marco de la Comisión de Estadística y de la red de Estadísticos Jefes de las Naciones Unidas.', icon: 'community.svg', links: [{ label: 'Más información', url: 'https://unstats.un.org/UNSDWebsite/events-details/un57sc-beyond-gdp-rethinking-progress-in-a-changing-world-2Mar2026/' }] },
+    { title: 'Participación juvenil', description: 'Promovemos la participación juvenil a través del Beyond Lab de las Naciones Unidas en Ginebra.', icon: 'individual.svg', links: [{ label: 'Más información', url: 'https://www.thebeyondlab.org/initiative/beyond-gdp' }] },
+    { title: 'Intercambio y asociación internacional', description: 'Apoyamos la Alianza Mundial para Más allá del PIB, lanzada en Sevilla y liderada por España. Junto con la OCDE y el SEGIB, la Alianza facilita el intercambio y el aprendizaje entre países.', icon: 'global.svg', links: [{ label: 'Más información', url: 'https://unctad.org/meeting/fin4dev-dialogue-first-plenary-meeting-beyond-gdp-global-alliance' }] }
+  ]}
+/>
+
+<p className="bgdp_disclaimer">Este trabajo forma parte del proyecto "Más allá del PIB: promover iniciativas mundiales y nacionales para desarrollar, compilar e integrar métricas más allá del PIB con el fin de fomentar la formulación de políticas inclusivas, sostenibles y con visión de futuro", con el apoyo financiero del Subfondo para la Agenda 2030 del Fondo de las Naciones Unidas para la Paz y el Desarrollo.</p>
+
+<Footer downloadUrl={props.meta.download_report_url} title="Ir más allá del PIB exige un esfuerzo colectivo y sostenido en el tiempo." downloadLabel="Descargar el informe (PDF)" exploreLabel="Explorar los datos">
+
+Los gobiernos, las instituciones y la sociedad necesitan datos más sólidos y medidas basadas en evidencia.
+
+</Footer>
+</div>
+</div>

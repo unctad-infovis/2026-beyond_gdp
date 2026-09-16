@@ -1,0 +1,18 @@
+{
+  "show_site_header": true,
+  "hero": {
+    "title": "Mirar más allá del PIB",
+    "subtitle": "Medir lo que importa a través del panel propuesto por el Grupo de Expertos de Alto Nivel",
+    "image_url": "assets/img/2026-beyond_gdp_hero.jpg",
+    "titleHighlight": "más allá del PIB"
+  },
+  "nav": [
+    {
+      "label": "Análisis de los datos",
+      "href": ".anchor_data",
+      "children": [{ "label": "Bienestar actual", "href": ".anchor_current_wellbeing" }, { "label": "Equidad e inclusión", "href": ".anchor_equity_inclusion" }, { "label": "Sostenibilidad y resiliencia", "href": ".anchor_sustainability_resilience" }]
+    },
+    { "label": "Recomendaciones", "href": ".anchor_gaps" }
+  ],
+  "download_report_url": "https://unctad.org/system/files/official-document/sddsinf2026d1_en.pdf"
+}

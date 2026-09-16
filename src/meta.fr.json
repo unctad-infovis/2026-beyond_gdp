@@ -1,0 +1,18 @@
+{
+  "show_site_header": true,
+  "hero": {
+    "title": "Regarder au-delà du PIB",
+    "subtitle": "Mesurer ce qui compte grâce au tableau de bord proposé par le Groupe d'experts de haut niveau",
+    "image_url": "assets/img/2026-beyond_gdp_hero.jpg",
+    "titleHighlight": "au-delà du PIB"
+  },
+  "nav": [
+    {
+      "label": "Aperçus des données",
+      "href": ".anchor_data",
+      "children": [{ "label": "Bien-être actuel", "href": ".anchor_current_wellbeing" }, { "label": "Équité et inclusion", "href": ".anchor_equity_inclusion" }, { "label": "Durabilité et résilience", "href": ".anchor_sustainability_resilience" }]
+    },
+    { "label": "Recommandations", "href": ".anchor_gaps" }
+  ],
+  "download_report_url": "https://unctad.org/system/files/official-document/sddsinf2026d1_en.pdf"
+}

@@ -36,9 +36,15 @@ Besides the full minisite (below), each of the 9 charts is also built as its own
 
 The full page now needs all of the above stylesheet links, not just the last one — since the 9 standalone chart entries were added, Vite splits shared chart CSS (`ChartPair`, `LineChartMulti`, `GroupedBarChart`, etc.) into their own chunk files instead of bundling everything into `2026-beyond_gdp.min.css`, because those chunks are now shared across multiple entries. `2026-beyond_gdp.min.css` still exists but now only holds what's exclusive to the full page (header/nav/footer/etc.) — regenerate this list from `dist/index.html`'s own `<link rel="stylesheet">` tags (skip `modulepreload` links) if it changes on a future build. Update the `?v=` query parameter on the entry `.js`/`.css` files to match the current build version to bust the cache. Don't add a `?v=` to (or hand-write a preload link for) the shared chunk file(s) each entry imports internally (visible in `dist/js/` as e.g. `2026-beyond_gdp.styles-XXXXXXXX.js`) — their filename carries a content hash that changes on every build specifically so they never need manual versioning; a query string on that file would do nothing anyway, since each entry's own `import` statement for it is a bare, query-string-less path resolved independently of the outer `<script>` tag's URL. (This was a real incident on `2026-global_trade_update`: bumping `?v=` on the entry scripts alone did not surface a content fix that actually lived in the shared chunk — only a rebuild's new content hash, i.e. a genuinely new URL, fixed it. `2026-beyond_gdp`'s build config follows the same pattern to avoid repeating that incident.)
 
+### Languages
+
+The full minisite ships in English, French and Spanish from a single build — there's no separate French/Spanish `index.html`. `src/jsx/i18n.js`'s `resolveLanguage()` picks the language at runtime, in priority order: a `?lang=fr`/`?lang=es` query param, a `lang="fr"`/`lang="es"` attribute on the embed's root `<div>`, an `/fr/`/`/es/` segment in the page's own URL path (how unctad.org serves translated pages), falling back to English. There's no in-page language switcher — the embedding page's language decides. Content lives in parallel `Article.mdx`/`Article.fr.mdx`/`Article.es.mdx` and `meta.json`/`meta.fr.json`/`meta.es.json` files; every component that renders copy (chart "Source:"/"Note:" labels, the "← Back to dashboard" link, Header/Footer CTAs, dashboard framework labels, etc.) takes that copy as a prop rather than hardcoding it, so the same components serve all three languages.
+
+The 9 standalone chart embeds don't use runtime language resolution — each language is a separate build entry/bootstrap file (e.g. `chart-health.html` / `chart-health-fr.html` / `chart-health-es.html`), matching the pattern already used to keep each standalone embed's content self-contained. Pick the snippet for the language the embedding page is actually in.
+
 ### Embedding individual charts
 
-All 10 pages (the full minisite plus each of the 9 standalone charts) share the `app-root-2026-beyond_gdp` **class** (a project-wide styling hook), but each needs its own **id** — because more than one of these embeds can sit on the same article page at once, and reusing one id across them would make `getElementById` resolve to only the first, leaving the others unmounted.
+All 28 pages (the full minisite plus each of the 9 standalone charts × 3 languages) share the `app-root-2026-beyond_gdp` **class** (a project-wide styling hook), but each needs its own **id** — because more than one of these embeds can sit on the same article page at once, and reusing one id across them would make `getElementById` resolve to only the first, leaving the others unmounted.
 
 The `storage.unctad.org` CDN only returns `Access-Control-Allow-Origin` for the `https://unctad.org` origin specifically — since `<script type="module">` always fetches cross-origin in CORS mode, these snippets will fail to load silently (no console error, requests just come back without the CORS header) if pasted into a test page served from any other origin, including `localhost`. Test embedding changes on an actual unctad.org page, not a local HTML file.
 
@@ -176,6 +182,284 @@ Each chart's stylesheet list below isn't arbitrary — a chart pulls in a differ
 <link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=13">
 <link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_GroupedBarChart.min.css?v=13">
 <div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-data-gaps">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+### Embedding individual charts (French)
+
+#### Santé
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-health-fr.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-health-fr">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Sécurité
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-security-fr.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-security-fr">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Cohésion sociale
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-trust-fr.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_GroupedBarChart.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-trust-fr">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Satisfaction à l'égard des services publics
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-satisfaction-fr.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_DualBarRowsLoader.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-satisfaction-fr">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Inégalités de richesse
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-wealth-inequality-fr.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-wealth-inequality-fr">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Écart salarial
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-wage-gap-fr.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_BarPair.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-wage-gap-fr">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Préjugés
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-prejudice-fr.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ScatterLog.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-prejudice-fr">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Émissions
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-emissions-fr.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-emissions-fr">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Lacunes de données
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-data-gaps-fr.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_GroupedBarChart.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-data-gaps-fr">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+### Embedding individual charts (Spanish)
+
+#### Salud
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-health-es.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-health-es">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Seguridad
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-security-es.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-security-es">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Cohesión social
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-trust-es.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_GroupedBarChart.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-trust-es">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Satisfacción con los servicios públicos
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-satisfaction-es.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_DualBarRowsLoader.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-satisfaction-es">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Desigualdad de la riqueza
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-wealth-inequality-es.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-wealth-inequality-es">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Brecha salarial
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-wage-gap-es.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_BarPair.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-wage-gap-es">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Prejuicios
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-prejudice-es.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ScatterLog.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-prejudice-es">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Emisiones
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-emissions-es.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartPair.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_d3Locale.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_LineChartMulti.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-emissions-es">
+  Loading...
+</div>
+<noscript>Your browser does not support Javascript!</noscript>
+```
+
+#### Lagunas de datos
+
+```html
+<script type="module" crossorigin="" src="https://storage.unctad.org/2026-beyond_gdp/js/2026-beyond_gdp.chart-data-gaps-es.min.js?v=13"></script>
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_styles.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartLegend.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartCaption.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_ChartYTicks.min.css?v=13">
+<link rel="stylesheet" crossorigin="" href="https://storage.unctad.org/2026-beyond_gdp/css/2026-beyond_gdp_GroupedBarChart.min.css?v=13">
+<div class="app-root-2026-beyond_gdp" id="app-root-2026-beyond_gdp-chart-data-gaps-es">
   Loading...
 </div>
 <noscript>Your browser does not support Javascript!</noscript>

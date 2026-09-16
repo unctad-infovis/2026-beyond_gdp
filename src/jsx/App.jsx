@@ -2,7 +2,6 @@ import BackToTop from '@unctad-infovis/general-tools/components/BackToTop.jsx';
 import ProgressBar from '@unctad-infovis/general-tools/components/ProgressBar.jsx';
 import { useRef } from 'react';
 
-import Article from '../Article.mdx';
 import ChapterBanner from './components/beyond_gdp/ChapterBanner.jsx';
 import ChartData from './components/beyond_gdp/ChartData.jsx';
 import ChartPair from './components/beyond_gdp/ChartPair.jsx';
@@ -50,7 +49,7 @@ const components = {
   Timeline
 };
 
-const App = ({ meta }) => {
+const App = ({ Article, meta }) => {
   const appRef = useRef();
 
   window.appRef = appRef;
