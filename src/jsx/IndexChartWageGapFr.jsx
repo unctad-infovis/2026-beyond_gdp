@@ -22,7 +22,7 @@ root.render(
           source="Banque mondiale et Organisation internationale du Travail, via la base de données mondiale des indicateurs relatifs aux ODD des Nations Unies."
           sourceLabel="Source :"
           noteLabel="Note :"
-          insight={["La croissance du PIB peut être plus lente pour une partie de la population. Le PIB par habitant moyen des économies développées a augmenté de 12 % sur une période de dix ans, mais l'écart de rémunération entre les femmes et les hommes ne s'est réduit que de 1 %, soit moins d'un dixième de cette progression."]}
+          insight={["La croissance du PIB peut être plus lente pour une partie de la population. Le PIB par habitant moyen des économies développées a augmenté de 12 % sur une période de dix ans, mais la rémunération des femmes par rapport à celle des hommes ne s'est améliorée que de 1 %, soit moins d'un dixième de cette progression."]}
           expandable={{ label: 'Pays pris en compte dans le calcul', items: ["Bosnie-Herzégovine, Tchéquie, Finlande, France, Grèce, Hongrie, Italie, Portugal, République de Corée, République de Moldova, Roumanie, Slovaquie, Espagne, Suède, Suisse, Royaume-Uni de Grande-Bretagne et d'Irlande du Nord, États-Unis d'Amérique."] }}
         >
           <ChartPair
